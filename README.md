@@ -1,0 +1,1 @@
+# akazeto.github.io
