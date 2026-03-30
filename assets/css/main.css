@@ -2096,6 +2096,7 @@ input, select, textarea {
 		position: relative;
 		padding: 4em 0 2em 0;
 		background-color: white;
+		background-image: url("image/test01.jpg");
 		background-repeat: no-repeat;
 		background-position: center;
 	}
@@ -2178,7 +2179,7 @@ input, select, textarea {
 				}
 
 				#nav > ul > li > span, #nav > ul > li > a {
-					color: #fff;
+					color: black;
 					text-decoration: none;
 					outline: 0;
 					border: 0;
