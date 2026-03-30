@@ -2146,7 +2146,7 @@ input, select, textarea {
 			border-color: rgba(255, 255, 255, 0.75);
 			border-top: 0;
 			border-radius: 0 0 0.35em 0.35em;
-			color: #fff;
+			color: black;
 			display: inline-block;
 			font-weight: 600;
 			letter-spacing: 3px;
