@@ -2097,7 +2097,7 @@ input, select, textarea {
 		padding: 4em 0 2em 0;
 		background-image: url("images/test00.jpg");
 		background-color: #ffffff;
-		background-size: cover;
+		background-size: 150%;
 		background-repeat: no-repeat;
 		background-position: center;
 	}
