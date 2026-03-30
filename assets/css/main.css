@@ -2096,10 +2096,10 @@ input, select, textarea {
 		position: relative;
 		padding: 4em 0 2em 0;
 		min-height: 600px;
-		background-image: url("images/test0.jpg");
-		background-size: 150%; /* 확대 */
+		background-image: url("images/test00.jpg");
+		background-size: 150%;
 		background-repeat: no-repeat;
-		background-position: top center; /* 위쪽 기준 */
+		background-position: top center;
 	}
 
 	.homepage #header-wrapper {
