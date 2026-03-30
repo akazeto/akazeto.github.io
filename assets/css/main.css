@@ -2096,14 +2096,13 @@ input, select, textarea {
 		position: relative;
 		padding: 4em 0 2em 0;
 		background-image: url("images/test01.jpg");
-		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
 	}
 
 	.homepage #header-wrapper {
 		padding: 10em 0 6em 0;
-		background-size: 128px 128px, 100% 100%, auto;
+		background-size: cover;
 	}
 
 	#promo-wrapper {
