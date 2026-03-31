@@ -2095,11 +2095,11 @@ input, select, textarea {
 	#header-wrapper {
 		position: relative;
 		padding: 4em 0 2em 0;
-		background-color: white;
+		background-color: white, rgb(0, 0, 0, 0.8);
 		background-image: url("images/test01.jpg"), url("images/overlay");
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center;
+		background-size: cover, cover;
+		background-repeat: no-repeat, no-repeat;
+		background-position: center, center;
 	}
 
 	.homepage #header-wrapper {
