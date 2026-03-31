@@ -2297,8 +2297,13 @@ input, select, textarea {
 		}
 
 		#hero .profile {
+			position: relative;
+			padding: 4em 4.5em;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
 			background: #fff;
-			border-radius: 0 0 3em 3em;
+			border-radius: 50%;
 			border-color: rgba(255, 255, 255, 0);
 			background-image: url("images/test00.jpg");
 		}
