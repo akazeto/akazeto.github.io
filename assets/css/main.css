@@ -2296,6 +2296,13 @@ input, select, textarea {
 			line-height: 1.5em;
 		}
 
+		#hero .profile {
+			background: #fff;
+			border-radius: 0 0 3em 3em;
+			border-color: rgba(255, 255, 255, 0);
+			background-image: url("images/test00.jpg");
+		}
+
 		#hero .button {
 			background: #fff;
 			border-color: rgba(255, 255, 255, 0);
