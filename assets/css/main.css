@@ -2130,7 +2130,7 @@ input, select, textarea {
 
 	#logo {
 		position: fixed;
-		z-index: 1;
+		z-index: 2;
 		top: 0;
 		left: 50%;
 		width: 15em;
