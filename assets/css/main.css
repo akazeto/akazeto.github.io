@@ -2144,8 +2144,8 @@ input, select, textarea {
 			line-height: 4em;
 			background: rgba(255, 255, 255, 0.15);
 			border: solid 1px;
-			border-color: #fff;
-			border-color: rgba(255, 255, 255, 0.75);
+			border-color: black;
+			border-color: rgba(0, 0, 0, 0.75);
 			border-top: 0;
 			border-radius: 0 0 0.35em 0.35em;
 			color: black;
