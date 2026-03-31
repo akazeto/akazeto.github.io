@@ -2095,7 +2095,7 @@ input, select, textarea {
 	#header-wrapper {
 		position: relative;
 		padding: 4em 0 2em 0;
-		background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("images/test01.jpg") ;
+		background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("images/test01.jpg") ;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: top;
@@ -2144,7 +2144,7 @@ input, select, textarea {
 			background: rgba(255, 255, 255, 0.5);
 			border: solid 1px;
 			border-color: black;
-			border-color: rgba(0, 0, 0, 0.75);
+			border-color: rgba(255, 255, 255, 0.75);
 			border-top: 0;
 			border-radius: 0 0 0.35em 0.35em;
 			color: black;
@@ -2179,7 +2179,7 @@ input, select, textarea {
 				}
 
 				#nav > ul > li > span, #nav > ul > li > a {
-					color: black;
+					color: white;
 					text-decoration: none;
 					outline: 0;
 					border: 0;
