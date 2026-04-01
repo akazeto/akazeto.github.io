@@ -55,17 +55,6 @@
 			document.getElementById('prev').onclick = () => go(cur - 1);
 			document.getElementById('next').onclick = () => go(cur + 1);
 
-			const perPage = 5;   // 한 번에 보여줄 이미지 수
-			const gap = 12;      // CSS gap과 동일하게
-			const pages = Math.ceil(총이미지수 / perPage);
-			let page = 0;
-
-			function update() {
-				const cardW = (track.parentElement.offsetWidth - gap * (perPage - 1)) / perPage;
-				const offset = page * (cardW * perPage + gap * perPage);
-				track.style.transform = `translateX(-${offset}px)`;
-			}
-
 		// Panel.
 			$(
 				'<div id="navPanel">' +
