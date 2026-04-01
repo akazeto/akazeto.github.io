@@ -2227,7 +2227,7 @@ input, select, textarea {
 
 	#profile-wrapper {
 		position: relative;
-		padding: 8em 0 8em 0;
+		padding: 10em 0 8em 0;
 		background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2), rgba(0,0,0,1));
 		background-size: cover;
 		background-repeat: no-repeat;
