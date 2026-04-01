@@ -1868,6 +1868,49 @@ input, select, textarea {
 	}
 
 
+	/* Modal */
+	/* 모달 배경 */
+	.modal-overlay {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.8);
+		z-index: 1000;
+		align-items: center;
+		justify-content: center;
+	}
+
+		/* 모달 열렸을 때 */
+		.modal-overlay.active {
+			display: flex;
+		}
+
+		/* 모달 이미지 */
+		.modal-overlay img {
+			max-width: 90%;
+			max-height: 90vh;
+			object-fit: contain;
+			border-radius: 8px;
+		}
+
+	/* 닫기 버튼 */
+	.modal-close {
+		position: fixed;
+		top: 20px;
+		right: 30px;
+		font-size: 36px;
+		color: #fff;
+		cursor: pointer;
+	}
+
+	/* 이미지에 커서 포인터 */
+	.image.artwork img {
+		cursor: pointer;
+	}
+
 /* List */
 
 	ul {
@@ -2170,7 +2213,7 @@ input, select, textarea {
 	#header-wrapper {
 		position: relative;
 		padding: 4em 0 2em 0;    
-		background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url("images/test00.jpg");
+		background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url("images/test01.jpg");
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
