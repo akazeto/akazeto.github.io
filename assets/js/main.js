@@ -43,6 +43,18 @@
 			)
 				.appendTo($body);
 
+			const track = document.getElementById('track');
+			const total = track.querySelectorAll('.slide').length;
+			let cur = 0;
+
+			function go(n) {
+				cur = (n + total) % total;
+				track.style.transform = `translateX(-${cur * 100}%)`;
+			}
+
+			document.getElementById('prev').onclick = () => go(cur - 1);
+			document.getElementById('next').onclick = () => go(cur + 1);
+
 		// Panel.
 			$(
 				'<div id="navPanel">' +

@@ -1746,6 +1746,27 @@ input, select, textarea {
 
 		}
 
+/* Slider */
+	.slider-viewport {
+		overflow: hidden;
+	}
+
+	.slider-track {
+		display: flex;
+		transition: transform 0.35s ease;
+	}
+
+	.slide {
+		min-width: 100%;
+	}
+
+	.slide img {
+		width: 100%;
+		height: 300px; /* 원하는 높이로 조절 */
+		object-fit: cover;
+		object-position: center;
+	}
+
 /* Image */
 
 	.image {
