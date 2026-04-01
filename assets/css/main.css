@@ -1868,6 +1868,14 @@ input, select, textarea {
 	}
 
 
+	pLink {
+		position: relative center;
+		margin: 0px 10px 0px 0px;
+		color: rgb(255 255 255);
+		text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+		font-size: 2em;
+	}
+
 	/* Modal */
 	/* 모달 배경 */
 	.modal-overlay {
