@@ -2225,6 +2225,15 @@ input, select, textarea {
 		background-attachment: scroll, fixed;
 	}
 
+	#profile-wrapper {
+		position: relative;
+		padding: 8em 0 12em 0;
+		background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2), rgba(0,0,0,1));
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
 	#promo-wrapper {
 		position: relative;
 		background-image: url("images/overlay.png"), url("../../images/promo.jpg");
