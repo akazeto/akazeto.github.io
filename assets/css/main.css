@@ -1767,10 +1767,11 @@ input, select, textarea {
 		object-position: center;
 	}
 
-/* Card */
+	/* Card */
 	.card {
 		/* 5개 보이게: 갭 4개(12px) 제외하고 5등분 */
 		min-width: calc((100% - 48px) / 5);
+		flex-shrink: 0; /* 추가 - 카드가 찌그러지지 않게 */
 	}
 
 	.card img {
@@ -1778,6 +1779,10 @@ input, select, textarea {
 		height: 160px; /* 원하는 높이 */
 		object-fit: cover;
 		border-radius: 8px;
+	}
+	.controls {
+		position: relative;
+		justify-self: center;
 	}
 
 /* Image */
@@ -1798,16 +1803,19 @@ input, select, textarea {
 		}
 
 		.image.artwork {
-			display: block;
-			width: auto;
-			height: 400px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 450px;
+			height: 350px;
+			overflow: hidden;
 		}
 
 			.image.artwork img {
-				width: 100%;
-				height: 100%;
-				object-fit: contain;
-				object-position: left;
+				width: 400px;
+				height: 300px;
+				object-fit: cover;
+				object-position: left top;
 			}
 
 		.image.fit {
@@ -1839,6 +1847,26 @@ input, select, textarea {
 	a.image:hover {
 		opacity: 0.85;
 	}
+
+	/* image wrap */
+	.wrap {
+		width: 100%; /* 추가 */
+		padding: 1rem 0;
+		box-sizing: border-box; /* 추가 */
+	}
+
+	.viewport {
+		width: 100%; /* 추가 */
+		overflow: hidden;
+	}
+
+	.track {
+		display: flex;
+		flex-wrap: nowrap; /* 추가 - 줄바꿈 방지 */
+		gap: 12px;
+		transition: transform 0.35s ease;
+	}
+
 
 /* List */
 
