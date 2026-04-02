@@ -2519,6 +2519,11 @@ input, select, textarea {
 		padding-bottom: 4em;
 	}
 
+	#main h2 {
+		position: relative;
+		text-align: center;
+	}
+
 /* Sidebar */
 
 	#sidebar section {
