@@ -2519,6 +2519,17 @@ input, select, textarea {
 		padding-bottom: 4em;
 	}
 
+	#main profile {
+		margin: 0 auto;
+		max-width: 100%;
+		width: 1200px;
+		padding-bottom: 4em;
+		padding-top: 4em;
+		border: solid 1px;
+		border-color: black;
+		border-inline: solid black;
+	}
+
 	#main h2 {
 		position: relative;
 		text-align: center;
