@@ -2525,9 +2525,7 @@ input, select, textarea {
 		width: 1200px;
 		padding-bottom: 4em;
 		padding-top: 4em;
-		border: solid 1px;
-		border-color: black;
-		border-inline: solid black;
+		border: double 5px black;
 	}
 
 	#main h2 {
