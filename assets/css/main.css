@@ -2531,12 +2531,14 @@ input, select, textarea {
 	#main .profile h2 {
 		position: relative;
 		text-align: center;
+		font-weight: bold;
 	}
 
 
 	#main h2 {
 		position: relative;
 		text-align: left;
+		font-weight: bold;
 	}
 
 	#main p {
