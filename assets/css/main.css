@@ -1770,16 +1770,17 @@ input, select, textarea {
 	/* Card */
 	.card {
 		/* 5개 보이게: 갭 4개(12px) 제외하고 5등분 */
-		min-width: calc((100% - 48px) / 4);
-		flex-shrink: 0; /* 추가 - 카드가 찌그러지지 않게 */
 	}
 
-	.card img {
-		width: 100%;
-		height: 160px; /* 원하는 높이 */
-		object-fit: cover;
-		border-radius: 8px;
-	}
+		.card img {
+			width: 100%;
+			height: 160px;
+			object-fit: cover;
+			object-position: center;
+			border-radius: 8px;
+			display: block;
+		}
+
 	.controls {
 		position: relative;
 		justify-self: center;
@@ -1861,8 +1862,9 @@ input, select, textarea {
 	}
 
 	.track {
-		display: flex;
-		flex-wrap: nowrap; /* 추가 - 줄바꿈 방지 */
+		display: grid;
+		grid-template-columns: repeat(4, 1fr); /* 한 줄에 4개 */
+		grid-template-rows: repeat(2, 1fr); /* 2줄 */
 		gap: 12px;
 		transition: transform 0.35s ease;
 	}
