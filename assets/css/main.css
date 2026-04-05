@@ -1807,7 +1807,7 @@ input, select, textarea {
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			width: 100%;
+			width: 600px;
 			height: 100%;
 			overflow: hidden;
 			outline: solid 2px black;
@@ -1888,6 +1888,13 @@ input, select, textarea {
 		text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 		font-size: 2em;
 		font-weight: bold;
+	}
+
+	.gallery {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		align-items: center;
 	}
 
 	/* Modal */
