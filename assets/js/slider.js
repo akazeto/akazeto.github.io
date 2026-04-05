@@ -16,4 +16,7 @@ function update() {
     document.getElementById('next').disabled = page === pages - 1;
 }
 
+document.getElementById('prev').onclick = () => { if (page > 0) { page--; update(); } };
+document.getElementById('next').onclick = () => { if (page < pages - 1) { page++; update(); } };
+
 update();
