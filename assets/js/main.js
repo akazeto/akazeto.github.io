@@ -51,9 +51,11 @@
 				cur = (n + total) % total;
 				track.style.transform = `translateX(-${cur * 100}%)`;
 			}
+			const prevBtn = document.getElementById('prev');
+			if (prevBtn) prevBtn.onclick = () => { ... };
 
-			document.getElementById('prev').onclick = () => go(cur - 1);
-			document.getElementById('next').onclick = () => go(cur + 1);
+			const nextBtn = document.getElementById('next');
+			if (nextBtn) nextBtn.onclick = () => { ... };
 
 		// Panel.
 			$(
