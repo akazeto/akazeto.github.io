@@ -2586,6 +2586,41 @@ input, select, textarea {
 		line-height: 50px;
 	}
 
+/* Sticky-nav */
+	#sticky-nav {
+		background: rgba(0, 0, 0, 0.8);
+		padding: 12px 0;
+		z-index: 1000;
+		width: 100%;
+	}
+
+		#sticky-nav.fixed {
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+
+		#sticky-nav ul {
+			display: flex;
+			justify-content: center;
+			gap: 16px;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+			#sticky-nav ul li a {
+				color: #fff;
+				text-decoration: none;
+				padding: 6px 16px;
+				border: 1px solid rgba(255,255,255,0.4);
+				border-radius: 4px;
+			}
+
+				#sticky-nav ul li a:hover {
+					background: rgba(255,255,255,0.1);
+				}
+
 /* Sidebar */
 
 	#sidebar section {
