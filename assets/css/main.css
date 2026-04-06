@@ -1867,7 +1867,7 @@ input, select, textarea {
 
 	.track {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 		grid-template-rows: repeat(2, auto); 
 		gap: 12px;
 		transition: transform 0.35s ease;
