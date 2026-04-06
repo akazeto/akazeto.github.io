@@ -1,5 +1,5 @@
 const stickyNav = document.getElementById('sticky-nav');
-const navOffset = stickyNav.offsetTop;
+const navOffset = stickyNav.offsetHeight;
 
 window.addEventListener('scroll', () => {
     if (window.scrollY >= navOffset) {

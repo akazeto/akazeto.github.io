@@ -2588,9 +2588,9 @@ input, select, textarea {
 
 /* Sticky-nav */
 	#sticky-nav {
-		background: rgba(0, 0, 0, 0.8);
+		background: rgb(255 255 255 / 80%);
 		padding: 12px 0;
-		z-index: 1000;
+		z-index: 100;
 		width: 100%;
 	}
 
@@ -2610,15 +2610,15 @@ input, select, textarea {
 		}
 
 			#sticky-nav ul li a {
-				color: #fff;
+				color: #000000;
 				text-decoration: none;
-				padding: 6px 16px;
-				border: 1px solid rgba(255,255,255,0.4);
+				padding: 8px 25px;
+				border: 2px solid rgb(0 0 0);
 				border-radius: 4px;
 			}
 
 				#sticky-nav ul li a:hover {
-					background: rgba(255,255,255,0.1);
+					background: rgb(255 255 255 / 0.1);
 				}
 
 /* Sidebar */
