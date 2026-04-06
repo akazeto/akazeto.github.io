@@ -1780,6 +1780,13 @@ input, select, textarea {
 			border-radius: 8px;
 			display: block;
 		}
+	
+		.card-desc {
+			font-size: 13px;
+			color: #555;
+			margin: 6px 0 0;
+			text-align: left;
+		}
 
 	.controls {
 		position: relative;
