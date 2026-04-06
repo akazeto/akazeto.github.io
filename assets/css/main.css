@@ -2311,9 +2311,9 @@ input, select, textarea {
 /* Header */
 
 	#logo {
-		position: fixed;
+		position: relative;
 		z-index: 3;
-		top: 0;
+		top: -190px;
 		left: 50%;
 		width: 15em;
 		margin-left: -7.5em;
@@ -2335,7 +2335,6 @@ input, select, textarea {
 			font-weight: 600;
 			letter-spacing: 3px;
 			text-align: center;
-			text-transform: uppercase;
 		}
 
 	#nav {
@@ -2588,8 +2587,8 @@ input, select, textarea {
 
 /* Sticky-nav */
 	#sticky-nav {
-		background: rgb(255 255 255 / 80%);
-		padding: 12px 0;
+		position: relative;
+		padding: 30px;
 		z-index: 100;
 		width: 100%;
 	}
@@ -2603,7 +2602,7 @@ input, select, textarea {
 		#sticky-nav ul {
 			display: flex;
 			justify-content: center;
-			gap: 16px;
+			gap: 60px;
 			list-style: none;
 			margin: 0;
 			padding: 0;
@@ -2614,7 +2613,8 @@ input, select, textarea {
 				text-decoration: none;
 				padding: 8px 25px;
 				border: 2px solid rgb(0 0 0);
-				border-radius: 4px;
+				border-radius: 12px;
+				background: rgb(238 238 238 / 80%);
 			}
 
 				#sticky-nav ul li a:hover {
