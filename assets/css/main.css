@@ -1780,11 +1780,10 @@ input, select, textarea {
 			border-radius: 8px;
 			display: block;
 		}
-	
-		.card-desc {
-			font-size: 13px;
-			color: #555;
-			margin: 6px 0 0;
+
+		#main .card-desc {
+			font-size: 20px;
+			color: #000000;
 			text-align: left;
 		}
 
@@ -1820,6 +1819,7 @@ input, select, textarea {
 			overflow: hidden;
 			border-radius: 8px;
 			box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+			margin-bottom: 0;
 		}
 
 			.image.artwork img {
