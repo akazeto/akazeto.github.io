@@ -1911,7 +1911,6 @@ input, select, textarea {
 		width: 600px;
 		height: 100%;
 		overflow: hidden;
-		outline: solid 2px black;
 		border-radius: 8px;
 		box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
 	}
