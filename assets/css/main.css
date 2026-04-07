@@ -1945,9 +1945,8 @@ input, select, textarea {
 		/* 모달 이미지 */
 		.modal-overlay img {
 			max-width: 90%;
-			max-height: 90vh;
+			max-height: 100vh;
 			object-fit: contain;
-			border-radius: 8px;
 		}
 
 	/* 닫기 버튼 */
