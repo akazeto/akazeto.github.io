@@ -26,7 +26,7 @@
 		});
 
 	// Dropdowns.
-		$('#nav > ul').dropotron({
+		$('#nav > ul, #sticky-nav > ul').dropotron({
 			mode: 'fade',
 			speed: 300,
 			alignment: 'center',
