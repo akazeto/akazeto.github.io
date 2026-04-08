@@ -30,10 +30,10 @@ window.addEventListener('scroll', () => {
 });
 
 function filterArtwork(category) {
-    const artworks = document.querySelectorAll('.gallery artwork');
+    const artworks = document.querySelectorAll('.gallery.artwork');
 
     artworks.forEach(artwork => {
-        if (category === 'all' || card.dataset.category === category) {
+        if (category === 'all' || artwork.dataset.category === category) {
             artwork.hidden = false;
         } else {
             artwork.hidden = true;
