@@ -46,11 +46,11 @@
 					<li class="has-dropdown">
 						<a href="artwork.html">ARTWORK</a>
 						<ul class="dropdown">
-							<li><a href="artwork.html?category=all" data-filter="all">All</a></li>
-							<li><a href="artwork.html?category=bluearchive" data-filter="bluearchive">Blue Archive</a></li>
-							<li><a href="artwork.html?category=stellive" data-filter="stellive">StelLive</a></li>
-							<li><a href="artwork.html?category=original" data-filter="original">Original</a></li>
-							<li><a href="artwork.html?category=etc" data-filter="etc">ETC.</a></li>
+							<li><a href="artwork.html?category=all" onclick="forceFilter(event, 'all')">All</a></li>
+							<li><a href="artwork.html?category=bluearchive" onclick="forceFilter(event, 'bluearchive')">Blue Archive</a></li>
+							<li><a href="artwork.html?category=stellive" onclick="forceFilter(event, 'stellive')">StelLive</a></li>
+							<li><a href="artwork.html?category=original" onclick="forceFilter(event, 'original')">Original</a></li>
+							<li><a href="artwork.html?category=etc" onclick="forceFilter(event, 'etc')">ETC.</a></li>
 						</ul>
 					</li>
 					<li class="has-dropdown">
@@ -125,5 +125,44 @@
 		<script src="assets/js/modal.js"></script>
 		<script src="assets/js/sticky-nav.js"></script>
 		<script src="assets/js/slider.js"></script>
+		<script>// 1. 필터링 함수 (질문자님이 콘솔에서 쳤을 때 작동하던 그 로직)
+            function applyFilter(category) {
+                console.log("필터링 적용 시작:", category);
+                const artworks = document.querySelectorAll('.gallery .artwork');
+
+                artworks.forEach(item => {
+                    const itemCat = item.getAttribute('data-category');
+                    if (category === 'all' || itemCat === category) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+
+            // 2. 드롭다운 클릭 시 강제 실행 함수
+            function forceFilter(e, category) {
+                // 현재 주소가 artwork.html을 포함하고 있다면 페이지 이동을 막음
+                if (window.location.pathname.includes('artwork.html')) {
+                    e.preventDefault(); // 새로고침 방지
+                    history.pushState(null, '', `artwork.html?category=${category}`); // 주소창 변경
+                    applyFilter(category); // 필터 적용
+                }
+                // artwork.html이 아니면(예: index.html) e.preventDefault가 안 불려서 정상 이동함
+            }
+
+            // 3. 페이지가 처음 켜질 때 URL 확인해서 필터링
+            window.addEventListener('load', () => {
+                const params = new URLSearchParams(window.location.search);
+                const category = params.get('category') || 'all';
+                applyFilter(category);
+            });
+
+            // 4. 뒤로가기 버튼 대응
+            window.onpopstate = function () {
+                const params = new URLSearchParams(window.location.search);
+                const category = params.get('category') || 'all';
+                applyFilter(category);
+            };</script>
 </body>
 </html>
