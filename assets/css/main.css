@@ -2608,6 +2608,16 @@ input, select, textarea {
 		padding: 0;
 	}
 
+	#sticky-nav a {
+		font-size: 20px;
+		font-weight: bold;
+		color: black;
+		border: solid 1px #b6b6b6;
+		background-color: rgb(255 255 255 / 80%);
+		padding: 10px;
+		border-radius: 10px;
+	}
+
 	/* 드롭다운 있는 li */
 	#sticky-nav .has-dropdown {
 		position: relative;
