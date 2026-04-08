@@ -46,7 +46,7 @@ function getCategoryFromURL() {
     return params.get('category') || 'all';
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
     const category = getCategoryFromURL();
     filterArtwork(category);
 });
