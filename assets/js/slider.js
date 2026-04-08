@@ -29,19 +29,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-function filterArtwork_Lobby(category) {
-    const cards = document.querySelectorAll('.card');
-
-    cards.forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
-            card.hidden = false;
-        } else {
-            card.hidden = true;
-        }
-    });
-}
-
-function filterArtwork_Artwork(category) {
+function filterArtwork(category) {
     const artworks = document.querySelectorAll('.gallery artwork');
 
     artworks.forEach(artwork => {
