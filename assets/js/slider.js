@@ -29,7 +29,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-function filterArtwork(category) {
+function filterArtwork_Lobby(category) {
     const cards = document.querySelectorAll('.card');
 
     cards.forEach(card => {
@@ -37,6 +37,18 @@ function filterArtwork(category) {
             card.hidden = false;
         } else {
             card.hidden = true;
+        }
+    });
+}
+
+function filterArtwork_Artwork(category) {
+    const artworks = document.querySelectorAll('.gallery artwork');
+
+    artworks.forEach(artwork => {
+        if (category === 'all' || card.dataset.category === category) {
+            artwork.hidden = false;
+        } else {
+            artwork.hidden = true;
         }
     });
 }
