@@ -29,18 +29,20 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// 필터링 핵심 함수
-function filterArtwork() {
-    // 1. URL에서 category 값 가져오기 (?category=bluearchive 등)
+// 1. 실제 필터링을 수행하는 함수
+function applyFilter() {
     const urlParams = new URLSearchParams(window.location.search);
     const category = urlParams.get('category') || 'all';
 
-    console.log("현재 필터링 카테고리:", category); // 확인용
+    console.log("필터링 적용 중:", category); // 콘솔에서 이게 뜨는지 확인해보세요!
 
     const artworks = document.querySelectorAll('.gallery .artwork');
 
+    if (artworks.length === 0) return; // 갤러리가 없는 페이지라면 무시
+
     artworks.forEach(item => {
-        if (category === 'all' || item.getAttribute('data-category') === category) {
+        const itemCategory = item.getAttribute('data-category');
+        if (category === 'all' || itemCategory === category) {
             item.style.display = 'flex';
         } else {
             item.style.display = 'none';
@@ -48,20 +50,30 @@ function filterArtwork() {
     });
 }
 
-// 상황 1: 페이지가 처음 로드될 때 실행
-window.addEventListener('load', filterArtwork);
+// 2. 모든 드롭다운 링크에 '강제 클릭 이벤트' 부여
+function setupNavLinks() {
+    const links = document.querySelectorAll('.dropdown a');
 
-// 상황 2: 이미 artwork.html인 상태에서 드롭다운을 눌러 URL이 바뀔 때 실행
-// 뒤로가기/앞으로가기 포함
-window.addEventListener('popstate', filterArtwork);
+    links.forEach(link => {
+        link.onclick = function (e) {
+            const href = this.getAttribute('href');
 
-// 상황 3: 만약 <a> 태그 클릭 시 URL만 바뀌고 페이지가 안 바뀐다면 강제로 감지
-// 모든 드롭다운 링크에 이벤트를 걸어줍니다.
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.dropdown a').forEach(link => {
-        link.addEventListener('click', () => {
-            // 클릭 후 URL이 바뀐 직후에 filterArtwork를 실행하기 위해 0.1초 지연
-            setTimeout(filterArtwork, 100);
-        });
+            // 만약 현재 페이지가 artwork.html인데 클릭한 링크도 artwork.html이면
+            if (window.location.pathname.includes('artwork.html') && href.includes('artwork.html')) {
+                e.preventDefault(); // 페이지 이동을 막고
+                history.pushState(null, '', href); // 주소창만 바꾼 뒤
+                applyFilter(); // 즉시 필터 함수 실행!
+            }
+            // 그 외(다른 페이지에서 올 때)는 그냥 내버려 두면 알아서 이동 후 로드됨
+        };
     });
+}
+
+// 3. 실행 시점들
+window.addEventListener('load', () => {
+    applyFilter();
+    setupNavLinks();
 });
+
+// 뒤로가기 대응
+window.addEventListener('popstate', applyFilter);
