@@ -17,10 +17,14 @@ function forceFilter(e, category) {
     // 현재 주소가 artwork.html을 포함하고 있다면 페이지 이동을 막음
     if (window.location.pathname.includes('artwork.html') || window.location.pathname.includes('others.html')) {
         e.preventDefault(); // 새로고침 방지
-        if (window.location.pathname.includes('artwork.html'))
+        if (window.location.pathname.includes('artwork.html')) {
             history.pushState(null, '', `artwork.html?category=${category}`); // 주소창 변경
-        if (window.location.pathname.includes('others.html'))
+            console.log("AAA");
+        }
+        if (window.location.pathname.includes('others.html')) {
             history.pushState(null, '', `others.html?category=${category}`); // 주소창 변경
+            console.log("AAA");
+        }
         applyFilter(category); // 필터 적용
     }
 }
