@@ -3,7 +3,7 @@ const modalImg = document.getElementById('modalImg');
 const modalClose = document.getElementById('modalClose');
 
 // 모든 .image.artwork img 클릭 시 모달 열기
-document.querySelectorAll('.image.artwork img, .gallery.artwork img').forEach(img => {
+document.querySelectorAll('.image .artwork img, .gallery .artwork img').forEach(img => {
     img.onclick = () => {
         modalImg.src = img.src;
         modal.classList.add('active');
