@@ -31,7 +31,7 @@ window.addEventListener('scroll', () => {
 
 // artworks 필터 함수
 function filterArtwork(category) {
-    const artworks = document.querySelectorAll('.gallery.artwork');
+    const artworks = document.querySelectorAll('.gallery .artwork');
 
     artworks.forEach(artwork => {
         if (category === 'all' || artwork.dataset.category === category) {
