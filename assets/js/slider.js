@@ -29,53 +29,25 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// artworks 필터 함수
+document.addEventListener("DOMContentLoaded", function () {
+    // 1. URL에서 파라미터 추출 (예: artwork.html?category=bluearchive -> bluearchive)
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category') || 'all'; // 없으면 기본값 'all'
+
+    // 2. 필터링 함수 실행
+    filterArtwork(category);
+});
+
 function filterArtwork(category) {
+    // 갤러리 아이템들을 모두 가져옴 (부모 .gallery 안의 .artwork 들)
     const artworks = document.querySelectorAll('.gallery .artwork');
 
-    artworks.forEach(artwork => {
-        if (category === 'all' || artwork.dataset.category === category) {
-            artwork.style.display = 'flex';
+    artworks.forEach(item => {
+        // 'all'이거나 데이터 카테고리가 일치하면 보여주고, 아니면 숨김
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+            item.style.display = 'flex';
         } else {
-            artwork.style.display = 'none';
+            item.style.display = 'none';
         }
     });
 }
-
-// URL에서 category 가져오기
-function getCategoryFromURL() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('category') || 'all';
-}
-
-// 드롭다운 클릭 이벤트 등록
-function setupDropdownFiltering() {
-    document.querySelectorAll('.dropdown a').forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault(); // 링크 기본 이동 막기
-
-            // 클릭한 링크의 category 가져오기
-            const urlParams = new URL(this.href).searchParams;
-            const category = urlParams.get('category') || 'all';
-
-            // 필터 적용
-            filterArtwork(category);
-
-            // URL만 바꾸기 (브라우저 히스토리)
-            history.pushState(null, '', this.href);
-        });
-    });
-}
-
-// 페이지 로드 시 초기 필터 적용
-window.addEventListener('load', () => {
-    const category = getCategoryFromURL();
-    filterArtwork(category);
-    setupDropdownFiltering();
-});
-
-// 뒤로가기 / 앞으로가기 버튼 클릭 시도 필터 유지
-window.addEventListener('popstate', () => {
-    const category = getCategoryFromURL();
-    filterArtwork(category);
-});
