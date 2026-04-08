@@ -4,7 +4,7 @@
 	<title>하루의 아트워크</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="../../assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/main.css" />
 	<link rel="icon" href="data:,">
 </head>
 <body class="homepage is-preload">
@@ -40,25 +40,25 @@
 			<!-- Nav -->
 			<nav id="sticky-nav">
 				<ul>
-					<li><a href="../../profile.html">PROFILE</a></li>
-					<li><a href="../../commission.html">COMMISSION</a></li>
-					<li><a href="../../index.html">LOBBY</a></li>
+					<li><a href="profile.html">PROFILE</a></li>
+					<li><a href="commission.html">COMMISSION</a></li>
+					<li><a href="index.html">LOBBY</a></li>
 					<li class="has-dropdown">
-						<a href="../../pages/artwork/artwork.html">ARTWORK</a>
+						<a href="pages/artwork/artwork.html">ARTWORK</a>
 						<ul class="dropdown">
-							<li><a href="../../pages/artwork/artwork.html">All</a></li>
-							<li><a href="../../pages/artwork/blue_archive.html">Blue Archive</a></li>
-							<li><a href="../../pages/artwork/stel_live.html">StelLive</a></li>
-							<li><a href="../../pages/artwork/original.html">Original</a></li>
-							<li><a href="../../pages/artwork/etc.html">ETC.</a></li>
+							<li><a href="pages/artwork/artwork.html" onclick="filterArtwork('all'); return false;">All</a></li>
+							<li><a href="pages/artwork/blue_archive.html" onclick="filterArtwork('bluearchive'); return false;">Blue Archive</a></li>
+							<li><a href="pages/artwork/stel_live.html" onclick="filterArtwork('stellive'); return false;">StelLive</a></li>
+							<li><a href="pages/artwork/original.html" onclick="filterArtwork('original'); return false;">Original</a></li>
+							<li><a href="pages/artwork/etc.html" onclick="filterArtwork('etc'); return false;">ETC.</a></li>
 						</ul>
 					</li>
 					<li class="has-dropdown">
-						<a href="../../pages/others/others.html">OTHERS</a>
+						<a href="pages/others/others.html">OTHERS</a>
 						<ul class="dropdown">
-							<li><a href="../../pages/others/others.html">All</a></li>
-							<li><a href="../../pages/others/study.html">Study</a></li>
-							<li><a href="../../pages/others/rkgk.html">RKGK</a></li>
+							<li><a href="pages/others/others.html">All</a></li>
+							<li><a href="pages/others/study.html">Study</a></li>
+							<li><a href="pages/others/rkgk.html">RKGK</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -74,17 +74,33 @@
 				</div>
 			</div>
 			<div class="gallery">
-				<p class="gallery artwork"><img src="../../assets/artwork_Images/0.jpg" alt=""></p>
-				<p class="gallery artwork"><img src="../../assets/artwork_Images/1.jpg" alt=""></p>
-				<p class="gallery artwork"><img src="../../assets/artwork_Images/2.jpeg" alt=""></p>
-				<p class="gallery artwork"><img src="../../assets/artwork_Images/3.jpg" alt=""></p>
-				<p class="gallery artwork"><img src="../../assets/artwork_Images/4.jpg" alt=""></p>
-				<p class="gallery artwork"><img src="../../assets/artwork_Images/5.jpeg" alt=""></p>
-				<p class="gallery artwork"><img src="../../assets/artwork_Images/6.jpeg" alt=""></p>
-				<p class="gallery artwork"><img src="../../assets/artwork_Images/8.jpeg" alt=""></p>
-				<p class="gallery artwork"><img src="../../assets/artwork_Images/9.jpg" alt=""></p>
-				<p class="gallery artwork"><img src="../../assets/artwork_Images/100.jpeg" alt=""></p>
-			</div>
+				<p class="gallery artwork" data-category="stellive"><img src="assets/artwork_Images/0.jpg" alt=""></p>
+				<p class="gallery artwork" data-category="stellive"><img src="assets/artwork_Images/1.jpg" alt=""></p>
+				<p class="gallery artwork" data-category="stellive"><img src="assets/artwork_Images/2.jpeg" alt=""></p>
+				<p class="gallery artwork" data-category="etc"><img src="assets/artwork_Images/3.jpg" alt=""></p>
+				<p class="gallery artwork" data-category="bluearchive"><img src="assets/artwork_Images/4.jpg" alt=""></p>
+				<p class="gallery artwork" data-category="bluearchive"><img src="assets/artwork_Images/5.jpeg" alt=""></p>
+				<p class="gallery artwork" data-category="bluearchive"><img src="assets/artwork_Images/6.jpeg" alt=""></p>
+				<p class="gallery artwork" data-category="bluearchive"><img src="assets/artwork_Images/8.jpeg" alt=""></p>
+				<p class="gallery artwork" data-category="bluearchive"><img src="assets/artwork_Images/9.jpg" alt=""></p>
+				<p class="gallery artwork" data-category="bluearchive"><img src="assets/artwork_Images/100.jpeg" alt=""></p>
+				<p class="gallery artwork" data-category="etc"><img src="assets/artwork_Images/temp.png" alt=""></p>
+				<p class="gallery artwork" data-category="etc"><img src="assets/artwork_Images/temp.png" alt=""></p>
+				<p class="gallery artwork" data-category="etc"><img src="assets/artwork_Images/temp.png" alt=""></p>
+				<p class="gallery artwork" data-category="etc"><img src="assets/artwork_Images/temp.png" alt=""></p>
+				<p class="gallery artwork" data-category="etc"><img src="assets/artwork_Images/temp.png" alt=""></p>
+				<p class="gallery artwork" data-category="etc"><img src="assets/artwork_Images/temp.png" alt=""></p>
+				<p class="gallery artwork" data-category="etc"><img src="assets/artwork_Images/temp.png" alt=""></p>
+				<p class="gallery artwork" data-category="etc"><img src="assets/artwork_Images/temp.png" alt=""></p>
+				<p class="gallery artwork" data-category="etc"><img src="assets/artwork_Images/temp.png" alt=""></p>
+				<p class="gallery artwork" data-category="etc"><img src="assets/artwork_Images/temp.png" alt=""></p>
+				<p class="gallery artwork" data-category="etc"><img src="assets/artwork_Images/temp.png" alt=""></p>
+				<p class="gallery artwork" data-category="etc"><img src="assets/artwork_Images/temp.png" alt=""></p>
+				<p class="gallery artwork" data-category="etc"><img src="assets/artwork_Images/temp.png" alt=""></p>
+				<p class="gallery artwork" data-category="etc"><img src="assets/artwork_Images/temp.png" alt=""></p>
+				<p class="gallery artwork" data-category="etc"><img src="assets/artwork_Images/temp.png" alt=""></p>
+				<p class="gallery artwork" data-category="etc"><img src="assets/artwork_Images/temp.png" alt=""></p>
+				<p class="gallery artwork" data-category="etc"><img src="assets/artwork_Images/temp.png" alt=""></p>
 		</div>
 
 		<!-- Footer -->
@@ -100,14 +116,13 @@
 	</div>
 
 	<!-- Scripts -->
-	<script src="../../assets/js/jquery.min.js"></script>
-	<script src="../../assets/js/jquery.dropotron.min.js"></script>
-	<script src="../../assets/js/browser.min.js"></script>
-	<script src="../../assets/js/breakpoints.min.js"></script>
-	<script src="../../assets/js/util.js"></script>
-	<script src="../../assets/js/main.js"></script>
-	<script src="../../assets/js/modal.js"></script>
-	<script src="../../assets/js/sticky-nav.js"></script>
-
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/modal.js"></script>
+	<script src="assets/js/sticky-nav.js"></script>
 </body>
 </html>

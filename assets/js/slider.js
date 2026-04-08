@@ -28,3 +28,15 @@ window.addEventListener('scroll', () => {
         }
     }
 });
+
+function filterArtwork(category) {
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+            card.hidden = false;
+        } else {
+            card.hidden = true;
+        }
+    });
+}
