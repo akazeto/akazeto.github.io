@@ -29,20 +29,14 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// 1. 실제 필터링을 수행하는 함수
-function applyFilter() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const category = urlParams.get('category') || 'all';
-
-    console.log("필터링 적용 중:", category); // 콘솔에서 이게 뜨는지 확인해보세요!
-
+// 1. 필터링 로직 (단순 명료하게)
+function filterItems(category) {
     const artworks = document.querySelectorAll('.gallery .artwork');
-
-    if (artworks.length === 0) return; // 갤러리가 없는 페이지라면 무시
+    console.log("필터링 실행:", category); // 콘솔 확인용
 
     artworks.forEach(item => {
-        const itemCategory = item.getAttribute('data-category');
-        if (category === 'all' || itemCategory === category) {
+        const itemCat = item.getAttribute('data-category');
+        if (category === 'all' || itemCat === category) {
             item.style.display = 'flex';
         } else {
             item.style.display = 'none';
@@ -50,30 +44,45 @@ function applyFilter() {
     });
 }
 
-// 2. 모든 드롭다운 링크에 '강제 클릭 이벤트' 부여
-function setupNavLinks() {
-    const links = document.querySelectorAll('.dropdown a');
+// 2. 드롭다운 클릭 이벤트 설정
+function initMenu() {
+    const dropdownLinks = document.querySelectorAll('.dropdown a');
 
-    links.forEach(link => {
-        link.onclick = function (e) {
-            const href = this.getAttribute('href');
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            const filterValue = this.getAttribute('data-filter');
 
-            // 만약 현재 페이지가 artwork.html인데 클릭한 링크도 artwork.html이면
-            if (window.location.pathname.includes('artwork.html') && href.includes('artwork.html')) {
-                e.preventDefault(); // 페이지 이동을 막고
-                history.pushState(null, '', href); // 주소창만 바꾼 뒤
-                applyFilter(); // 즉시 필터 함수 실행!
+            // 현재 페이지가 artwork.html인 경우에만!
+            if (window.location.pathname.includes('artwork.html')) {
+                // 새로고침 방지
+                e.preventDefault();
+
+                // URL 주소창만 조용히 변경 (새로고침 X)
+                const newUrl = `artwork.html?category=${filterValue}`;
+                history.pushState(null, '', newUrl);
+
+                // 필터 적용
+                filterItems(filterValue);
             }
-            // 그 외(다른 페이지에서 올 때)는 그냥 내버려 두면 알아서 이동 후 로드됨
-        };
+            // artwork.html이 아닌 다른 페이지(index 등)라면 
+            // e.preventDefault()를 안 했으므로 정상적으로 artwork.html로 이동합니다.
+        });
     });
 }
 
-// 3. 실행 시점들
-window.addEventListener('load', () => {
-    applyFilter();
-    setupNavLinks();
+// 3. 페이지 로드 시 실행
+window.addEventListener('DOMContentLoaded', () => {
+    // URL에서 카테고리 읽기
+    const params = new URLSearchParams(window.location.search);
+    const category = params.get('category') || 'all';
+
+    filterItems(category);
+    initMenu();
 });
 
-// 뒤로가기 대응
-window.addEventListener('popstate', applyFilter);
+// 4. 브라우저 뒤로가기 버튼 대응
+window.addEventListener('popstate', () => {
+    const params = new URLSearchParams(window.location.search);
+    const category = params.get('category') || 'all';
+    filterItems(category);
+});
