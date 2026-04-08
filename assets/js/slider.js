@@ -34,9 +34,9 @@ function filterArtwork(category) {
 
     artworks.forEach(artwork => {
         if (category === 'all' || artwork.dataset.category === category) {
-            artwork.hidden = false;
+            artwork.style.display = 'flex';
         } else {
-            artwork.hidden = true;
+            artwork.style.display = 'none';
         }
     });
 }
