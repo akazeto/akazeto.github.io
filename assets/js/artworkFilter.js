@@ -9,7 +9,9 @@ function filterArtwork(category) {
     });
 }
 
-// 페이지 로드 시 URL 파라미터 확인
-const urlParams = new URLSearchParams(window.location.search);
-const category = urlParams.get('category');
-filterArtwork(category);
+// 페이지가 완전히 로드된 후 실행
+window.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category');
+    filterArtwork(category);
+});
