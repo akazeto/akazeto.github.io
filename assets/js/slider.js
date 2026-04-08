@@ -29,21 +29,17 @@ window.addEventListener('scroll', () => {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    // 1. URL에서 파라미터 추출 (예: artwork.html?category=bluearchive -> bluearchive)
+// 필터링 핵심 함수
+function filterArtwork() {
+    // 1. URL에서 category 값 가져오기 (?category=bluearchive 등)
     const urlParams = new URLSearchParams(window.location.search);
-    const category = urlParams.get('category') || 'all'; // 없으면 기본값 'all'
+    const category = urlParams.get('category') || 'all';
 
-    // 2. 필터링 함수 실행
-    filterArtwork(category);
-});
+    console.log("현재 필터링 카테고리:", category); // 확인용
 
-function filterArtwork(category) {
-    // 갤러리 아이템들을 모두 가져옴 (부모 .gallery 안의 .artwork 들)
     const artworks = document.querySelectorAll('.gallery .artwork');
 
     artworks.forEach(item => {
-        // 'all'이거나 데이터 카테고리가 일치하면 보여주고, 아니면 숨김
         if (category === 'all' || item.getAttribute('data-category') === category) {
             item.style.display = 'flex';
         } else {
@@ -51,3 +47,21 @@ function filterArtwork(category) {
         }
     });
 }
+
+// 상황 1: 페이지가 처음 로드될 때 실행
+window.addEventListener('load', filterArtwork);
+
+// 상황 2: 이미 artwork.html인 상태에서 드롭다운을 눌러 URL이 바뀔 때 실행
+// 뒤로가기/앞으로가기 포함
+window.addEventListener('popstate', filterArtwork);
+
+// 상황 3: 만약 <a> 태그 클릭 시 URL만 바뀌고 페이지가 안 바뀐다면 강제로 감지
+// 모든 드롭다운 링크에 이벤트를 걸어줍니다.
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.dropdown a').forEach(link => {
+        link.addEventListener('click', () => {
+            // 클릭 후 URL이 바뀐 직후에 filterArtwork를 실행하기 위해 0.1초 지연
+            setTimeout(filterArtwork, 100);
+        });
+    });
+});
