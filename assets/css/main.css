@@ -2595,17 +2595,16 @@ input, select, textarea {
 /* Sticky-nav */
 	#sticky-nav {
 		position: relative;
-		padding: 30px 0 80px 0;
+		padding: 0 0 80px 0;
 		z-index: 100;
 		width: 100%;
-		background: white;
 	}
 
-	#sticky-nav.fixed {
-		position: fixed;
-		top: 0;
-		left: 0;
-	}
+		#sticky-nav.fixed {
+			position: fixed;
+			top: 30px;
+			left: 0;
+		}
 
 	#sticky-nav > ul {
 		display: flex;
