@@ -232,11 +232,13 @@ input, select, textarea {
 
 /* Container */
 
+
 	.container {
-		margin: 0 auto;
+		margin: 0 0 0 100px;
 		max-width: 100%;
 		width: 1200px;
 	}
+
 
 		@media screen and (max-width: 1280px) {
 
