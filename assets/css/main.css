@@ -1769,7 +1769,7 @@ input, select, textarea {
 
 	/* Card */
 	.card {
-		height: 200px;
+		height: 250px;
 	}
 
 		.card img {
@@ -1794,40 +1794,24 @@ input, select, textarea {
 
 /* Image */
 
+
 	.image {
 		-moz-transition: opacity 0.25s ease-in-out;
 		-webkit-transition: opacity 0.25s ease-in-out;
 		-ms-transition: opacity 0.25s ease-in-out;
 		transition: opacity 0.25s ease-in-out;
-		display: inline-block;
+		display: flex;
 		outline: 0;
 		border: 0;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+		margin: 0px;
 	}
 
-		.image img {
-			display: block;
-			width: 100%;
-		}
-
-
-		.image.artwork {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 100%;
-			height: 100%;
-			overflow: hidden;
-			border-radius: 8px;
-			box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
-			margin-bottom: 0;
-		}
-
-			.image.artwork img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				object-position: top center;
-			}
 
 		.image.fit {
 			display: block;
@@ -1866,14 +1850,15 @@ input, select, textarea {
 		box-sizing: border-box; /* 추가 */
 	}
 
+
 	.viewport {
-		width: 100%;
+		width: 120%;
 		overflow: visible;
 	}
 
 	.track {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(5, 1fr);
 		grid-template-rows: repeat(2, auto);
 		gap: 100px 20px;
 		transition: transform 0.35s ease;
