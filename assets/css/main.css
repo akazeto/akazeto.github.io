@@ -1792,17 +1792,19 @@ input, select, textarea {
 		justify-self: center;
 	}
 
-/* top Button*/
+	/* top Button*/
 	#top-btn {
 		position: fixed;
 		bottom: 30px;
 		right: 30px;
-		width: 45px;
-		height: 45px;
-		border-radius: 50%;
+		width: 120px;
+		height: 50px;
+		border-radius: 12px;
 		border: 2px solid #000;
-		background: rgba(255, 255, 255, 0.9);
-		font-size: 20px;
+		background: rgb(255 255 255 / 90%);
+		font-size: 15px;
+		color: black;
+		padding: 0px;
 		cursor: pointer;
 		display: none; /* 처음엔 숨김 */
 		z-index: 9999;
