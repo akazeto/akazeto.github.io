@@ -1,7 +1,7 @@
 const track = document.getElementById('track');
 const cards = Array.from(track.querySelectorAll('.card'));
 const total = cards.length;
-const perLoad = 8;  // 한 번에 보여줄 개수
+const perLoad = 10;  // 한 번에 보여줄 개수
 let loaded = 0;
 
 // 처음엔 모두 숨기기
