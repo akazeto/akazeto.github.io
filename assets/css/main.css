@@ -232,11 +232,13 @@ input, select, textarea {
 
 /* Container */
 
+
 	.container {
 		margin: 0 auto;
 		max-width: 100%;
 		width: 1200px;
 	}
+
 
 		@media screen and (max-width: 1280px) {
 
@@ -1874,9 +1876,10 @@ input, select, textarea {
 
 
 	.viewport {
-		width: 120%;
+		width: 100%;
 		overflow: visible;
 	}
+
 
 	.track {
 		display: grid;
