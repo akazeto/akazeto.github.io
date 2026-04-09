@@ -2646,12 +2646,6 @@ input, select, textarea {
 		min-width: 150px;
 		gap: 0;
 	}
-
-		.dropdown li a.active {
-			background: rgba(0, 0, 0, 0.1);
-			font-weight: bold;
-		}
-
 	/* 호버 시 드롭다운 표시 */
 	#sticky-nav .has-dropdown:hover .dropdown {
 		display: block;
@@ -2672,6 +2666,12 @@ input, select, textarea {
 		#sticky-nav .dropdown li a:hover {
 			background: rgba(0, 0, 0, 0.05);
 		}
+
+		#sticky-nav .dropdown li a.active {
+			background: rgba(0, 0, 0, 0.1);
+			font-weight: bold;
+		}
+
 
 /* Sidebar */
 
