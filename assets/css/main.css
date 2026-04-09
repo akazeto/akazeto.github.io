@@ -1792,6 +1792,26 @@ input, select, textarea {
 		justify-self: center;
 	}
 
+/* top Button*/
+	#top-btn {
+		position: fixed;
+		bottom: 30px;
+		right: 30px;
+		width: 45px;
+		height: 45px;
+		border-radius: 50%;
+		border: 2px solid #000;
+		background: rgba(255, 255, 255, 0.9);
+		font-size: 20px;
+		cursor: pointer;
+		display: none; /* 처음엔 숨김 */
+		z-index: 9999;
+	}
+
+		#top-btn:hover {
+			background: rgba(0, 0, 0, 0.1);
+		}
+
 /* Image */
 
 
