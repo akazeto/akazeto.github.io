@@ -14,3 +14,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const category = urlParams.get('category');
     filterArtwork(category);
 });
+
+btn.classList.remove('active');
+btn.classList.add('active');
