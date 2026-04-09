@@ -2647,6 +2647,11 @@ input, select, textarea {
 		gap: 0;
 	}
 
+		.dropdown li a.active {
+			background: rgba(0, 0, 0, 0.1);
+			font-weight: bold;
+		}
+
 	/* 호버 시 드롭다운 표시 */
 	#sticky-nav .has-dropdown:hover .dropdown {
 		display: block;
