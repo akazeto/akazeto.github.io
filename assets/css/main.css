@@ -2618,7 +2618,7 @@ input, select, textarea {
 	#sticky-nav a {
 		font-size: 20px;
 		font-weight: bold;
-		color: black;
+		color: white;
 		background-color: rgb(0 100 100 / 80%);
 		padding: 10px;
 		border-radius: 10px;
