@@ -2598,6 +2598,7 @@ input, select, textarea {
 		padding: 30px 0 80px 0;
 		z-index: 100;
 		width: 100%;
+		background: white;
 	}
 
 	#sticky-nav.fixed {
