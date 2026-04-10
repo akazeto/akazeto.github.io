@@ -1912,6 +1912,7 @@ input, select, textarea {
 		flex-direction: column;
 		gap: 16px;
 		align-items: center;
+		margin-top: 100px;
 	}
 
 	.gallery .artwork {
@@ -2571,7 +2572,6 @@ input, select, textarea {
 			max-width: 100%;
 			width: 1200px;
 			padding-bottom: 1.5em;
-			margin-bottom: 50px;
 			border-bottom: solid 2px black;
 		}
 
