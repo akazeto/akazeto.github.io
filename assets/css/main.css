@@ -2567,14 +2567,15 @@ input, select, textarea {
 		padding-bottom: 4em;
 	}
 
-	#main .profile {
-		margin: 0 auto;
-		max-width: 100%;
-		width: 1200px;
-		padding-bottom: 2em;
-		padding-top: 2em;
-		border: double 5px black;
-	}
+		#main .profile {
+			margin: 0 auto;
+			max-width: 100%;
+			width: 1200px;
+			padding-bottom: 2em;
+			padding-top: 2em;
+			margin-bottom: 30px;
+			border: double 5px black;
+		}
 
 	#main .profile h2 {
 		position: relative;
