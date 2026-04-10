@@ -41,176 +41,199 @@
 			</div>
 
 			<div class="wrapper">
-				<!-- Nav -->
-				<nav id="sticky-nav">
-					<ul>
-						<li><a href="profile.html">PROFILE</a></li>
-						<li><a href="commission.html">COMMISSION</a></li>
-						<li><a href="index.html">LOBBY</a></li>
+				<div class="layout">
+					<!-- 왼쪽 사이드바 -->
+					<nav id="sticky-nav">
+						<ul>
+							<li><a href="profile.html">PROFILE</a></li>
+							<li><a href="commission.html">COMMISSION</a></li>
+							<li><a href="index.html">LOBBY</a></li>
+							<li class="has-dropdown">
+								<a href="artwork.html">ARTWORK</a>
+								<ul class="dropdown">ㅁ</ul>
+								<ul class="dropdown">ㄴ</ul>
+								<ul class="dropdown">ㅇㄴ</ul>
+							</li>
+							<li class="has-dropdown">
+								<a href="others.html">OTHERS</a>
+								<ul class="dropdown">...</ul>
+							</li>
+						</ul>
+
 						<li class="has-dropdown">
 							<a href="artwork.html">ARTWORK</a>
 							<ul class="dropdown">
-								<li><a href="artwork.html?category=all" onclick="forceFilter(event, 'all')">All</a></li>
-								<li><a href="artwork.html?category=bluearchive" onclick="forceFilter(event, 'bluearchive')">Blue Archive</a></li>
-								<li><a href="artwork.html?category=stellive" onclick="forceFilter(event, 'stellive')">StelLive</a></li>
-								<li><a href="artwork.html?category=original" onclick="forceFilter(event, 'original')">Original</a></li>
-								<li><a href="artwork.html?category=etc" onclick="forceFilter(event, 'etc')">ETC.</a></li>
+								<a href="artwork.html?category=all" onclick="forceFilter(event, 'all')">All</a>
 							</ul>
-						</li>
-						<li class="has-dropdown">
-							<a href="others.html">OTHERS</a>
-							<ul class="dropdown">
-								<li><a href="others.html?category=all" onclick="forceFilter(event, 'all')">All</a></li>
-								<li><a href="others.html?category=study" onclick="forceFilter(event, 'study')">Study</a></li>
-								<li><a href="others.html?category=rkgk" onclick="forceFilter(event, 'rkgk')">RKGK</a></li>
+							
+							<ul>
+								<li><a href="profile.html">PROFILE</a></li>
+								<li><a href="commission.html">COMMISSION</a></li>
+								<li><a href="index.html">LOBBY</a></li>
+								<li class="has-dropdown">
+									<a href="artwork.html">ARTWORK</a>
+									<ul class="dropdown">
+										<a href="artwork.html?category=all" onclick="forceFilter(event, 'all')">All</a>
+										<a href="artwork.html?category=bluearchive" onclick="forceFilter(event, 'bluearchive')">Blue Archive</a>
+										<a href="artwork.html?category=stellive" onclick="forceFilter(event, 'stellive')">StelLive</a>
+										<a href="artwork.html?category=original" onclick="forceFilter(event, 'original')">Original</a>
+										<a href="artwork.html?category=etc" onclick="forceFilter(event, 'etc')">ETC.</a>
+									</ul>
+								</li>
+								<li class="has-dropdown">
+									<a href="others.html">OTHERS</a>
+									<ul class="dropdown">
+										<li><a href="others.html?category=all" onclick="forceFilter(event, 'all')">All</a></li>
+										<li><a href="others.html?category=study" onclick="forceFilter(event, 'study')">Study</a></li>
+										<li><a href="others.html?category=rkgk" onclick="forceFilter(event, 'rkgk')">RKGK</a></li>
+									</ul>
+								</li>
 							</ul>
-						</li>
-					</ul>
-				</nav>
-				<div class="container" id="main">
-					<div class="row gtr-150">
-						<!-- 🔹 메인 컨텐츠 -->
-						<div class="container">
-							<section>
-								<header>
-									<h2><a href="artwork.html">ARTWORK</a></h2>
-								</header>
-								<div class="wrap">
-									<div class="viewport">
-										<div class="track" id="track">
-											<div class="card" data-category="stellive">
-												<p class="image"><img src="assets/artwork_Images/0.jpg" style="object-position:center 30%"></p>
-												<p class="card-desc">시부키-바니걸2</p>
+					</nav>
+					<div class="container" id="main">
+						<div class="row gtr-150">
+							<!-- 🔹 메인 컨텐츠 -->
+							<div class="container">
+								<section>
+									<header>
+										<h2><a href="artwork.html">ARTWORK</a></h2>
+									</header>
+									<div class="wrap">
+										<div class="viewport">
+											<div class="track" id="track">
+												<div class="card" data-category="stellive">
+													<p class="image"><img src="assets/artwork_Images/0.jpg" style="object-position:center 30%"></p>
+													<p class="card-desc">시부키-바니걸2</p>
+												</div>
+												<div class="card" data-category="stellive">
+													<p class="image"><img src="assets/artwork_Images/1.jpg" style="object-position:center 30%"></p>
+													<p class="card-desc">후야-바니걸</p>
+												</div>
+												<div class="card" data-category="stellive">
+													<p class="image"><img src="assets/artwork_Images/2.jpeg"></p>
+													<p class="card-desc">시부키-바니걸</p>
+												</div>
+												<div class="card" data-category="etc">
+													<p class="image"><img src="assets/artwork_Images/3.jpg" style="object-position:center 30%"></p>
+													<p class="card-desc">レゼー温泉</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/4.jpg" style="object-position:center 30%"></p>
+													<p class="card-desc">プラナークリスマス</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/5.jpeg" style="object-position:center 20%"></p>
+													<p class="card-desc">キサキー温泉</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/6.jpeg" style="object-position:center 20%"></p>
+													<p class="card-desc">ヒナーお風呂の後</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/8.jpeg" style="object-position:center 10%"></p>
+													<p class="card-desc">ヒナー温泉</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/9.jpg" style="object-position:center 10%"></p>
+													<p class="card-desc">ヒナー雨の日</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
+													<p class="card-desc">ヒナーネコ</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
+													<p class="card-desc">ヒナーネコ</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
+													<p class="card-desc">ヒナーネコ</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
+													<p class="card-desc">ヒナーネコ</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
+													<p class="card-desc">ヒナーネコ</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
+													<p class="card-desc">ヒナーネコ</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
+													<p class="card-desc">ヒナーネコ</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
+													<p class="card-desc">ヒナーネコ</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
+													<p class="card-desc">ヒナーネコ</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
+													<p class="card-desc">ヒナーネコ</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
+													<p class="card-desc">ヒナーネコ</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
+													<p class="card-desc">ヒナーネコ</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
+													<p class="card-desc">ヒナーネコ</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
+													<p class="card-desc">ヒナーネコ</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
+													<p class="card-desc">ヒナーネコ</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
+													<p class="card-desc">ヒナーネコ</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
+													<p class="card-desc">ヒナーネコ</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
+													<p class="card-desc">ヒナーネコ</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
+													<p class="card-desc">ヒナーネコ</p>
+												</div>
+												<div class="card" data-category="bluearchive">
+													<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
+													<p class="card-desc">ヒナーネコ</p>
+												</div>
 											</div>
-											<div class="card" data-category="stellive">
-												<p class="image"><img src="assets/artwork_Images/1.jpg" style="object-position:center 30%"></p>
-												<p class="card-desc">후야-바니걸</p>
-											</div>
-											<div class="card" data-category="stellive">
-												<p class="image"><img src="assets/artwork_Images/2.jpeg"></p>
-												<p class="card-desc">시부키-바니걸</p>
-											</div>
-											<div class="card" data-category="etc">
-												<p class="image"><img src="assets/artwork_Images/3.jpg" style="object-position:center 30%"></p>
-												<p class="card-desc">レゼー温泉</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/4.jpg" style="object-position:center 30%"></p>
-												<p class="card-desc">プラナークリスマス</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/5.jpeg" style="object-position:center 20%"></p>
-												<p class="card-desc">キサキー温泉</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/6.jpeg" style="object-position:center 20%"></p>
-												<p class="card-desc">ヒナーお風呂の後</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/8.jpeg" style="object-position:center 10%"></p>
-												<p class="card-desc">ヒナー温泉</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/9.jpg" style="object-position:center 10%"></p>
-												<p class="card-desc">ヒナー雨の日</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
-												<p class="card-desc">ヒナーネコ</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
-												<p class="card-desc">ヒナーネコ</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
-												<p class="card-desc">ヒナーネコ</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
-												<p class="card-desc">ヒナーネコ</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
-												<p class="card-desc">ヒナーネコ</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
-												<p class="card-desc">ヒナーネコ</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
-												<p class="card-desc">ヒナーネコ</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
-												<p class="card-desc">ヒナーネコ</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
-												<p class="card-desc">ヒナーネコ</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
-												<p class="card-desc">ヒナーネコ</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
-												<p class="card-desc">ヒナーネコ</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
-												<p class="card-desc">ヒナーネコ</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
-												<p class="card-desc">ヒナーネコ</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
-												<p class="card-desc">ヒナーネコ</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
-												<p class="card-desc">ヒナーネコ</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
-												<p class="card-desc">ヒナーネコ</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
-												<p class="card-desc">ヒナーネコ</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
-												<p class="card-desc">ヒナーネコ</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
-												<p class="card-desc">ヒナーネコ</p>
-											</div>
-											<div class="card" data-category="bluearchive">
-												<p class="image"><img src="assets/artwork_Images/100.jpeg"></p>
-												<p class="card-desc">ヒナーネコ</p>
-											</div>
+											<!-- 이미지 추가할수록 .slide 블록 복붙 -->
 										</div>
-										<!-- 이미지 추가할수록 .slide 블록 복붙 -->
 									</div>
-								</div>
-							</section>
-						</div>
+								</section>
+							</div>
 
+						</div>
+					</div>
+				</div>
+
+				<!-- Footer -->
+				<div id="footer-wrapper">
+					<div id="footer" class="container">
 					</div>
 				</div>
 			</div>
-
-			<!-- Footer -->
-			<div id="footer-wrapper">
-				<div id="footer" class="container">
-				</div>
-			</div>
-		</div>
 
 		<div class="modal-overlay" id="modal">
 			<span class="modal-close" id="modalClose">&times;</span>

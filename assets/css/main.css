@@ -2595,50 +2595,62 @@ input, select, textarea {
 		line-height: 50px;
 	}
 
-/* Sticky-nav */
-	#sticky-nav {
-		position: relative;
-		padding: 0 0 80px 0;
-		z-index: 100;
-		width: 100%;
+/* Layout */
+	.layout {
+		display: flex;
+		gap: 0;
+		align-items: flex-start; /* sticky 작동에 필수 */
+		padding-left: 120px;
+		padding-right: 200px;
 	}
 
-		#sticky-nav.fixed {
-			position: fixed;
-			top: 30px;
-			left: 0;
-		}
+/* Sticky-nav */
+	#sticky-nav {
+		width: auto;
+		flex-shrink: 0;
+		position: sticky;
+		left: auto;
+		top: 150px;
+		height: 500px;
+		padding: 0;
+		z-index: 100;
+	}
 
 	#sticky-nav > ul {
 		display: flex;
-		justify-content: center;
-		gap: 60px;
+		flex-direction: column;
+		gap: 30px;
 		list-style: none;
 		margin: 0;
 		padding: 0;
 	}
 
-	#sticky-nav a {
-		font-size: 20px;
+	#sticky-nav ul li a {
+		color: #000000;
+		text-decoration: none;
+		font-size: 23px;
 		font-weight: bold;
-		color: white;
-		background-color: rgb(0 100 100 / 80%);
-		padding: 10px;
-		border-radius: 10px;
+		padding: 8px 25px;
+		background: rgb(255 255 255 / 80%);
+		display: block;
 	}
+
+		#sticky-nav ul li a:hover {
+			background: rgb(255 255 255 / 0.1);
+		}
 
 	/* 드롭다운 있는 li */
 	#sticky-nav .has-dropdown {
 		position: relative;
 	}
 
-	/* 하위 메뉴 기본 상태 (숨김) */
+	/* 하위 메뉴 */
 	#sticky-nav .dropdown {
 		display: none;
 		position: absolute;
-		top: 100%;
-		left: 50%;
-		transform: translateX(-50%);
+		top: 0;
+		left: 100%; /* 오른쪽으로 펼쳐짐 */
+		transform: none;
 		background: rgba(255, 255, 255, 0.95);
 		border: 1px solid #ccc;
 		border-radius: 8px;
@@ -2646,8 +2658,8 @@ input, select, textarea {
 		z-index: 9999;
 		list-style: none;
 		min-width: 150px;
-		gap: 0;
 	}
+
 	/* 호버 시 드롭다운 표시 */
 	#sticky-nav .has-dropdown:hover .dropdown {
 		display: block;
@@ -2670,7 +2682,7 @@ input, select, textarea {
 		}
 
 		#sticky-nav .dropdown li a.active {
-			background: rgba(0, 0, 0, 0.1);
+			background: rgba(0, 0, 0, 0.1) !important;
 			font-weight: bold;
 		}
 
