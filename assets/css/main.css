@@ -1921,7 +1921,6 @@ input, select, textarea {
 		width: 600px;
 		height: 100%;
 		overflow: hidden;
-		border-radius: 8px;
 		box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
 	}
 
@@ -2571,11 +2570,11 @@ input, select, textarea {
 			margin: 0 auto;
 			max-width: 100%;
 			width: 1200px;
-			padding-bottom: 2em;
-			padding-top: 2em;
-			margin-bottom: 30px;
-			border: double 5px black;
+			padding-bottom: 1.5em;
+			margin-bottom: 50px;
+			border-bottom: solid 2px black;
 		}
+
 
 	#main .profile h2 {
 		position: relative;
