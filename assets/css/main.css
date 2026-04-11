@@ -1769,9 +1769,10 @@ input, select, textarea {
 		object-position: center;
 	}
 
-	/* Card */
+/* Card */
 	.card {
 		height: 250px;
+		width: 200px;
 	}
 
 		.card img {
@@ -2247,7 +2248,7 @@ input, select, textarea {
 	.wrapper {
 		position: relative;
 		background: #fff;
-		overflow-x: hidden;
+		overflow-x: visible;
 		padding: 6em 0 6em 0;
 	}
 
@@ -2613,9 +2614,9 @@ input, select, textarea {
 		top: 150px;
 		height: 500px;
 		padding: 0;
+		padding-top: 100px;
 		z-index: 100;
 	}
-
 	#sticky-nav > ul {
 		display: flex;
 		flex-direction: column;
