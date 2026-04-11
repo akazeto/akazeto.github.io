@@ -2601,9 +2601,13 @@ input, select, textarea {
 		display: flex;
 		gap: 0;
 		align-items: flex-start; /* sticky 작동에 필수 */
-		padding-left: 120px;
-		padding-right: 200px;
+		padding-left: 5%;
+		padding-right: 5%;
+		max-width: 1800px; /* 너무 넓어지지 않게 제한 */
+		margin: 0 auto; /* 가운데 정렬 */
 	}
+
+
 
 /* Sticky-nav */
 	#sticky-nav {
