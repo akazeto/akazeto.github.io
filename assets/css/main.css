@@ -2641,7 +2641,7 @@ input, select, textarea {
 	}
 
 		#sticky-nav ul li a:hover {
-			background: rgb(255 255 255 / 0.1);
+			background: rgb(80 80 80 / 10%);
 		}
 
 	/* 드롭다운 있는 li */
