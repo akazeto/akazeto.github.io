@@ -35,22 +35,19 @@ window.addEventListener('scroll', () => {
     }
 });
 
+const artworks = Array.from(document.querySelectorAll('.gallery .artwork'));
+
 function filterCards(category) {
-    // 버튼 active 처리
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.classList.remove('active');
     });
     event.target.classList.add('active');
 
-    // 카드 필터링
-    cards.forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
-            card.hidden = false;
+    artworks.forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+            item.style.display = 'flex';
         } else {
-            card.hidden = true;
+            item.style.display = 'none';
         }
     });
-
-    // loaded 초기화
-    loaded = cards.filter(c => !c.hidden).length;
 }
