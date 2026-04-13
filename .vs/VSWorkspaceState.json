@@ -2,9 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\assets",
-    "\\assets\\css\\images",
-    "\\assets\\js"
+    "\\assets\\js",
+    "\\pages"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\assets\\js\\sticky-nav.js",
   "PreviewInSolutionExplorer": false
 }
