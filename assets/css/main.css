@@ -2287,7 +2287,7 @@ input, select, textarea {
 		position: relative;
 		background: #fff;
 		overflow-x: visible;
-		padding: 6em 0 6em 0;
+		padding: 6em 0 4em 0;
 	}
 
 	.image-wrapper {
