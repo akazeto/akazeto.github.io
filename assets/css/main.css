@@ -1827,7 +1827,7 @@ input, select, textarea {
 		display: inline-block;
 		width: 10px;
 		height: 10px;
-		margin: 0 4px;
+		margin: 100px 4px;
 		border-radius: 50%;
 		background: #888;
 		animation: dot-bounce 1.2s infinite ease-in-out;
