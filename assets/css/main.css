@@ -1951,7 +1951,7 @@ input, select, textarea {
 		flex-direction: column;
 		gap: 16px;
 		align-items: center;
-		margin-top: 100px;
+		margin-top: 40px;
 	}
 
 	.gallery .artwork {
@@ -1974,18 +1974,20 @@ input, select, textarea {
 /* filter btn */
 	.filter-btns {
 		display: flex;
-		gap: 10px;
+		gap: 20px;
 		flex-wrap: wrap;
 		margin-bottom: 20px;
+		margin-top: 30px;
+		justify-self: center;
 	}
 
 	.filter-btn {
-		padding: 6px 16px;
+		padding: 10px 16px;
 		border: 1px solid #aaa;
 		border-radius: 20px;
 		background: transparent;
 		cursor: pointer;
-		font-size: 14px;
+		font-size: 20px;
 	}
 
 		.filter-btn:hover {
