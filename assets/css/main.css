@@ -1971,6 +1971,32 @@ input, select, textarea {
 			object-position: top center;
 		}
 
+/* filter btn */
+	.filter-btns {
+		display: flex;
+		gap: 10px;
+		flex-wrap: wrap;
+		margin-bottom: 20px;
+	}
+
+	.filter-btn {
+		padding: 6px 16px;
+		border: 1px solid #aaa;
+		border-radius: 20px;
+		background: transparent;
+		cursor: pointer;
+		font-size: 14px;
+	}
+
+		.filter-btn:hover {
+			background: rgba(0, 0, 0, 0.05);
+		}
+
+		.filter-btn.active {
+			background: rgba(0, 0, 0, 0.15);
+			font-weight: bold;
+		}
+
 	/* Modal */
 	/* 모달 배경 */
 	.modal-overlay {
