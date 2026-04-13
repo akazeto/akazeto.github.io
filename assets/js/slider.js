@@ -28,3 +28,23 @@ window.addEventListener('scroll', () => {
         }
     }
 });
+
+const loadingDots = document.getElementById('loading-dots');
+
+function loadMore() {
+    if (!loadingDots) return;
+
+    // 로딩 점 표시
+    loadingDots.style.display = 'block';
+
+    setTimeout(() => {
+        const end = Math.min(loaded + perLoad, total);
+        for (let i = loaded; i < end; i++) {
+            cards[i].hidden = false;
+        }
+        loaded = end;
+
+        // 로딩 점 숨기기
+        loadingDots.style.display = 'none';
+    }, 500);  // 0.5초 후 이미지 표시
+}
