@@ -3,6 +3,7 @@ const cards = Array.from(track.querySelectorAll('.card'));
 const total = cards.length;
 const perLoad = 10;  // 한 번에 보여줄 개수
 let loaded = 0;
+const loadingDots = document.getElementById('loading-dots');
 
 // 처음엔 모두 숨기기
 cards.forEach(card => card.hidden = true);
@@ -28,8 +29,6 @@ window.addEventListener('scroll', () => {
         }
     }
 });
-
-const loadingDots = document.getElementById('loading-dots');
 
 function loadMore() {
     if (!loadingDots) return;
