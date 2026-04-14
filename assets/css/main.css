@@ -2681,8 +2681,8 @@ input, select, textarea {
 		flex-shrink: 0;
 		position: sticky;
 		left: auto;
-		top: 150px;
-		height: 600px;
+		top: 100px;
+		height: 800px;
 		padding: 0;
 		padding-top: 100px;
 		z-index: 100;
