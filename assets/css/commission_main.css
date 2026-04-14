@@ -1,0 +1,327 @@
+
+<style >
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #1e1e1e;
+    --bg2: #2a2a2a;
+    --bg3: #333333;
+    --text: #f0f0f0;
+    --text-muted: #999;
+    --accent: #e040fb;
+    --accent2: #f06292;
+    --border: rgba(255,255,255,0.08);
+    --radius: 12px;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', 'Noto Sans KR', sans-serif;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 48px;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: rgba(30,30,30,0.92);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+}
+
+.nav-logo-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+    .nav-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.2s;
+    }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+/* MAIN LAYOUT */
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 56px 32px 80px;
+}
+
+/* HERO */
+.hero {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 52px;
+    align-items: center;
+    margin-bottom: 64px;
+    animation: fadeUp 0.6s ease both;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-image {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--bg3);
+    position: relative;
+}
+
+    .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+/* placeholder gradient when no image */
+.hero-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.hero-info {
+    animation: fadeUp 0.6s 0.1s ease both;
+}
+
+.hero-name {
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: -0.8px;
+    margin-bottom: 6px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.hero-title {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.hero-desc {
+    font-size: 14px;
+    color: #bbb;
+    line-height: 1.8;
+    margin-bottom: 28px;
+    max-width: 400px;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.15s;
+    font-family: inherit;
+}
+
+    .btn-primary:hover {
+        opacity: 0.85;
+        transform: translateY(-1px);
+    }
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+    font-family: inherit;
+}
+
+    .btn-secondary:hover {
+        border-color: rgba(255,255,255,0.3);
+        color: var(--text);
+    }
+
+.hero-social {
+    display: flex;
+    gap: 16px;
+}
+
+.social-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+    .social-icon:hover {
+        border-color: var(--accent);
+        background: rgba(224,64,251,0.08);
+        color: var(--accent);
+    }
+
+/* STATS */
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 48px;
+    animation: fadeUp 0.6s 0.2s ease both;
+}
+
+.stat-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.stat-icon {
+    font-size: 22px;
+    opacity: 0.5;
+}
+
+/* GENRE */
+.section {
+    animation: fadeUp 0.6s 0.3s ease both;
+}
+
+.section-title {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+.genre-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.genre-item {
+}
+
+.genre-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.genre-name {
+    font-size: 14px;
+    color: var(--text);
+}
+
+.genre-pct {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.bar-track {
+    height: 4px;
+    background: var(--bg3);
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: 99px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    width: 0;
+    transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 32px;
+    color: var(--text-muted);
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+}
+
+</style >
