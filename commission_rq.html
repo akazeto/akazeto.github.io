@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커미션 안내 · Artist Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/commission.css" />
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="commission_index.html">
+      <span class="nav-logo-dot"></span>
+      Artist Portfolio
+    </a>
+    <ul class="nav-links">
+      <li><a href="commission_index.html">Main</a></li>
+      <li><a href="commission_rq.html" class="active">Commission</a></li>
+      <li><a href="#">정보</a></li>
+      <li><a href="#">시사</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- 페이지 헤더 -->
+    <div class="page-header">
+      <h1>커미션 안내</h1>
+      <p>작업 의뢰 전 아래 내용을 꼭 읽어주세요.</p>
+    </div>
+
+    <!-- 오픈 상태 -->
+    <div class="status-row">
+      <span class="status-badge open">커미션 오픈</span>
+      <span class="status-note">현재 2자리 남아있어요 · 평균 응답 1영업일 이내</span>
+    </div>
+
+    <!-- 티어 카드 -->
+    <div class="tiers">
+
+      <div class="tier-card">
+        <div class="tier-name">베이직</div>
+        <div class="tier-price">₩50,000 <span>부터</span></div>
+        <p class="tier-desc">단순 캐릭터 단독 컷.<br>배경 없음, 채색 포함.</p>
+        <ul class="tier-features">
+          <li>캐릭터 1인</li>
+          <li>단색 / 간단 배경</li>
+          <li>수정 2회 포함</li>
+          <li class="no">상업적 이용</li>
+          <li class="no">고해상도 원본</li>
+        </ul>
+        <button class="btn-tier outline">신청하기</button>
+      </div>
+
+      <div class="tier-card featured">
+        <div class="tier-badge">인기</div>
+        <div class="tier-name">스탠다드</div>
+        <div class="tier-price">₩120,000 <span>부터</span></div>
+        <p class="tier-desc">배경 포함 풀컷.<br>디테일 채색 및 효과 포함.</p>
+        <ul class="tier-features">
+          <li>캐릭터 1~2인</li>
+          <li>배경 포함</li>
+          <li>수정 4회 포함</li>
+          <li>고해상도 원본 제공</li>
+          <li class="no">상업적 이용</li>
+        </ul>
+        <button class="btn-tier filled">신청하기</button>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-name">프리미엄</div>
+        <div class="tier-price">₩250,000 <span>부터</span></div>
+        <p class="tier-desc">상업용 일러스트.<br>커버, 굿즈, SNS 광고 등.</p>
+        <ul class="tier-features">
+          <li>캐릭터 제한 없음</li>
+          <li>배경 포함</li>
+          <li>수정 무제한</li>
+          <li>고해상도 원본 제공</li>
+          <li>상업적 이용 허가</li>
+        </ul>
+        <button class="btn-tier outline">신청하기</button>
+      </div>
+
+    </div>
+
+    <!-- 안내 사항 -->
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>✅ 가능한 작업</h3>
+        <ul>
+          <li>오리지널 캐릭터(OC)</li>
+          <li>팬아트 (비상업)</li>
+          <li>커플 / 그룹 일러스트</li>
+          <li>책 표지, 앨범 커버</li>
+          <li>SNS 프로필 / 배너</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>❌ 불가능한 작업</h3>
+        <ul>
+          <li>성인(18+) 콘텐츠</li>
+          <li>혐오·차별 표현 포함</li>
+          <li>타 작가 스타일 모방</li>
+          <li>AI 학습용 데이터 목적</li>
+          <li>명시 없는 NFT 사용</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>💳 결제 안내</h3>
+        <ul>
+          <li>착수금 50% 선입금 후 작업 시작</li>
+          <li>잔금 50%는 최종본 전달 전 납부</li>
+          <li>계좌이체 / 카카오페이 지원</li>
+          <li>환불은 스케치 단계까지만 가능</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>📅 작업 기간</h3>
+        <ul>
+          <li>베이직: 약 5~7영업일</li>
+          <li>스탠다드: 약 10~14영업일</li>
+          <li>프리미엄: 별도 협의</li>
+          <li>급행 작업 가능 (추가 비용 발생)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 신청 폼 -->
+    <div class="form-section">
+      <h2>커미션 신청</h2>
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name">이름 / 닉네임</label>
+            <input type="text" id="name" placeholder="홍길동" required>
+          </div>
+          <div class="form-group">
+            <label for="contact">연락처 (이메일 또는 SNS)</label>
+            <input type="text" id="contact" placeholder="example@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="tier">티어 선택</label>
+            <select id="tier">
+              <option value="">선택해주세요</option>
+              <option value="basic">베이직 (₩50,000~)</option>
+              <option value="standard">스탠다드 (₩120,000~)</option>
+              <option value="premium">프리미엄 (₩250,000~)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="deadline">희망 완성 날짜</label>
+            <input type="date" id="deadline">
+          </div>
+          <div class="form-group full">
+            <label for="desc">의뢰 내용</label>
+            <textarea id="desc" placeholder="캐릭터 설명, 원하는 분위기, 참고 이미지 링크 등을 자세히 적어주세요."></textarea>
+          </div>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn-submit">신청서 보내기</button>
+          <p class="form-note">신청 접수 후 1영업일 이내 답변드려요.<br>스팸 방지를 위해 첫 연락은 이메일로 드립니다.</p>
+        </div>
+      </form>
+    </div>
+
+  </main>
+
+  <footer>
+    © 2026 Artist Portfolio · 모든 이미지는 저작권 보호를 받습니다
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.btn-submit');
+      btn.textContent = '전송됨 ✓';
+      btn.style.background = '#22c55e';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = '신청서 보내기';
+        btn.style.background = '';
+        btn.disabled = false;
+        e.target.reset();
+      }, 3000);
+    }
+
+    // 티어 버튼 클릭시 폼 select 연동
+    document.querySelectorAll('.btn-tier').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tierName = btn.closest('.tier-card').querySelector('.tier-name').textContent.trim();
+        const map = { '베이직': 'basic', '스탠다드': 'standard', '프리미엄': 'premium' };
+        const select = document.getElementById('tier');
+        if (map[tierName]) select.value = map[tierName];
+        document.querySelector('.form-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+
+</body>
+</html>

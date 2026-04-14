@@ -2316,8 +2316,6 @@ input, select, textarea {
 		background: #fff;
 		overflow-x: visible;
 		padding: 6em 0 4em 0;
-		background: linear-gradient(to bottom, #eaf5ff 0%, #ffffff 60%);
-		background-attachment: fixed;
 	}
 
 	.image-wrapper {
