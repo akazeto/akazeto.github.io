@@ -82,12 +82,12 @@ main {
 
 /* HERO */
 .hero {
-    display: grid;
-    grid-template-columns: 320px 1fr;
+    display: block;
     gap: 52px;
     align-items: center;
     margin-bottom: 64px;
     animation: fadeUp 0.6s ease both;
+    justify-items: center;
 }
 
 @keyframes fadeUp {
@@ -103,7 +103,8 @@ main {
 }
 
 .hero-image {
-    width: 100%;
+    width: 300px;
+    max-height: 300px;
     aspect-ratio: 1;
     border-radius: var(--radius);
     overflow: hidden;
@@ -132,6 +133,7 @@ main {
 
 .hero-info {
     animation: fadeUp 0.6s 0.1s ease both;
+    justify-items: center;
 }
 
 .hero-name {
