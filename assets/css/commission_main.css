@@ -110,6 +110,7 @@ main {
     overflow: hidden;
     background: var(--bg3);
     position: relative;
+    border-radius: 50%;
 }
 
     .hero-image img {
