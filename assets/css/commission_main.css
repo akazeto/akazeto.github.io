@@ -226,97 +226,45 @@ main {
         background: rgba(224,64,251,0.08);
         color: var(--accent);
     }
-
-/* STATS */
-.stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 48px;
+/* NOTICE */
+.notice {
     animation: fadeUp 0.6s 0.2s ease both;
-}
-
-.stat-card {
     background: var(--bg2);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 24px 28px;
+    padding: 28px 32px;
+}
+
+.notice-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 18px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 8px;
 }
 
-.stat-label {
-    font-size: 12px;
-    color: var(--text-muted);
-    margin-bottom: 6px;
-}
-
-.stat-value {
-    font-size: 28px;
-    font-weight: 600;
-    letter-spacing: -1px;
-    font-family: 'DM Sans', sans-serif;
-}
-
-.stat-icon {
-    font-size: 22px;
-    opacity: 0.5;
-}
-
-/* GENRE */
-.section {
-    animation: fadeUp 0.6s 0.3s ease both;
-}
-
-.section-title {
-    font-size: 15px;
-    font-weight: 500;
-    margin-bottom: 20px;
-    color: var(--text-muted);
-    letter-spacing: 0.5px;
-}
-
-.genre-list {
+.notice-list {
+    list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
 }
 
-.genre-item {
-}
+    .notice-list li {
+        font-size: 14px;
+        color: #ccc;
+        line-height: 1.6;
+        padding-left: 16px;
+        position: relative;
+    }
 
-.genre-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-}
-
-.genre-name {
-    font-size: 14px;
-    color: var(--text);
-}
-
-.genre-pct {
-    font-size: 13px;
-    color: var(--text-muted);
-}
-
-.bar-track {
-    height: 4px;
-    background: var(--bg3);
-    border-radius: 99px;
-    overflow: hidden;
-}
-
-.bar-fill {
-    height: 100%;
-    border-radius: 99px;
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-    width: 0;
-    transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
+        .notice-list li::before {
+            content: '¡¤';
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
 
 /* FOOTER */
 footer {
