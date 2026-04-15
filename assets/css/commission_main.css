@@ -260,7 +260,7 @@ main {
     }
 
         .notice-list li::before {
-            content: ' ¡¤ ';
+            content: '\00B7';
             position: absolute;
             left: 0;
             color: var(--text-muted);
