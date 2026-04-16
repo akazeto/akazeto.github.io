@@ -132,15 +132,15 @@
         <div class="form-grid">
           <div class="form-group">
             <label for="name">이름 / 닉네임</label>
-            <input type="text" id="name" placeholder="홍길동" required>
+            <input type="text" id="name" name="name" placeholder="홍길동" required>
           </div>
           <div class="form-group">
             <label for="contact">연락처 (이메일 또는 SNS)</label>
-            <input type="text" id="contact" placeholder="example@email.com" required>
+            <input type="text" id="email" name="email" placeholder="example@email.com" required>
           </div>
           <div class="form-group">
             <label for="tier">티어 선택</label>
-            <select id="tier">
+            <select id="tier" name="tier">
               <option value="">선택해주세요</option>
               <option value="basic">베이직 (₩50,000~)</option>
               <option value="standard">스탠다드 (₩120,000~)</option>
@@ -149,11 +149,11 @@
           </div>
           <div class="form-group">
             <label for="deadline">희망 완성 날짜</label>
-            <input type="date" id="deadline">
+            <input type="date" id="deadline" name="deadline">
           </div>
           <div class="form-group full">
             <label for="desc">의뢰 내용</label>
-            <textarea id="desc" placeholder="캐릭터 설명, 원하는 분위기, 참고 이미지 링크 등을 자세히 적어주세요."></textarea>
+            <textarea id="desc" name="desc" placeholder="캐릭터 설명, 원하는 분위기, 참고 이미지 링크 등을 자세히 적어주세요."></textarea>
           </div>
         </div>
         <div class="form-submit">
