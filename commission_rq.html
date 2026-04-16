@@ -170,20 +170,6 @@
   </footer>
 
   <script>
-    function handleSubmit(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('.btn-submit');
-      btn.textContent = '전송됨 ✓';
-      btn.style.background = '#22c55e';
-      btn.disabled = true;
-      setTimeout(() => {
-        btn.textContent = '신청서 보내기';
-        btn.style.background = '';
-        btn.disabled = false;
-        e.target.reset();
-      }, 3000);
-    }
-
     // 티어 버튼 클릭시 폼 select 연동
     document.querySelectorAll('.btn-tier').forEach(btn => {
       btn.addEventListener('click', () => {
