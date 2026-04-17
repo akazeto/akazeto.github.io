@@ -115,6 +115,32 @@ main {
     font-size: 15px;
 }
 
+/* Process */
+.process-flow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 28px 0;
+}
+
+.process-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.process-arrow {
+    font-size: 24px;
+    color: var(--text);
+}
+
 /* STATUS BADGE */
 .status-row {
     display: flex;
