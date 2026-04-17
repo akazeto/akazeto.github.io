@@ -171,7 +171,7 @@ main {
 /* TIERS */
 .tiers {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
     margin-bottom: 48px;
     animation: fadeUp 0.5s 0.1s ease both;
