@@ -121,6 +121,7 @@ main {
     align-items: center;
     gap: 16px;
     margin: 28px 0;
+    animation: fadeUp 0.5s 0.1s ease both;
 }
 
 .process-circle {
