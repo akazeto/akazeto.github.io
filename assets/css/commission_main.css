@@ -172,6 +172,7 @@ main {
     border: none;
     padding: 10px 24px;
     border-radius: 8px;
+    text-decoration: none;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
