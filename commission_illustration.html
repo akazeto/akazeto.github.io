@@ -12,7 +12,7 @@
         <a class="nav-logo" href="commission_index.html">
             <span class="nav-logo-dot"></span>
             Haru's Commission
-        </a>        
+        </a>
         <div class="lang-switcher">
             <button onclick="setLang('ko')" class="lang-btn active" id="btn-ko">한국어</button>
             <button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button>
@@ -53,6 +53,7 @@
             <span class="status-note"></span>
         </div>
 
+        <!-- 작업 진행 과정 -->
         <div class="process-flow">
             <div class="process-step">
                 <div class="process-circle"
@@ -85,53 +86,57 @@
 
         <!-- 티어 카드 -->
         <div class="tiers">
-            <div class="tier-name"
-                 data-ko="스탠다드"
-                 data-en="Standard"
-                 data-ja="スタンダード">스탠다드</div>
-            <div class="tier-price">₩X0,000 <span data-ko="부터" data-en="and up" data-ja="から">부터</span></div>
-            <p class="tier-desc"
-               data-ko="단순 캐릭터 단독 컷.&#10;배경 없음, 채색 포함."
-               data-en="Simple character solo cut.&#10;No background, coloring included."
-               data-ja="シンプルなキャラクター単体カット。&#10;背景なし、着色込み。">단순 캐릭터 단독 컷.<br>배경 없음, 채색 포함.</p>
-            <ul class="tier-features">
-                <li data-ko="캐릭터 1인" data-en="1 character" data-ja="キャラクター1名">캐릭터 1인</li>
-                <li data-ko="단색 / 간단 배경" data-en="Solid / simple background" data-ja="単色・シンプル背景">단색 / 간단 배경</li>
-                <li class="no" data-ko="컨펌" data-en="Confirmation" data-ja="確認">컨펌</li>
-                <li class="no" data-ko="상업적 이용" data-en="Commercial use" data-ja="商業利用">상업적 이용</li>
-                <li class="no" data-ko="고해상도 원본" data-en="High-res original" data-ja="高解像度原本">고해상도 원본</li>
-            </ul>
-            <button class="btn-tier outline"
-                    data-ko="신청하기"
-                    data-en="Apply"
-                    data-ja="申し込む">
-                신청하기
-            </button>
-        </div>
 
-        <div class="tier-card">
-            <div class="tier-name"
-                 data-ko="프리미엄"
-                 data-en="Premium"
-                 data-ja="プレミアム">프리미엄</div>
-            <div class="tier-price">₩X0,000 <span data-ko="부터" data-en="and up" data-ja="から">부터</span></div>
-            <p class="tier-desc"
-               data-ko="상업용 일러스트.&#10;커버, 굿즈, SNS 광고 등."
-               data-en="Commercial illustration.&#10;Covers, goods, SNS ads, etc."
-               data-ja="商業用イラスト。&#10;表紙、グッズ、SNS広告など。">상업용 일러스트.<br>커버, 굿즈, SNS 광고 등.</p>
-            <ul class="tier-features">
-                <li data-ko="캐릭터 제한 없음" data-en="No character limit" data-ja="キャラクター数制限なし">캐릭터 제한 없음</li>
-                <li data-ko="배경 포함" data-en="Background included" data-ja="背景込み">배경 포함</li>
-                <li data-ko="러프, 채색단계에서 컨펌 1회씩" data-en="1 confirmation each at rough & coloring stage" data-ja="ラフ・着色段階で各1回確認あり">러프, 채색단계에서 컨펌 1회씩</li>
-                <li data-ko="고해상도 원본 제공" data-en="High-res original provided" data-ja="高解像度原本提供">고해상도 원본 제공</li>
-                <li data-ko="상업적 이용 허가" data-en="Commercial use permitted" data-ja="商業利用許可">상업적 이용 허가</li>
-            </ul>
-            <button class="btn-tier outline"
-                    data-ko="신청하기"
-                    data-en="Apply"
-                    data-ja="申し込む">
-                신청하기
-            </button>
+            <div class="tier-card">
+                <div class="tier-name"
+                     data-ko="스탠다드"
+                     data-en="Standard"
+                     data-ja="スタンダード">스탠다드</div>
+                <div class="tier-price">₩X0,000 <span data-ko="부터" data-en="and up" data-ja="から">부터</span></div>
+                <p class="tier-desc"
+                   data-ko="단순 캐릭터 단독 컷.&#10;배경 없음, 채색 포함."
+                   data-en="Simple character solo cut.&#10;No background, coloring included."
+                   data-ja="シンプルなキャラクター単体カット。&#10;背景なし、着色込み。">단순 캐릭터 단독 컷.<br>배경 없음, 채색 포함.</p>
+                <ul class="tier-features">
+                    <li data-ko="캐릭터 1인" data-en="1 character" data-ja="キャラクター1名">캐릭터 1인</li>
+                    <li data-ko="단색 / 간단 배경" data-en="Solid / simple background" data-ja="単色・シンプル背景">단색 / 간단 배경</li>
+                    <li class="no" data-ko="컨펌" data-en="Confirmation" data-ja="確認">컨펌</li>
+                    <li class="no" data-ko="상업적 이용" data-en="Commercial use" data-ja="商業利用">상업적 이용</li>
+                    <li class="no" data-ko="고해상도 원본" data-en="High-res original" data-ja="高解像度原本">고해상도 원본</li>
+                </ul>
+                <button class="btn-tier outline"
+                        data-ko="신청하기"
+                        data-en="Apply"
+                        data-ja="申し込む">
+                    신청하기
+                </button>
+            </div>
+
+            <div class="tier-card">
+                <div class="tier-name"
+                     data-ko="프리미엄"
+                     data-en="Premium"
+                     data-ja="プレミアム">프리미엄</div>
+                <div class="tier-price">₩X0,000 <span data-ko="부터" data-en="and up" data-ja="から">부터</span></div>
+                <p class="tier-desc"
+                   data-ko="상업용 일러스트.&#10;커버, 굿즈, SNS 광고 등."
+                   data-en="Commercial illustration.&#10;Covers, goods, SNS ads, etc."
+                   data-ja="商業用イラスト。&#10;表紙、グッズ、SNS広告など。">상업용 일러스트.<br>커버, 굿즈, SNS 광고 등.</p>
+                <ul class="tier-features">
+                    <li data-ko="캐릭터 제한 없음" data-en="No character limit" data-ja="キャラクター数制限なし">캐릭터 제한 없음</li>
+                    <li data-ko="배경 포함" data-en="Background included" data-ja="背景込み">배경 포함</li>
+                    <li data-ko="러프, 채색단계에서 컨펌 1회씩" data-en="1 confirmation each at rough & coloring stage" data-ja="ラフ・着色段階で各1回確認あり">러프, 채색단계에서 컨펌 1회씩</li>
+                    <li data-ko="고해상도 원본 제공" data-en="High-res original provided" data-ja="高解像度原本提供">고해상도 원본 제공</li>
+                    <li data-ko="상업적 이용 허가" data-en="Commercial use permitted" data-ja="商業利用許可">상업적 이용 허가</li>
+                </ul>
+                <button class="btn-tier outline"
+                        data-ko="신청하기"
+                        data-en="Apply"
+                        data-ja="申し込む">
+                    신청하기
+                </button>
+            </div>
+
         </div>
 
         <!-- 안내 사항 -->
