@@ -125,11 +125,11 @@ main {
 }
 
 .process-circle {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    border-color: rgb(224 64 251);
     border: 2px solid var(--text);
+    border-color: rgb(224 64 251);
     display: flex;
     align-items: center;
     justify-content: center;
