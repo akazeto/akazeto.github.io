@@ -1971,6 +1971,26 @@ input, select, textarea {
 			object-position: top center;
 		}
 
+/* Commission Btn */
+.commission-btn {
+	display: inline-block;
+	padding: 12px 32px;
+	border: 1px solid currentColor;
+	border-radius: 999px;
+	text-decoration: none;
+	color: inherit;
+	font-size: 14px;
+	transition: background 0.2s, color 0.2s;
+}
+
+	.commission-btn:hover {
+		background: currentColor;
+	}
+
+	.commission-btn:hover {
+		color: #fff;
+	}
+
 /* filter btn */
 	.filter-btns {
 		display: flex;
