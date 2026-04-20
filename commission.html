@@ -94,6 +94,16 @@
 		</div>
 
 	<!-- Scripts -->
+	<script>
+        // 바 애니메이션: 페이지 로드 후 실행
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.bar-fill').forEach(bar => {
+                setTimeout(() => {
+                    bar.style.width = bar.dataset.width + '%';
+                }, 400);
+            });
+        });
+  </script>
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.dropotron.min.js"></script>
 	<script src="assets/js/browser.min.js"></script>
