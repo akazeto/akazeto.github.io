@@ -1,7 +1,7 @@
 function setLang(lang) {
     document.querySelectorAll('[data-ko]').forEach(function (el) {
         if (el.dataset[lang]) {
-            el.textContent = el.dataset[lang];
+            el.innerHTML = el.dataset[lang];
         }
     });
     document.querySelectorAll('.lang-btn').forEach(function (btn) {
