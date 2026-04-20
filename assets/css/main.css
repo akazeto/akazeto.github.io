@@ -1976,7 +1976,7 @@ input, select, textarea {
 	display: inline-block;
 	padding: 25px 500px;
 	border: 1px solid currentColor;
-	border-radius: 999px;
+	border-radius: 25px;
 	text-decoration: none;
 	color: white;
 	font-size: 25px;
@@ -1986,7 +1986,8 @@ input, select, textarea {
 }
 
 	.commission-btn:hover {
-		background: currentColor;
+		background-color: rgb(205 48 231);
+		transform: translateY(-4px);
 	}
 
 	.commission-btn:hover {
