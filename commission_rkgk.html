@@ -13,6 +13,11 @@
             <span class="nav-logo-dot"></span>
             Haru's Commission
         </a>
+        <div class="lang-switcher">
+            <button onclick="setLang('ko')" class="lang-btn active" id="btn-ko">한국어</button>
+            <button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button>
+            <button onclick="setLang('ja')" class="lang-btn" id="btn-ja">日本語</button>
+        </div>
         <ul class="nav-links">
             <li><a href="commission_index.html">Main</a></li>
             <li><a href="commission_illustration.html">Illustration Commission</a></li>
@@ -21,143 +26,193 @@
     </nav>
 
     <main>
-
         <!-- 페이지 헤더 -->
         <div class="page-header">
-            <h1>rkgk 커미션</h1>
-            <h2>커미션 안내</h2>
-            <p>작업 의뢰 전 아래 내용을 꼭 읽어주세요.</p>
+            <h1 data-ko="rkgk 커미션"
+                data-en="rkgk Commission"
+                data-ja="rkgk 依頼">
+                rkgk 커미션
+            </h1>
+            <h2 data-ko="커미션 안내"
+                data-en="Commission Info"
+                data-ja="依頼について">
+                커미션 안내
+            </h2>
+            <p data-ko="작업 의뢰 전 아래 내용을 꼭 읽어주세요."
+               data-en="Please read the following before placing an order."
+               data-ja="依頼前に必ず以下の内容をお読みください。">작업 의뢰 전 아래 내용을 꼭 읽어주세요.</p>
         </div>
 
         <!-- 오픈 상태 -->
         <div class="status-row">
-            <span class="status-badge open">커미션 오픈</span>
+            <span class="status-badge open"
+                  data-ko="커미션 오픈"
+                  data-en="Commission Open"
+                  data-ja="依頼受付中">커미션 오픈</span>
             <span class="status-note"></span>
         </div>
 
+        <!-- 작업 진행 과정 -->
         <div class="process-flow">
             <div class="process-step">
-                <div class="process-circle">신청접수</div>
+                <div class="process-circle"
+                     data-ko="신청접수"
+                     data-en="Application"
+                     data-ja="申込受付">신청접수</div>
             </div>
             <div class="process-arrow">⇒</div>
             <div class="process-step">
-                <div class="process-circle">메일로<br>오픈 카톡<br>전달</div>
+                <div class="process-circle"
+                     data-ko="메일로&#10;오픈 카톡&#10;전달"
+                     data-en="Open KakaoTalk&#10;sent via&#10;email"
+                     data-ja="メールで&#10;オープン&#10;カカオ送付">메일로<br>오픈 카톡<br>전달</div>
             </div>
             <div class="process-arrow">⇒</div>
             <div class="process-step">
-                <div class="process-circle">신청서<br>제출</div>
+                <div class="process-circle"
+                     data-ko="신청서&#10;제출"
+                     data-en="Submit&#10;Request Form"
+                     data-ja="申込書&#10;提出">신청서<br>제출</div>
             </div>
             <div class="process-arrow">⇒</div>
             <div class="process-step">
-                <div class="process-circle">결제<br>및<br>작업 진행</div>
+                <div class="process-circle"
+                     data-ko="결제&#10;및&#10;작업 진행"
+                     data-en="Payment&#10;&amp;&#10;Work Begins"
+                     data-ja="お支払い&#10;・&#10;作業開始">결제<br>및<br>작업 진행</div>
             </div>
         </div>
 
         <!-- 티어 카드 -->
         <div class="tiers">
-
             <div class="tier-card">
-                <div class="tier-name">rkgk 커미션</div>
-                <div class="tier-price">₩X0,000 <span>부터</span></div>
-                <p class="tier-desc">
+                <div class="tier-name"
+                     data-ko="rkgk 커미션"
+                     data-en="rkgk Commission"
+                     data-ja="rkgk 依頼">rkgk 커미션</div>
+                <div class="tier-price">₩X0,000 <span data-ko="부터" data-en="and up" data-ja="から">부터</span></div>
+                <p class="tier-desc"
+                   data-ko="캐릭터 자료만 받아 자유롭게 그려드리는 커미션입니다. 그리는 스타일은 그때그때 달라질 수 있습니다. 한 캔버스에 1 캐릭터만 작업하며, 배경은 작업하지 않습니다."
+                   data-en="A commission where I draw freely based on character references. The style may vary each time. Only 1 character per canvas, no background."
+                   data-ja="キャラクター資料のみ受け取り、自由に描く依頼です。スタイルはその都度異なる場合があります。1キャンバスにつき1キャラクターのみ、背景なし。">
                     캐릭터 자료만 받아 자유롭게 그려드리는 커미션입니다.<br>
                     그리는 스타일은 그때그때 달라질 수 있습니다.<br>
                     한 캔버스에 1 캐릭터만 작업하며, 배경은 작업하지 않습니다.
                 </p>
-                <button class="btn-tier outline">신청하기</button>
+                <button class="btn-tier outline"
+                        data-ko="신청하기"
+                        data-en="Apply"
+                        data-ja="申し込む">
+                    신청하기
+                </button>
             </div>
         </div>
 
         <!-- 안내 사항 -->
         <div class="info-grid">
             <div class="info-card">
-                <h3>✅ 가능한 작업</h3>
+                <h3 data-ko="✅ 가능한 작업" data-en="✅ Accepted Work" data-ja="✅ 対応可能な作業">✅ 가능한 작업</h3>
                 <ul>
-                    <li>오리지널 캐릭터(OC)</li>
-                    <li>팬아트 (비상업)</li>
-                    <li>커플 / 그룹 일러스트</li>
-                    <li>유튜브 썸네일 / 배너</li>
-                    <li>SNS 프로필 / 배너</li>
+                    <li data-ko="오리지널 캐릭터(OC)" data-en="Original characters (OC)" data-ja="オリジナルキャラクター(OC)">오리지널 캐릭터(OC)</li>
+                    <li data-ko="팬아트 (비상업)" data-en="Fan art (non-commercial)" data-ja="ファンアート（非商業）">팬아트 (비상업)</li>
+                    <li data-ko="커플 / 그룹 일러스트" data-en="Couple / group illustration" data-ja="カップル・グループイラスト">커플 / 그룹 일러스트</li>
+                    <li data-ko="유튜브 썸네일 / 배너" data-en="YouTube thumbnail / banner" data-ja="YouTubeサムネイル・バナー">유튜브 썸네일 / 배너</li>
+                    <li data-ko="SNS 프로필 / 배너" data-en="SNS profile / banner" data-ja="SNSプロフィール・バナー">SNS 프로필 / 배너</li>
                 </ul>
             </div>
             <div class="info-card">
-                <h3>❌ 불가능한 작업</h3>
+                <h3 data-ko="❌ 불가능한 작업" data-en="❌ Declined Work" data-ja="❌ 対応不可な作業">❌ 불가능한 작업</h3>
                 <ul>
-                    <li>혐오·차별 표현 포함</li>
-                    <li>타 작가 스타일 모방</li>
-                    <li>AI 학습용 데이터 목적</li>
-                    <li>정치적 목적의 작업</li>
-                    <li>저작권 침해 소지가 있는 작업</li>
+                    <li data-ko="혐오·차별 표현 포함" data-en="Hate speech or discriminatory content" data-ja="差別・ヘイト表現を含むもの">혐오·차별 표현 포함</li>
+                    <li data-ko="타 작가 스타일 모방" data-en="Imitation of another artist's style" data-ja="他作家のスタイルの模倣">타 작가 스타일 모방</li>
+                    <li data-ko="AI 학습용 데이터 목적" data-en="For AI training data purposes" data-ja="AI学習データ目的">AI 학습용 데이터 목적</li>
+                    <li data-ko="정치적 목적의 작업" data-en="Work for political purposes" data-ja="政治的目的の作業">정치적 목적의 작업</li>
+                    <li data-ko="저작권 침해 소지가 있는 작업" data-en="Work that may infringe copyright" data-ja="著作権侵害の恐れがある作業">저작권 침해 소지가 있는 작업</li>
                 </ul>
             </div>
             <div class="info-card">
-                <h3>💳 결제 안내</h3>
+                <h3 data-ko="💳 결제 안내" data-en="💳 Payment Info" data-ja="💳 お支払いについて">💳 결제 안내</h3>
                 <ul>
-                    <li>결제는 오픈카톡 송금으로만 받습니다.</li>
-                    <li>모든 결제 완료 후 작업 진행</li>
-                    <li>환불은 스케치 단계까지만 가능</li>
-                    <li>단순 변심에 의한 환불 불가</li>
+                    <li data-ko="결제는 오픈카톡 송금으로만 받습니다." data-en="Payment via KakaoTalk open chat transfer only." data-ja="お支払いはオープンカカオ送金のみです。">결제는 오픈카톡 송금으로만 받습니다.</li>
+                    <li data-ko="모든 결제 완료 후 작업 진행" data-en="Work begins after full payment." data-ja="全額入金確認後に作業を開始します。">모든 결제 완료 후 작업 진행</li>
+                    <li data-ko="환불은 스케치 단계까지만 가능" data-en="Refunds only available up to the sketch stage." data-ja="返金はスケッチ段階までのみ可能です。">환불은 스케치 단계까지만 가능</li>
+                    <li data-ko="단순 변심에 의한 환불 불가" data-en="No refunds for change of mind." data-ja="単純な気持ちの変化による返金は不可です。">단순 변심에 의한 환불 불가</li>
                 </ul>
             </div>
             <div class="info-card">
-                <h3>❓ 자주 묻는 질문</h3>
+                <h3 data-ko="❓ 자주 묻는 질문" data-en="❓ FAQ" data-ja="❓ よくある質問">❓ 자주 묻는 질문</h3>
                 <ul>
-                    <li>작업 시간은 일반적으로 입금 후 2개월 이내,<br />(현재 대기 인원에 따라 시작 시간이 달라질 수 있습니다.)</li>
-                    <li>상업적 용도로 사용 시 별도로 연락 부탁드립니다.</li>
-                    <li>본인(하루)의 실수로 요청사항이 반영되지 않았을 경우 수정 가능<br />단순 변심에 의한 수정은 유료로 진행됩니다.</li>
-                    <li>묘사가 많이 필요하거나 장식품이 지나치게 많은 그림 등의 경우 추가 비용이 발생할 수 있습니다.</li>
+                    <li data-ko="작업 시간은 일반적으로 입금 후 2개월 이내 (현재 대기 인원에 따라 달라질 수 있습니다.)"
+                        data-en="Work is generally completed within 2 months of payment. (May vary depending on current queue.)"
+                        data-ja="作業期間は通常入金後2ヶ月以内です。（現在の待機人数により異なる場合があります。）">작업 시간은 일반적으로 입금 후 2개월 이내 (현재 대기 인원에 따라 달라질 수 있습니다.)</li>
+                    <li data-ko="상업적 용도로 사용 시 별도로 연락 부탁드립니다."
+                        data-en="For commercial use, please contact me separately."
+                        data-ja="商業利用の場合は別途ご連絡ください。">상업적 용도로 사용 시 별도로 연락 부탁드립니다.</li>
+                    <li data-ko="본인(하루)의 실수로 요청사항이 반영되지 않았을 경우 수정 가능. 단순 변심에 의한 수정은 유료로 진행됩니다."
+                        data-en="Free revisions if a request was missed due to my error. Revisions due to change of mind are paid."
+                        data-ja="私（はる）のミスでご要望が反映されなかった場合は修正可能です。気持ちの変化による修正は有料となります。">본인(하루)의 실수로 요청사항이 반영되지 않았을 경우 수정 가능. 단순 변심에 의한 수정은 유료로 진행됩니다.</li>
+                    <li data-ko="묘사가 많이 필요하거나 장식품이 지나치게 많은 경우 추가 비용이 발생할 수 있습니다."
+                        data-en="Additional costs may apply for highly detailed designs or excessive accessories."
+                        data-ja="描写が多い場合や装飾品が過度に多い場合は追加料金が発生する場合があります。">묘사가 많이 필요하거나 장식품이 지나치게 많은 경우 추가 비용이 발생할 수 있습니다.</li>
                 </ul>
             </div>
         </div>
 
         <!-- 신청 폼 -->
         <div class="form-section">
-            <h2>커미션 신청</h2>
+            <h2 data-ko="커미션 신청" data-en="Apply for Commission" data-ja="依頼フォーム">커미션 신청</h2>
             <form id="commissionForm" action="https://formspree.io/f/mbdqdbkd" method="POST">
                 <div class="form-grid">
 
                     <div class="form-group">
-                        <label for="name">이름 / 닉네임</label>
+                        <label for="name" data-ko="이름 / 닉네임" data-en="Name / Nickname" data-ja="名前 / ニックネーム">이름 / 닉네임</label>
                         <input type="text" id="name" name="name" placeholder="홍길동" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="contact">연락처 (이메일 또는 SNS)</label>
-                        <!-- 이메일로 받는게 안정적 -->
+                        <label for="contact" data-ko="연락처 (이메일 또는 SNS)" data-en="Contact (email or SNS)" data-ja="連絡先（メールまたはSNS）">연락처 (이메일 또는 SNS)</label>
                         <input type="email" id="contact" name="email" placeholder="example@email.com" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="deadline">희망 완성 날짜</label>
+                        <label for="deadline" data-ko="희망 완성 날짜" data-en="Desired Completion Date" data-ja="希望完成日">희망 완성 날짜</label>
                         <input type="date" id="deadline" name="deadline">
                     </div>
 
                     <div class="form-group full">
-                        <label for="desc">의뢰 내용</label>
+                        <label for="desc" data-ko="의뢰 내용" data-en="Request Details" data-ja="依頼内容">의뢰 내용</label>
                         <textarea id="desc" name="desc" placeholder="캐릭터 설명, 원하는 분위기, 참고 이미지 링크 등을 자세히 적어주세요." required></textarea>
                     </div>
 
                 </div>
 
                 <div class="form-submit">
-                    <button type="submit" class="btn-submit">신청서 보내기</button>
-                    <p class="form-note">
-                        신청 후 메일로 오픈카톡 전달 부탁드립니다.
-                    </p>
+                    <button type="submit" class="btn-submit"
+                            data-ko="신청서 보내기"
+                            data-en="Submit Application"
+                            data-ja="申込書を送る">
+                        신청서 보내기
+                    </button>
+                    <p class="form-note"
+                       data-ko="신청 후 메일로 오픈카톡 전달 부탁드립니다."
+                       data-en="After applying, please send the open KakaoTalk link via email."
+                       data-ja="お申し込み後、メールでオープンカカオをお送りください。">신청 후 메일로 오픈카톡 전달 부탁드립니다.</p>
                 </div>
             </form>
 
-            <!-- 성공 메시지 -->
-            <p id="successMessage" style="display:none; margin-top:20px; color:green;">
-                ✅ 신청이 완료되었습니다!
-            </p>
+            <p id="successMessage" style="display:none; margin-top:20px; color:green;"
+               data-ko="✅ 신청이 완료되었습니다!"
+               data-en="✅ Your application has been submitted!"
+               data-ja="✅ 申し込みが完了しました！">✅ 신청이 완료되었습니다!</p>
         </div>
-
 
     </main>
 
     <footer>
-        © 2026 Artist Portfolio · 모든 이미지는 저작권 보호를 받습니다
+        <span data-ko="© 2026 Haru's Commission · 모든 이미지는 저작권 보호를 받습니다"
+              data-en="© 2026 Haru's Commission · All images are protected by copyright"
+              data-ja="© 2026 Haru's Commission · すべての画像は著作権により保護されています">© 2026 Haru's Commission · 모든 이미지는 저작권 보호를 받습니다</span>
+    </footer>
     </footer>
 
     <script>
