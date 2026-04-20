@@ -1981,6 +1981,7 @@ input, select, textarea {
 	color: inherit;
 	font-size: 14px;
 	transition: background 0.2s, color 0.2s;
+	text-align: center; /* 글자 가운데 */
 }
 
 	.commission-btn:hover {
