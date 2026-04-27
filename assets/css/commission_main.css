@@ -98,6 +98,35 @@ nav {
         color: var(--accent);
     }
 
+/* Process */
+.process-flow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 28px 0;
+    animation: fadeUp 0.5s 0.1s ease both;
+}
+
+.process-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid var(--text);
+    border-color: rgb(224 64 251);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.process-arrow {
+    font-size: 24px;
+    color: var(--text);
+}
+
+
 
 /* MAIN LAYOUT */
 main {
