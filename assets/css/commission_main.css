@@ -337,6 +337,7 @@ main {
     font-family: inherit;
     cursor: pointer;
     transition: all 0.2s;
+    animation: fadeUp 0.5s 0.1s ease both;
 }
 
     .tier-tab.active {
