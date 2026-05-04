@@ -321,6 +321,35 @@ main {
             color: var(--text-muted);
         }
 
+.tier-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.tier-tab {
+    padding: 10px 28px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+    .tier-tab.active {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+    }
+
+    .tier-tab:hover:not(.active) {
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+
 .btn-tier {
     width: 100%;
     padding: 11px;

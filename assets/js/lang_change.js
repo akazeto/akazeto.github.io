@@ -10,6 +10,8 @@ function setLang(lang) {
     var activeBtn = document.getElementById('btn-' + lang);
     if (activeBtn) activeBtn.classList.add('active');
     localStorage.setItem('lang', lang);
+
+    updateSelectOptions(currentTier);
 }
 
 window.addEventListener('DOMContentLoaded', function () {
