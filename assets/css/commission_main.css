@@ -206,6 +206,7 @@ main {
     border-radius: var(--radius);
     padding: 32px;
     margin-bottom: 16px;
+    animation: fadeUp 0.5s 0.05s ease both;
 }
 
 .tier-card-info {
