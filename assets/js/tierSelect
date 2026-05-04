@@ -45,4 +45,7 @@ function updateSelectOptions(tier) {
 // 페이지 로드시 초기화
 window.addEventListener('DOMContentLoaded', () => {
     updateSelectOptions('illustration');
+    
+    document.querySelector('.tier-tab').classList.add('active');
+    document.getElementById('tier-rkgk').style.display = 'none';
 });
