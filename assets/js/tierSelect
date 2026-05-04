@@ -1,5 +1,4 @@
-﻿
-const tierOptions = {
+﻿const tierOptions = {
     illustration: [
         { value: 'illust-bust',   ko: '흉상 (70,000₩)',  en: 'Bust-up (₩70,000)',    ja: 'バストアップ (70,000₩)' },
         { value: 'illust-thigh',  ko: '반신 (90,000₩)',  en: 'Thighs-up (₩90,000)',  ja: '半身 (90,000₩)' },
