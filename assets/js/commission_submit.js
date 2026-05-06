@@ -1,28 +1,31 @@
-﻿const form = document.getElementById("commissionForm");
-const successMessage = document.getElementById("successMessage");
+﻿document.getElementById('commissionForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const btn = this.querySelector('.btn-submit');
+    btn.textContent = '전송 중...';
+    btn.disabled = true;
 
-form.addEventListener("submit", async function (e) {
-    e.preventDefault(); // 기본 이동 막기
-
-    const data = new FormData(form);
+    const formData = new FormData(this);
 
     try {
-        const response = await fetch(form.action, {
-            method: "POST",
-            body: data,
-            headers: {
-                'Accept': 'application/json'
-            }
+        const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
         });
+        const data = await res.json();
 
-        if (response.ok) {
-            alert("신청이 완료되었습니다!"); // 👉 팝업
-            successMessage.style.display = "block"; // 👉 페이지 메시지
-            form.reset(); // 입력 초기화
+        if (data.success) {
+            document.getElementById('successMessage').style.display = 'block';
+            this.reset();
+            btn.textContent = '신청서 보내기';
+            btn.disabled = false;
         } else {
-            alert("전송 실패. 다시 시도해주세요.");
+            alert('전송 실패. 다시 시도해주세요.');
+            btn.textContent = '신청서 보내기';
+            btn.disabled = false;
         }
-    } catch (error) {
-        alert("오류가 발생했습니다. 인터넷 상태를 확인해주세요.");
+    } catch (err) {
+        alert('오류가 발생했습니다. 다시 시도해주세요.');
+        btn.textContent = '신청서 보내기';
+        btn.disabled = false;
     }
 });

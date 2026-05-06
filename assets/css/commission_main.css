@@ -483,6 +483,28 @@ main {
         grid-column: 1 / -1;
     }
 
+input[type="file"] {
+    background: var(--bg2);
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 13px;
+    font-family: inherit;
+    color: var(--text-muted);
+    width: 100%;
+    cursor: pointer;
+}
+
+    input[type="file"]:hover {
+        border-color: var(--accent);
+    }
+
+.file-note {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 6px;
+}
+
 label {
     font-size: 13px;
     font-weight: 500;
