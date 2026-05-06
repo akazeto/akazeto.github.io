@@ -4,32 +4,42 @@
     btn.textContent = '전송 중...';
     btn.disabled = true;
 
-    const formData = new FormData(this);
-    // botcheck는 비워야 스팸 필터 통과
-    formData.set('botcheck', '');
+    // 파일을 base64로 변환
+    const fileInput = document.getElementById('file');
+    let attachmentData = null;
 
-    try {
-        const res = await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            body: formData
+    if (fileInput && fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+        attachmentData = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onload = (e) => resolve(e.target.result);
+            reader.readAsDataURL(file);
         });
-        const data = await res.json();
+    }
 
-        if (data.success) {
+    const params = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('contact').value,
+        type: document.getElementById('type').value,
+        desc: document.getElementById('desc').value,
+        attachment: attachmentData || '첨부 없음'
+    };
+
+    emailjs.send(
+        'service_hd4zpzj',    // EmailJS Service ID
+        'template_bfe6c38',   // EmailJS Template ID
+        params
+    )
+        .then(() => {
             document.getElementById('successMessage').style.display = 'block';
             this.reset();
             btn.textContent = '신청서 보내기';
             btn.disabled = false;
-        } else {
-            console.error('Web3Forms error:', data);
-            alert('전송 실패: ' + (data.message || '다시 시도해주세요.'));
+        })
+        .catch((err) => {
+            console.error('EmailJS error:', err);
+            alert('전송 실패. 다시 시도해주세요.');
             btn.textContent = '신청서 보내기';
             btn.disabled = false;
-        }
-    } catch (err) {
-        console.error('Fetch error:', err);
-        alert('오류가 발생했습니다. 다시 시도해주세요.');
-        btn.textContent = '신청서 보내기';
-        btn.disabled = false;
-    }
+        });
 });
