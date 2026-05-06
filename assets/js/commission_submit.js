@@ -5,6 +5,8 @@
     btn.disabled = true;
 
     const formData = new FormData(this);
+    // botcheck는 비워야 스팸 필터 통과
+    formData.set('botcheck', '');
 
     try {
         const res = await fetch('https://api.web3forms.com/submit', {
@@ -19,11 +21,13 @@
             btn.textContent = '신청서 보내기';
             btn.disabled = false;
         } else {
-            alert('전송 실패. 다시 시도해주세요.');
+            console.error('Web3Forms error:', data);
+            alert('전송 실패: ' + (data.message || '다시 시도해주세요.'));
             btn.textContent = '신청서 보내기';
             btn.disabled = false;
         }
     } catch (err) {
+        console.error('Fetch error:', err);
         alert('오류가 발생했습니다. 다시 시도해주세요.');
         btn.textContent = '신청서 보내기';
         btn.disabled = false;
