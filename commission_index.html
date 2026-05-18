@@ -324,7 +324,19 @@
                                data-ko="참고 이미지 첨부"
                                data-en="Attach Reference Images"
                                data-ja="参考画像を添付">참고 이미지 첨부</label>
-                        <input type="file" id="file" name="attachment" accept="image/*" multiple>
+                        <div class="file-upload-wrap">
+                            <input type="file" id="file" name="attachment" accept="image/*" multiple style="display:none">
+                            <button type="button" class="file-btn" id="fileBtn" onclick="document.getElementById('file').click()"
+                                    data-ko="파일 선택"
+                                    data-en="Choose Files"
+                                    data-ja="ファイルを選択">
+                                파일 선택
+                            </button>
+                            <span class="file-label" id="fileLabel"
+                                  data-ko="선택된 파일 없음"
+                                  data-en="No files selected"
+                                  data-ja="ファイルが選択されていません">선택된 파일 없음</span>
+                        </div>
                         <p class="file-note"
                            data-ko="여러 파일 선택 가능 · 최대 10MB"
                            data-en="Multiple files allowed · Max 10MB"
