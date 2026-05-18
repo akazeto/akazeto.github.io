@@ -4,6 +4,14 @@ function setLang(lang) {
             el.innerHTML = el.dataset[lang];
         }
     });
+
+    document.querySelectorAll('[data-placeholder-ko]').forEach(function (el) {
+        const key = 'placeholder' + lang.charAt(0).toUpperCase() + lang.slice(1);
+        if (el.dataset[key]) {
+            el.placeholder = el.dataset[key];
+        }
+    });
+
     document.querySelectorAll('.lang-btn').forEach(function (btn) {
         btn.classList.remove('active');
     });
