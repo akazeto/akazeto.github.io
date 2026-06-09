@@ -50,11 +50,13 @@
             <div class="hero-info">
                 <h2 data-ko="작업순서"
                     data-en="Work Process"
-                    data-ja="制作の流れ">작업순서</h2>
+                    data-ja="制作の流れ">
+                    작업순서
+                </h2>
                 <a style="font-size:20px"
-                    data-ko="입금 → 상담 → 1차 러프 → 1차 컨펌 → 컬러 러프 → 2차 컨펌 → 선화 → 완성" 
-                    data-en="Payment → Consultation → 1st Rough Sketch → 1st Approval → Color Rough → 2nd Approval → Line Art → Final" 
-                    data-ja="入金 → 相談 → ラフ1稿 → 1次確認 → カラーラフ → 2次確認 → 線画 → 完成">
+                   data-ko="입금 → 상담 → 1차 러프 → 1차 컨펌 → 컬러 러프 → 2차 컨펌 → 선화 → 완성"
+                   data-en="Payment → Consultation → 1st Rough Sketch → 1st Approval → Color Rough → 2nd Approval → Line Art → Final"
+                   data-ja="入金 → 相談 → ラフ1稿 → 1次確認 → カラーラフ → 2次確認 → 線画 → 完成">
                     입금→상담→1차러프→1차 컨펌→컬러 러프→2차 컨펌→선화→완성
                 </a>
                 <br>
@@ -303,9 +305,11 @@
         <!-- 탭 버튼 -->
         <div class="tier-tabs">
             <button class="tier-tab active" onclick="switchTier('illustration')"
-                           data-ko="일러스트"
-                           data-en="illustration"
-                           data-ja="イラスト">일러스트</button>
+                    data-ko="일러스트"
+                    data-en="illustration"
+                    data-ja="イラスト">
+                일러스트
+            </button>
             <button class="tier-tab" onclick="switchTier('rkgk')">rkgk</button>
         </div>
 
@@ -394,6 +398,8 @@
               data-en="© 2026 Haru's Commission · All images are protected by copyright"
               data-ja="© 2026 Haru's Commission · すべての画像は著作権により保護されています">© 2026 Haru's Commission · 모든 이미지는 저작권 보호를 받습니다</span>
     </footer>
+    <button id="top-btn" onclick="window.scrollTo({top: 800, behavior: 'smooth'})" style="display: block;">↑ Back to Top</button>
+
 
     <script>
         // 바 애니메이션: 페이지 로드 후 실행
@@ -420,6 +426,7 @@
     <script src="assets/js/commission_submit.js"></script>
     <script src="assets/js/lang_change.js"></script>
     <script src="assets/js/tierSelect"></script>
+    <script src="assets/js/topButton.js"></script>
 
 </body>
 </html>
