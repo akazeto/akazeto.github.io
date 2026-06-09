@@ -1955,6 +1955,7 @@ input, select, textarea {
 	}
 
 	.gallery .artwork {
+		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -1969,6 +1970,7 @@ input, select, textarea {
 			height: 100%;
 			object-fit: cover;
 			object-position: top center;
+			pointer-events: none;
 		}
 
 /* Commission Btn */

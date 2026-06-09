@@ -31,3 +31,17 @@ document.addEventListener('keydown', (e) => {
         document.getElementById('top-btn').style.display = 'block';  // 추가
     }
 });
+
+// 우클릭 방지
+document.addEventListener('contextmenu', (e) => {
+    if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+    }
+});
+
+// 드래그 방지
+document.addEventListener('dragstart', (e) => {
+    if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+    }
+});
