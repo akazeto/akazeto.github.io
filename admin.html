@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 페이지 · Haru's Commission</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg: #1e1e1e;
+            --bg2: #2a2a2a;
+            --bg3: #333333;
+            --text: #f0f0f0;
+            --text-muted: #999;
+            --accent: #e040fb;
+            --border: rgba(255,255,255,0.08);
+            --radius: 12px;
+            --green: #22c55e;
+            --red: #ef4444;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'DM Sans', 'Noto Sans KR', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 로그인 */
+        .login-box {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 40px;
+            width: 360px;
+        }
+
+        .login-box h1 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 28px;
+            text-align: center;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        label {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 14px;
+            font-family: inherit;
+            color: var(--text);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input:focus { border-color: var(--accent); }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: inherit;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            margin-top: 8px;
+        }
+
+        .btn:hover { opacity: 0.85; }
+        .btn-accent { background: var(--accent); color: #fff; }
+        .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text-muted); }
+
+        .error-msg {
+            color: var(--red);
+            font-size: 13px;
+            margin-top: 8px;
+            text-align: center;
+            min-height: 20px;
+        }
+
+        /* 관리 패널 */
+        .admin-panel {
+            display: none;
+            width: 480px;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 4px;
+        }
+
+        .panel-header h1 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .card {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+        }
+
+        .card h2 {
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: var(--text-muted);
+        }
+
+        /* 토글 스위치 */
+        .toggle-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .toggle-label {
+            font-size: 15px;
+        }
+
+        .toggle {
+            position: relative;
+            width: 52px;
+            height: 28px;
+        }
+
+        .toggle input { display: none; }
+
+        .toggle-slider {
+            position: absolute;
+            inset: 0;
+            background: var(--bg3);
+            border-radius: 99px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .toggle-slider::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #fff;
+            top: 4px;
+            left: 4px;
+            transition: transform 0.2s;
+        }
+
+        .toggle input:checked + .toggle-slider { background: var(--green); }
+        .toggle input:checked + .toggle-slider::before { transform: translateX(24px); }
+
+        .status-text {
+            font-size: 13px;
+            margin-top: 10px;
+            color: var(--text-muted);
+        }
+
+        /* 대기 인원 */
+        .wait-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .wait-input {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 20px;
+            font-weight: 600;
+            font-family: inherit;
+            color: var(--text);
+            width: 100px;
+            text-align: center;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .wait-input:focus { border-color: var(--accent); }
+
+        .count-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--bg3);
+            color: var(--text);
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: border-color 0.2s;
+        }
+
+        .count-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* 저장 버튼 */
+        .save-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .save-msg {
+            font-size: 13px;
+            color: var(--green);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .save-msg.show { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <!-- 로그인 -->
+    <div class="login-box" id="loginBox">
+        <h1>🔐 관리자 로그인</h1>
+        <div class="form-group">
+            <label>이메일</label>
+            <input type="email" id="adminEmail" placeholder="admin@example.com">
+        </div>
+        <div class="form-group">
+            <label>비밀번호</label>
+            <input type="password" id="adminPassword" placeholder="••••••••">
+        </div>
+        <button class="btn btn-accent" onclick="login()">로그인</button>
+        <p class="error-msg" id="loginError"></p>
+    </div>
+
+    <!-- 관리 패널 -->
+    <div class="admin-panel" id="adminPanel">
+        <div class="panel-header">
+            <h1>⚙️ 커미션 관리</h1>
+            <button class="btn btn-outline" style="width:auto; padding: 8px 16px;" onclick="logout()">로그아웃</button>
+        </div>
+
+        <!-- 오픈 상태 -->
+        <div class="card">
+            <h2>커미션 상태</h2>
+            <div class="toggle-row">
+                <span class="toggle-label">커미션 오픈</span>
+                <label class="toggle">
+                    <input type="checkbox" id="isOpenToggle" onchange="updateStatusText()">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <p class="status-text" id="statusText">현재 상태: 클로즈</p>
+        </div>
+
+        <!-- 대기 인원 -->
+        <div class="card">
+            <h2>대기 인원</h2>
+            <div class="wait-row">
+                <button class="count-btn" onclick="changeCount(-1)">−</button>
+                <input type="number" class="wait-input" id="waitCount" value="0" min="0">
+                <button class="count-btn" onclick="changeCount(1)">+</button>
+            </div>
+        </div>
+
+        <!-- 저장 -->
+        <div class="save-row">
+            <button class="btn btn-accent" style="margin-top:0;" onclick="saveAll()">저장하기</button>
+            <span class="save-msg" id="saveMsg">✅ 저장됐어요!</span>
+        </div>
+    </div>
+
+    <script type="module">
+        import {
+            auth,
+            signInWithEmailAndPassword,
+            signOut,
+            onAuthStateChanged,
+            getStatus,
+            setStatus
+        } from './firebase.js';
+
+        // 로그인 상태 감지
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                document.getElementById('loginBox').style.display = 'none';
+                document.getElementById('adminPanel').style.display = 'flex';
+                // Firestore에서 현재 상태 불러오기
+                const data = await getStatus();
+                document.getElementById('isOpenToggle').checked = data.isOpen;
+                document.getElementById('waitCount').value = data.waitCount;
+                updateStatusText();
+            } else {
+                document.getElementById('loginBox').style.display = 'block';
+                document.getElementById('adminPanel').style.display = 'none';
+            }
+        });
+
+        window.login = async function() {
+            const email    = document.getElementById('adminEmail').value;
+            const password = document.getElementById('adminPassword').value;
+            const errEl    = document.getElementById('loginError');
+            try {
+                await signInWithEmailAndPassword(auth, email, password);
+                errEl.textContent = '';
+            } catch (e) {
+                errEl.textContent = '이메일 또는 비밀번호가 틀렸어요.';
+            }
+        };
+
+        window.logout = async function() {
+            await signOut(auth);
+        };
+
+        window.updateStatusText = function() {
+            const isOpen = document.getElementById('isOpenToggle').checked;
+            document.getElementById('statusText').textContent =
+                '현재 상태: ' + (isOpen ? '✅ 오픈' : '❌ 클로즈');
+        };
+
+        window.changeCount = function(delta) {
+            const input = document.getElementById('waitCount');
+            const val   = Math.max(0, parseInt(input.value || 0) + delta);
+            input.value = val;
+        };
+
+        window.saveAll = async function() {
+            const isOpen    = document.getElementById('isOpenToggle').checked;
+            const waitCount = parseInt(document.getElementById('waitCount').value || 0);
+            await setStatus(isOpen, waitCount);
+            const msg = document.getElementById('saveMsg');
+            msg.classList.add('show');
+            setTimeout(() => msg.classList.remove('show'), 2500);
+        };
+    </script>
+
+</body>
+</html>

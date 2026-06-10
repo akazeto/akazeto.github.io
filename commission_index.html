@@ -9,6 +9,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>emailjs.init("UjcMGFM3loGV0QnIq");</script>
+    <script type="module">
+        import { getStatus } from './firebase.js';
+
+        window.addEventListener('DOMContentLoaded', async () => {
+            const data = await getStatus();
+
+            // 오픈 상태 배지
+            const badge = document.querySelector('.status-badge');
+            if (badge) {
+                if (data.isOpen) {
+                    badge.className = 'status-badge open';
+                    badge.dataset.ko = '커미션 오픈';
+                    badge.dataset.en = 'Commission Open';
+                    badge.dataset.ja = '依頼受付中';
+                    badge.textContent = '커미션 오픈';
+                } else {
+                    badge.className = 'status-badge closed';
+                    badge.dataset.ko = '커미션 클로즈';
+                    badge.dataset.en = 'Commission Closed';
+                    badge.dataset.ja = '依頼停止中';
+                    badge.textContent = '커미션 클로즈';
+                }
+            }
+
+            // 대기 인원
+            const note = document.querySelector('.status-note');
+            if (note && data.waitCount >= 0) {
+                note.dataset.ko = `현재 대기 ${data.waitCount}명`;
+                note.dataset.en = `${data.waitCount} in queue`;
+                note.dataset.ja = `現在 ${data.waitCount}名待ち`;
+                note.textContent = `현재 대기 ${data.waitCount}명`;
+            }
+        });
+    </script>
 </head>
 <body>
     <nav>
