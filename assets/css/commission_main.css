@@ -469,6 +469,9 @@ main {
 
 /* LANGUAGE */
 .lang-switcher {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     gap: 4px;
 }
@@ -687,7 +690,8 @@ nav {
 #top-btn {
     position: fixed;
     bottom: 30px;
-    justify-self: center;
+    justify-self: right;
+    right:30px;
     width: 120px;
     height: 50px;
     border-radius: 12px;
