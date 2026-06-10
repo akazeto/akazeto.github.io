@@ -6,7 +6,11 @@
     <title>관리자 페이지 · Haru's Commission</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         :root {
             --bg: #1e1e1e;
@@ -40,12 +44,12 @@
             width: 360px;
         }
 
-        .login-box h1 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 28px;
-            text-align: center;
-        }
+            .login-box h1 {
+                font-size: 20px;
+                font-weight: 600;
+                margin-bottom: 28px;
+                text-align: center;
+            }
 
         .form-group {
             display: flex;
@@ -72,7 +76,9 @@
             transition: border-color 0.2s;
         }
 
-        input:focus { border-color: var(--accent); }
+        input:focus {
+            border-color: var(--accent);
+        }
 
         .btn {
             width: 100%;
@@ -87,9 +93,20 @@
             margin-top: 8px;
         }
 
-        .btn:hover { opacity: 0.85; }
-        .btn-accent { background: var(--accent); color: #fff; }
-        .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text-muted); }
+            .btn:hover {
+                opacity: 0.85;
+            }
+
+        .btn-accent {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+        }
 
         .error-msg {
             color: var(--red);
@@ -114,10 +131,10 @@
             margin-bottom: 4px;
         }
 
-        .panel-header h1 {
-            font-size: 20px;
-            font-weight: 600;
-        }
+            .panel-header h1 {
+                font-size: 20px;
+                font-weight: 600;
+            }
 
         .card {
             background: var(--bg2);
@@ -126,12 +143,12 @@
             padding: 28px;
         }
 
-        .card h2 {
-            font-size: 15px;
-            font-weight: 500;
-            margin-bottom: 20px;
-            color: var(--text-muted);
-        }
+            .card h2 {
+                font-size: 15px;
+                font-weight: 500;
+                margin-bottom: 20px;
+                color: var(--text-muted);
+            }
 
         /* 토글 스위치 */
         .toggle-row {
@@ -150,7 +167,9 @@
             height: 28px;
         }
 
-        .toggle input { display: none; }
+            .toggle input {
+                display: none;
+            }
 
         .toggle-slider {
             position: absolute;
@@ -161,20 +180,25 @@
             transition: background 0.2s;
         }
 
-        .toggle-slider::before {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #fff;
-            top: 4px;
-            left: 4px;
-            transition: transform 0.2s;
+            .toggle-slider::before {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: #fff;
+                top: 4px;
+                left: 4px;
+                transition: transform 0.2s;
+            }
+
+        .toggle input:checked + .toggle-slider {
+            background: var(--green);
         }
 
-        .toggle input:checked + .toggle-slider { background: var(--green); }
-        .toggle input:checked + .toggle-slider::before { transform: translateX(24px); }
+            .toggle input:checked + .toggle-slider::before {
+                transform: translateX(24px);
+            }
 
         .status-text {
             font-size: 13px;
@@ -204,7 +228,9 @@
             transition: border-color 0.2s;
         }
 
-        .wait-input:focus { border-color: var(--accent); }
+            .wait-input:focus {
+                border-color: var(--accent);
+            }
 
         .count-btn {
             width: 36px;
@@ -221,7 +247,10 @@
             transition: border-color 0.2s;
         }
 
-        .count-btn:hover { border-color: var(--accent); color: var(--accent); }
+            .count-btn:hover {
+                border-color: var(--accent);
+                color: var(--accent);
+            }
 
         /* 저장 버튼 */
         .save-row {
@@ -237,7 +266,9 @@
             transition: opacity 0.3s;
         }
 
-        .save-msg.show { opacity: 1; }
+            .save-msg.show {
+                opacity: 1;
+            }
     </style>
 </head>
 <body>
@@ -253,7 +284,7 @@
             <label>비밀번호</label>
             <input type="password" id="adminPassword" placeholder="••••••••">
         </div>
-        <button class="btn btn-accent" onclick="login()">로그인</button>
+        <button class="btn btn-accent">로그인</button>
         <p class="error-msg" id="loginError"></p>
     </div>
 
@@ -261,7 +292,7 @@
     <div class="admin-panel" id="adminPanel">
         <div class="panel-header">
             <h1>⚙️ 커미션 관리</h1>
-            <button class="btn btn-outline" style="width:auto; padding: 8px 16px;" onclick="logout()">로그아웃</button>
+            <button id="logoutBtn" class="btn btn-outline" style="width:auto; padding: 8px 16px;">로그아웃</button>
         </div>
 
         <!-- 오픈 상태 -->
@@ -270,7 +301,7 @@
             <div class="toggle-row">
                 <span class="toggle-label">커미션 오픈</span>
                 <label class="toggle">
-                    <input type="checkbox" id="isOpenToggle" onchange="updateStatusText()">
+                    <input type="checkbox" id="isOpenToggle">
                     <span class="toggle-slider"></span>
                 </label>
             </div>
@@ -281,15 +312,15 @@
         <div class="card">
             <h2>대기 인원</h2>
             <div class="wait-row">
-                <button class="count-btn" onclick="changeCount(-1)">−</button>
+                <button id="minusBtn" class="count-btn">−</button>
                 <input type="number" class="wait-input" id="waitCount" value="0" min="0">
-                <button class="count-btn" onclick="changeCount(1)">+</button>
+                <button id="plusBtn" class="count-btn">+</button>
             </div>
         </div>
 
         <!-- 저장 -->
         <div class="save-row">
-            <button class="btn btn-accent" style="margin-top:0;" onclick="saveAll()">저장하기</button>
+            <button id="saveBtn" class="btn btn-accent" style="margin-top:0;">저장하기</button>
             <span class="save-msg" id="saveMsg">✅ 저장됐어요!</span>
         </div>
     </div>
@@ -320,42 +351,53 @@
             }
         });
 
-        window.login = async function() {
-            const email    = document.getElementById('adminEmail').value;
+        function updateStatusText() {
+            const isOpen = document.getElementById('isOpenToggle').checked;
+            document.getElementById('statusText').textContent =
+                '현재 상태: ' + (isOpen ? '✅ 오픈' : '❌ 클로즈');
+        }
+
+        // 로그인 버튼
+        document.querySelector('.btn-accent').addEventListener('click', async () => {
+            const email = document.getElementById('adminEmail').value;
             const password = document.getElementById('adminPassword').value;
-            const errEl    = document.getElementById('loginError');
+            const errEl = document.getElementById('loginError');
             try {
                 await signInWithEmailAndPassword(auth, email, password);
                 errEl.textContent = '';
             } catch (e) {
                 errEl.textContent = '이메일 또는 비밀번호가 틀렸어요.';
             }
-        };
+        });
 
-        window.logout = async function() {
+        // 로그아웃 버튼
+        document.getElementById('logoutBtn').addEventListener('click', async () => {
             await signOut(auth);
-        };
+        });
 
-        window.updateStatusText = function() {
-            const isOpen = document.getElementById('isOpenToggle').checked;
-            document.getElementById('statusText').textContent =
-                '현재 상태: ' + (isOpen ? '✅ 오픈' : '❌ 클로즈');
-        };
+        // 토글 상태 텍스트
+        document.getElementById('isOpenToggle').addEventListener('change', updateStatusText);
 
-        window.changeCount = function(delta) {
+        // 대기 인원 ± 버튼
+        document.getElementById('minusBtn').addEventListener('click', () => {
             const input = document.getElementById('waitCount');
-            const val   = Math.max(0, parseInt(input.value || 0) + delta);
-            input.value = val;
-        };
+            input.value = Math.max(0, parseInt(input.value || 0) - 1);
+        });
 
-        window.saveAll = async function() {
-            const isOpen    = document.getElementById('isOpenToggle').checked;
+        document.getElementById('plusBtn').addEventListener('click', () => {
+            const input = document.getElementById('waitCount');
+            input.value = parseInt(input.value || 0) + 1;
+        });
+
+        // 저장 버튼
+        document.getElementById('saveBtn').addEventListener('click', async () => {
+            const isOpen = document.getElementById('isOpenToggle').checked;
             const waitCount = parseInt(document.getElementById('waitCount').value || 0);
             await setStatus(isOpen, waitCount);
             const msg = document.getElementById('saveMsg');
             msg.classList.add('show');
             setTimeout(() => msg.classList.remove('show'), 2500);
-        };
+        });
     </script>
 
 </body>
