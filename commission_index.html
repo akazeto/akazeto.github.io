@@ -38,11 +38,23 @@
             const container = document.getElementById('waitIcons');
             if (container) {
                 container.innerHTML = '';
+                const MAX_SLOTS = 5;
+                const count = data.waitCount;
+
                 for (let i = 0; i < MAX_SLOTS; i++) {
-                    const span = document.createElement('span');
-                    span.className = 'wait-icon ' + (i < data.waitCount ? 'active' : 'inactive');
-                    span.textContent = '♟'; // 원하는 아이콘으로 교체 가능
-                    container.appendChild(span);
+                    const icon = document.createElement('i');
+                    icon.className = 'fa-solid fa-user wait-icon';
+                    icon.style.color = i < count ? '#22c55e' : '';
+                    icon.classList.add(i < count ? 'active' : 'inactive');
+                    container.appendChild(icon);
+                }
+
+                // 5명 초과면 "+ @" 텍스트 추가
+                if (count > MAX_SLOTS) {
+                    const extra = document.createElement('span');
+                    extra.className = 'wait-extra';
+                    extra.textContent = `+ ${count - MAX_SLOTS}`;
+                    container.appendChild(extra);
                 }
             }
         });

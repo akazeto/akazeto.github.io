@@ -963,14 +963,20 @@ main {
 
 .wait-icon {
     font-size: 32px;
-    line-height: 1;
 }
 
     .wait-icon.active {
-        filter: none;
-        opacity: 1;
+        color: #22c55e;
     }
 
     .wait-icon.inactive {
-        opacity: 0.25;
+        opacity: 0.2;
     }
+
+.wait-extra {
+    font-size: 20px;
+    font-weight: 600;
+    color: #22c55e;
+    align-self: center;
+    margin-left: 4px;
+}
