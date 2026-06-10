@@ -470,7 +470,6 @@ main {
 /* LANGUAGE */
 .lang-switcher {
     display: flex;
-    margin-left: 220px;
     gap: 4px;
 }
 
