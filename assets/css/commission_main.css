@@ -900,3 +900,77 @@ main {
             left: 0;
             color: var(--text-muted);
         }
+
+.status-section {
+    text-align: center;
+    margin: 24px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.status-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 14px;
+    border-radius: 99px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+    .status-badge.open {
+        background: rgba(34,197,94,0.12);
+        color: #16a34a;
+        border: 1px solid rgba(34,197,94,0.3);
+    }
+
+        .status-badge.open::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #22c55e;
+            animation: pulse 2s infinite;
+        }
+
+    .status-badge.closed {
+        background: rgba(239,68,68,0.12);
+        color: #dc2626;
+        border: 1px solid rgba(239,68,68,0.3);
+    }
+
+.wait-title {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.wait-icons {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.wait-icon {
+    font-size: 32px;
+    line-height: 1;
+}
+
+    .wait-icon.active {
+        filter: none;
+        opacity: 1;
+    }
+
+    .wait-icon.inactive {
+        opacity: 0.25;
+    }

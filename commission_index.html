@@ -14,32 +14,36 @@
 
         window.addEventListener('DOMContentLoaded', async () => {
             const data = await getStatus();
+            const MAX_SLOTS = 5; // 최대 슬롯 수 (아이콘 총 개수)
 
             // 오픈 상태 배지
             const badge = document.querySelector('.status-badge');
             if (badge) {
+                const lang = localStorage.getItem('lang') || 'ko';
                 if (data.isOpen) {
                     badge.className = 'status-badge open';
-                    badge.dataset.ko = '커미션 오픈';
-                    badge.dataset.en = 'Commission Open';
-                    badge.dataset.ja = '依頼受付中';
-                    badge.textContent = '커미션 오픈';
+                    badge.dataset.ko = '오픈';
+                    badge.dataset.en = 'Open';
+                    badge.dataset.ja = '受付中';
                 } else {
                     badge.className = 'status-badge closed';
-                    badge.dataset.ko = '커미션 클로즈';
-                    badge.dataset.en = 'Commission Closed';
-                    badge.dataset.ja = '依頼停止中';
-                    badge.textContent = '커미션 클로즈';
+                    badge.dataset.ko = '클로즈';
+                    badge.dataset.en = 'Closed';
+                    badge.dataset.ja = '停止中';
                 }
+                badge.textContent = badge.dataset[lang] || badge.dataset.ko;
             }
 
-            // 대기 인원
-            const note = document.querySelector('.status-note');
-            if (note && data.waitCount >= 0) {
-                note.dataset.ko = `현재 대기 ${data.waitCount}명`;
-                note.dataset.en = `${data.waitCount} in queue`;
-                note.dataset.ja = `現在 ${data.waitCount}名待ち`;
-                note.textContent = `현재 대기 ${data.waitCount}명`;
+            // 대기 인원 아이콘
+            const container = document.getElementById('waitIcons');
+            if (container) {
+                container.innerHTML = '';
+                for (let i = 0; i < MAX_SLOTS; i++) {
+                    const span = document.createElement('span');
+                    span.className = 'wait-icon ' + (i < data.waitCount ? 'active' : 'inactive');
+                    span.textContent = '♟'; // 원하는 아이콘으로 교체 가능
+                    container.appendChild(span);
+                }
             }
         });
     </script>
@@ -61,7 +65,7 @@
         <section class="hero">
             <div class="hero-image">
                 <!-- 이미지를 바꾸고 싶으면 아래 img 태그의 src를 수정하세요 -->
-                <a  href="https://harusama.vercel.app/" target="_blank" title="Portfolio"><img src="assets/css/images/profile.jpg"></a>
+                <a href="https://harusama.vercel.app/" target="_blank" title="Portfolio"><img src="assets/css/images/profile.jpg"></a>
                 <div class="hero-image-placeholder">프로필 이미지</div>
             </div>
 
@@ -78,6 +82,19 @@
                         FANBOX
                     </a>
                 </div>
+            </div>
+        </section>
+        <!-- 상태 + 대기 인원 -->
+        <section class="status-section">
+            <div class="status-line">
+                <span data-ko="현재상태 :" data-en="Status :" data-ja="現在の状態 :">현재상태 :</span>
+                <span class="status-badge open"
+                      data-ko="오픈" data-en="Open" data-ja="受付中">오픈</span>
+            </div>
+            <div class="wait-section">
+                <div class="wait-title"
+                     data-ko="대기 인원" data-en="Queue" data-ja="待機人数">대기 인원</div>
+                <div class="wait-icons" id="waitIcons"></div>
             </div>
         </section>
         <section class="hero">
