@@ -46,3 +46,9 @@ document.addEventListener('dragstart', (e) => {
         e.preventDefault();
     }
 });
+document.querySelectorAll('.card.artwork img').forEach(img => {
+    img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modal.classList.add('active');
+    });
+});
