@@ -111,6 +111,7 @@ main {
 }
 
 .page-header h2 {
+    animation: fadeUp 0.5s 0.2s ease both;
 }
 
 .page-header p {
@@ -502,6 +503,7 @@ main {
         font-weight: 600;
         letter-spacing: -0.4px;
         margin-bottom: 24px;
+        animation: fadeUp 0.5s 0.2s ease both;
     }
 
 .form-grid {
