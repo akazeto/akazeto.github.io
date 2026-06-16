@@ -119,22 +119,23 @@ main {
     font-size: 15px;
 }
 
+
 /* aside */
 .side-panel {
     position: fixed;
-    left: 24px;
-    top: 80px; /* 세로 중앙 → 상단 고정 */
-    transform: none; /* translateY 제거 */
+    left: 80px;
+    top: 55%;
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 14px;
+    gap: 28px;
     background: var(--bg2);
     border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 20px 16px;
+    padding: 50px 16px;
     z-index: 99;
-    width: 160px; /* 더 넓게 */
+    width: 200px;
 }
 
 .side-item {
@@ -146,7 +147,7 @@ main {
 }
 
 .side-label {
-    font-size: 12px;
+    font-size: 16px;
     color: var(--text-muted);
     text-align: center;
     margin-bottom: 4px;
@@ -169,8 +170,8 @@ main {
 
     .side-lang .lang-btn {
         flex: 1;
-        padding: 5px 0;
-        font-size: 11px;
+        padding: 8px 0;
+        font-size: 13px;
         border-radius: 6px;
     }
 
@@ -181,16 +182,17 @@ main {
     justify-content: center;
     gap: 5px;
     width: 100%;
-    padding: 8px 0;
+    padding: 12px 0;
     border-radius: 8px;
     border: 1px solid var(--border);
     background: transparent;
     color: var(--text-muted);
     text-decoration: none;
-    font-size: 12px;
+    font-size: 15px;
     transition: border-color 0.2s, color 0.2s;
     text-align: center;
 }
+
     .side-btn:hover {
         border-color: var(--accent);
         color: var(--accent);
@@ -1040,17 +1042,16 @@ main {
         border: 1px solid rgba(239,68,68,0.3);
     }
 
-/* WAIT ICONS (nav용) */
+/* wait */
 .wait-icons {
     display: flex;
-    flex-wrap: wrap; /* 2줄 wrap */
-    gap: 4px;
+    flex-wrap: wrap;
+    gap: 6px;
     justify-content: center;
-    max-width: 100px;
 }
 
 .wait-icon {
-    font-size: 20px;
+    font-size: 25px;
 }
 
     .wait-icon.active {
@@ -1067,3 +1068,4 @@ main {
     color: #22c55e;
     margin-left: 2px;
 }
+
