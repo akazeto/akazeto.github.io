@@ -45,11 +45,30 @@ document.getElementById('file').addEventListener('change', function () {
 
 document.getElementById('commissionForm').addEventListener('submit', async function (e) {
     e.preventDefault();
+
+    // 배경 유무 체크
+    const backgroundChecked = document.querySelector('input[name="background"]:checked');
+    if (!backgroundChecked) {
+        alert('배경 유무를 선택해주세요.');
+        btn.textContent = '신청서 보내기';
+        btn.disabled = false;
+        return;
+    }
+
+    // 이메일 정밀 검사
+    const emailVal = document.getElementById('contact').value;
+    const emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(emailVal)) {
+        alert('올바른 이메일 주소를 입력해주세요.\n예: example@gmail.com');
+        btn.textContent = '신청서 보내기';
+        btn.disabled = false;
+        return;
+    }
+
     const btn = this.querySelector('.btn-submit');
     btn.textContent = '전송 중...';
     btn.disabled = true;
 
-    // 기존 fileInput 코드 대신
     let imageUrls = '첨부 없음';
 
     if (uploadedFiles.length > 0) {
