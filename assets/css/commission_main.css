@@ -168,8 +168,8 @@ main {
 }
 
     .side-lang .lang-btn {
-        width: 100%;
-        padding: 4px 0;
+        flex: 1;
+        padding: 5px 0;
         font-size: 11px;
         border-radius: 6px;
     }
