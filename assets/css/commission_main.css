@@ -119,6 +119,86 @@ main {
     font-size: 15px;
 }
 
+/* aside */
+.side-panel {
+    position: fixed;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px 14px;
+    z-index: 99;
+    width: 90px;
+}
+
+.side-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.side-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.side-divider {
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+}
+
+.side-lang {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+    .side-lang .lang-btn {
+        width: 100%;
+        padding: 4px 0;
+        font-size: 11px;
+        border-radius: 6px;
+    }
+
+.side-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    padding: 8px 0;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 12px;
+    transition: border-color 0.2s, color 0.2s;
+    text-align: center;
+}
+
+    .side-btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+
+/* 사이드패널이 있으므로 main 왼쪽 여백 확보 */
+main {
+    padding-left: 130px;
+}
+
+
 /* Process */
 .process-flow {
     display: flex;

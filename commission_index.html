@@ -64,8 +64,6 @@
     <nav>
         <div class="nav-left">
             <div class="nav-logo">Haru's Commission</div>
-            <span class="status-badge open"
-                  data-ko="오픈" data-en="Open" data-ja="受付中">오픈</span>
         </div>
         <div class="lang-switcher">
             <button onclick="setLang('ko')" class="lang-btn active" id="btn-ko">한국어</button>
@@ -80,12 +78,55 @@
             <div class="wait-icons" id="waitIcons"></div>
         </div>
     </nav>
+    <aside class="side-panel">
+        <!-- 오픈 상태 -->
+        <div class="side-item">
+            <span class="status-badge open"
+                  data-ko="오픈" data-en="Open" data-ja="受付中">오픈</span>
+        </div>
+
+        <div class="side-divider"></div>
+
+        <!-- 대기 인원 -->
+        <div class="side-item">
+            <div class="side-label"
+                 data-ko="대기 인원" data-en="Queue" data-ja="待機">대기 인원</div>
+            <div class="wait-icons" id="waitIcons"></div>
+        </div>
+
+        <div class="side-divider"></div>
+
+        <!-- 언어 설정 -->
+        <div class="side-item">
+            <div class="side-label"
+                 data-ko="언어" data-en="Lang" data-ja="言語">언어</div>
+            <div class="side-lang">
+                <button onclick="setLang('ko')" class="lang-btn active" id="btn-ko">KO</button>
+                <button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button>
+                <button onclick="setLang('ja')" class="lang-btn" id="btn-ja">JP</button>
+            </div>
+        </div>
+
+        <div class="side-divider"></div>
+
+        <!-- 포트폴리오 이동 -->
+        <div class="side-item">
+            <a href="https://harusama.vercel.app/" target="_blank" class="side-btn"
+               data-ko="포트폴리오" data-en="Portfolio" data-ja="ポートフォリオ">포트폴리오</a>
+        </div>
+
+        <!-- X DM -->
+        <div class="side-item">
+            <a href="https://x.com/messages/compose?recipient_id=harusamadayo1" target="_blank" class="side-btn">
+                <i class="fa-brands fa-x-twitter"></i> DM
+            </a>
+        </div>
+    </aside>
 
     <main>
         <!-- HERO -->
         <section class="hero">
             <div class="hero-image">
-                <!-- 이미지를 바꾸고 싶으면 아래 img 태그의 src를 수정하세요 -->
                 <a href="https://harusama.vercel.app/" title="Portfolio"><img src="assets/css/images/profile.jpg"></a>
                 <div class="hero-image-placeholder">프로필 이미지</div>
             </div>
@@ -105,6 +146,8 @@
                 </div>
             </div>
         </section>
+        <span class="status-badge open"
+              data-ko="오픈" data-en="Open" data-ja="受付中">오픈</span>
         <section class="hero">
             <div class="hero-info">
                 <h2 data-ko="작업순서"
@@ -161,7 +204,7 @@
     </main>
 
     <main>
-        <!-- 페이지 헤더 -->
+        <!-- Page Header -->
         <div class="page-header">
             <h1 data-ko="커미션 안내"
                 data-en="Commission Info"
@@ -173,7 +216,7 @@
                data-ja="依頼前に必ず以下の内容をお読みください。">작업 의뢰 전 아래 내용을 꼭 읽어주세요.</p>
         </div>
 
-        <!-- 작업 진행 과정 -->
+        <!-- Process-flow -->
         <div class="process-flow">
             <div class="process-step">
                 <div class="process-circle"
@@ -204,7 +247,7 @@
             </div>
         </div>
 
-        <!-- 안내 사항 -->
+        <!-- info -->
         <div class="info-grid">
             <div class="info-card">
                 <h3 data-ko="✅ 가능한 작업" data-en="✅ Accepted Work" data-ja="✅ 対応可能な作業">✅ 가능한 작업</h3>
@@ -270,7 +313,7 @@
         <h2 data-ko="커미션 신청" data-en="Apply for Commission" data-ja="依頼フォーム">커미션 신청</h2>
 
 
-        <!-- 티어 카드 -->
+        <!-- Tier Card -->
         <div class="tiers" id="tier-illustration">
             <div class="tier-section-title"
                  data-ko="❖ 일러스트"
@@ -367,7 +410,7 @@
             </div>
         </div>
 
-        <!-- 탭 버튼 -->
+        <!-- Tabs -->
         <div class="tier-tabs">
             <button class="tier-tab active" onclick="switchTier('illustration')"
                     data-ko="일러스트"
@@ -379,7 +422,7 @@
         </div>
 
 
-        <!-- 신청 폼 -->
+        <!-- Form -->
         <div class="form-section">
             <form id="commissionForm" action="https://formspree.io/f/mbdqdbkd" method="POST">
                 <div class="form-grid">
@@ -397,6 +440,13 @@
                     <div class="form-group">
                         <label for="type" data-ko="커미션 종류" data-en="Commission Type" data-ja="依頼タイプ">커미션 종류</label>
                         <select id="type" name="type" required>
+                            <option value="">선택해주세요</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="background" data-ko="배경유무" data-en="Background (Yes/No)" data-ja="背景の有無">배경유무</label>
+                        <select id="background" name="background" required>
                             <option value="">선택해주세요</option>
                         </select>
                     </div>
@@ -467,7 +517,7 @@
 
 
     <script>
-        // 바 애니메이션: 페이지 로드 후 실행
+        // bar anim
         window.addEventListener('load', () => {
             document.querySelectorAll('.bar-fill').forEach(bar => {
                 setTimeout(() => {
@@ -477,7 +527,7 @@
         });
     </script>
     <script>
-        // 티어 버튼 클릭시 폼 select 연동
+        // tier btn to Select
         document.querySelectorAll('.btn-tier').forEach(btn => {
             btn.addEventListener('click', () => {
                 const tierName = btn.closest('.tier-card').querySelector('.tier-name').textContent.trim();
