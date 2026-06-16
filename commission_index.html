@@ -434,10 +434,19 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="background" data-ko="배경유무" data-en="Background (Yes/No)" data-ja="背景の有無">Background (Yes/No)</label>
-                        <select id="background" name="background" required>
-                            <option value="">선택해주세요</option>
-                        </select>
+                        <label data-ko="배경 유무"
+                               data-en="Background"
+                               data-ja="背景の有無">배경 유무</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="background" value="yes" required>
+                                <span data-ko="배경 있음" data-en="Yes" data-ja="あり">배경 있음</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="background" value="no">
+                                <span data-ko="배경 없음" data-en="No" data-ja="なし">배경 없음</span>
+                            </label>
+                        </div>
                     </div>
 
                     <div class="form-group full">

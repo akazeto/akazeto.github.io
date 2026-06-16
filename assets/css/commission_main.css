@@ -1051,3 +1051,29 @@ main {
     margin-left: 2px;
 }
 
+/* radio */
+.radio-group {
+    display: flex;
+    gap: 12px;
+}
+
+.radio-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+    .radio-item:has(input:checked) {
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+
+    .radio-item input[type="radio"] {
+        display: none;
+    }
