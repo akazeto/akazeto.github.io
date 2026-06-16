@@ -45,6 +45,7 @@ document.getElementById('file').addEventListener('change', function () {
 
 document.getElementById('commissionForm').addEventListener('submit', async function (e) {
     e.preventDefault();
+    const btn = this.querySelector('.btn-submit');
 
     // 배경 유무 체크
     const backgroundChecked = document.querySelector('input[name="background"]:checked');
@@ -65,7 +66,6 @@ document.getElementById('commissionForm').addEventListener('submit', async funct
         return;
     }
 
-    const btn = this.querySelector('.btn-submit');
     btn.textContent = '전송 중...';
     btn.disabled = true;
 
