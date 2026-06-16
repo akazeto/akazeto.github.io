@@ -48,6 +48,7 @@ document.getElementById('commissionForm').addEventListener('submit', async funct
         name: document.getElementById('name').value,
         email: document.getElementById('contact').value,
         type: document.getElementById('type').value,
+        background: document.getElementById('background').value,
         desc: document.getElementById('desc').value,
         images: imageUrls,
     };
