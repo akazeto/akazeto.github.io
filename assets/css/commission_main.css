@@ -329,6 +329,7 @@ main {
     .tier-card-images img {
         flex: 1;
         height: 300px;
+        width: 210px;
         object-fit: cover;
         border-radius: 10px;
     }
