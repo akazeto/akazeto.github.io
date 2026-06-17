@@ -1985,7 +1985,7 @@ input, select, textarea {
 /* Commission Btn */
 .commission-btn {
 	display: inline-block;
-	padding: 25px 500px;
+	padding: 30px 400px;
 	border: 1px solid currentColor;
 	border-radius: 25px;
 	text-decoration: none;
