@@ -1354,4 +1354,8 @@ main {
         padding: 3px 8px;
         font-size: 12px;
     }
+
+    .wait-icon {
+        font-size: 23px;
+    }
 }
