@@ -3539,6 +3539,7 @@ button,
 			flex-wrap: nowrap;
 			overflow-x: auto;
 			padding-bottom: 4px;
+			justify-self: center;
 		}
 
 		#sticky-nav ul li a {
@@ -3635,7 +3636,7 @@ button,
 
 	#main p {
 		text-align: center;
-		font-size: 14px;
-		line-height: 50px;
+		font-size: 16px;
+		line-height: 30px;
 	}
 }
