@@ -37,7 +37,7 @@ nav {
     background: rgba(255,255,255,0.92);
     backdrop-filter: blur(12px);
     z-index: 100;
-    height:80px;
+    height: 80px;
 }
 
 .nav-logo {
@@ -780,7 +780,7 @@ nav {
     position: fixed;
     bottom: 30px;
     justify-self: right;
-    right:30px;
+    right: 30px;
     width: 120px;
     height: 50px;
     border-radius: 12px;
@@ -1142,4 +1142,193 @@ main {
     align-items: center;
     justify-content: center;
     line-height: 1;
+}
+/* =====================
+   MOBILE (768px 이하)
+   ===================== */
+@media (max-width: 768px) {
+
+    /* NAV */
+    nav {
+        padding: 12px 16px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .nav-logo {
+        font-size: 13px;
+    }
+
+    .nav-links {
+        display: none; /* 모바일에서 nav 링크 숨김 */
+    }
+
+    .nav-right {
+        display: none; /* 대기 인원 nav에서 숨김 - 사이드패널로 표시 */
+    }
+
+    .lang-switcher {
+        position: static;
+        transform: none;
+    }
+
+    /* SIDE PANEL → 하단 고정 바로 변환 */
+    .side-panel {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: auto;
+        bottom: 0;
+        transform: none;
+        width: 100%;
+        border-radius: 16px 16px 0 0;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 12px 16px;
+        gap: 8px;
+        z-index: 200;
+    }
+
+    .side-divider {
+        display: none;
+    }
+
+    .side-item {
+        gap: 4px;
+    }
+
+    .side-label {
+        font-size: 10px;
+    }
+
+    .side-lang {
+        flex-direction: row;
+        gap: 3px;
+    }
+
+        .side-lang .lang-btn {
+            padding: 3px 6px;
+            font-size: 10px;
+        }
+
+    .side-btn {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+
+    /* MAIN 여백 조정 */
+    main {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 100px; /* 하단 사이드패널 공간 확보 */
+        max-width: 100%;
+    }
+
+    /* HERO */
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .hero-image {
+        width: 160px;
+        height: 160px;
+    }
+
+    .hero-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-social {
+        justify-content: center;
+    }
+
+    /* PROCESS FLOW */
+    .process-flow {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .process-circle {
+        width: 72px;
+        height: 72px;
+        font-size: 11px;
+    }
+
+    .process-arrow {
+        font-size: 16px;
+    }
+
+    /* TIER TABS */
+    .tier-tabs {
+        justify-content: center;
+    }
+
+    /* TIER CARD */
+    .tier-card-wide {
+        flex-direction: column;
+        padding: 20px 16px;
+        gap: 20px;
+    }
+
+    .tier-card-info {
+        width: 100%;
+        min-width: unset;
+        text-align: center;
+    }
+
+    .tier-card-images {
+        width: 100%;
+        overflow-x: auto;
+        gap: 8px;
+    }
+
+        .tier-card-images img {
+            height: 180px;
+            width: 130px;
+            flex-shrink: 0;
+        }
+
+    /* INFO GRID */
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* FORM */
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full {
+        grid-column: 1;
+    }
+
+    .radio-group {
+        flex-wrap: wrap;
+    }
+
+    .form-submit {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .btn-submit {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* NOTICE */
+    .notice {
+        padding: 20px 16px;
+    }
+
+    /* FOOTER */
+    footer {
+        padding-bottom: 100px; /* 하단 사이드패널 공간 확보 */
+    }
 }
