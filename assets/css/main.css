@@ -3610,6 +3610,7 @@ button,
 		width: 90px !important;
 		height: 40px !important;
 		bottom: 16px !important;
+		display: none; /* 처음엔 숨김 */
 	}
 
 	/* MODAL 이미지 */
