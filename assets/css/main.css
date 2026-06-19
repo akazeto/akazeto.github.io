@@ -3542,8 +3542,8 @@ button,
 		}
 
 		#sticky-nav ul li a {
-			font-size: 14px !important;
-			padding: 8px 12px !important;
+			font-size: 10px !important;
+			padding: 8px 6px !important;
 			white-space: nowrap;
 		}
 
@@ -3606,7 +3606,7 @@ button,
 
 	/* TOP 버튼 */
 	#top-btn {
-		font-size: 1.2em !important;
+		font-size: 0.8em !important;
 		width: 90px !important;
 		height: 40px !important;
 		bottom: 16px !important;
@@ -3622,5 +3622,19 @@ button,
 	.wrapper p {
 		font-size: 14px;
 		line-height: 1.8;
+	}
+
+	.track {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, auto);
+		gap: 100px 20px;
+		transition: transform 0.35s ease;
+	}
+
+	#main p {
+		text-align: center;
+		font-size: 14px;
+		line-height: 50px;
 	}
 }
