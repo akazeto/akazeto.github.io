@@ -1300,8 +1300,8 @@ main {
     }
 
         .tier-card-images img {
-            height: 180px;
-            width: 130px;
+            height: 150px;
+            width: 80px;
             flex-shrink: 0;
         }
 
