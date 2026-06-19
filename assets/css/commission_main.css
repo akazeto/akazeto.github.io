@@ -1356,6 +1356,10 @@ main {
     }
 
     .wait-icon {
-        font-size: 23px;
+        font-size: 12px;
+    }
+
+    .wait-extra {
+        font-size: 8px;
     }
 }
