@@ -3490,7 +3490,7 @@ button,
 /* =====================
    MOBILE (768px 이하)
    ===================== */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
 
 	/* HEADER */
 	#header-wrapper {
