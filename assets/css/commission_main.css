@@ -1300,6 +1300,7 @@ main {
     }
 
         .tier-card-images img {
+            min-height: 300px;
             height: 150px;
             width: 80px;
             flex-shrink: 0;
