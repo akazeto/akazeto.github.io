@@ -52,10 +52,21 @@ document.querySelectorAll('.card.artwork img').forEach(img => {
         modal.classList.add('active');
     });
 });
+
+// commission에서 사용
 document.querySelectorAll('.tier-card-images img').forEach(img => {
     img.addEventListener('click', () => {
         modalImg.src = img.src;
         modal.classList.add('active');
     });
     img.style.cursor = 'pointer';
+});
+
+document.querySelectorAll('.tier-card-images img').forEach(img => {
+    img.addEventListener('click', () => {
+        const img = artwork.querySelector('img');
+        modalImg.src = img.src;
+        modal.classList.add('active');
+        document.getElementById('top-btn').style.display = 'none';
+    });
 });
