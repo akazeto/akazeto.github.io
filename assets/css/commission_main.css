@@ -1143,7 +1143,8 @@ main {
     justify-content: center;
     line-height: 1;
 }
-
+/* Modal */
+/* 모달 배경 */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -1151,15 +1152,33 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 9999;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.85);
 }
 
+    /* 모달 열렸을 때 */
     .modal-overlay.active {
         display: flex;
     }
+
+    /* 모달 이미지 */
+    .modal-overlay img {
+        max-width: 90%;
+        max-height: 100vh;
+        object-fit: contain;
+    }
+
+/* 닫기 버튼 */
+.modal-close {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 36px;
+    color: #fff;
+    cursor: pointer;
+}
 
 /* =====================
    MOBILE (768px 이하)
@@ -1380,5 +1399,11 @@ main {
 
     .wait-extra {
         font-size: 8px;
+    }
+
+    /* MODAL 이미지 */
+    .modal-overlay img {
+        max-width: 95vw !important;
+        max-height: 85vh !important;
     }
 }
