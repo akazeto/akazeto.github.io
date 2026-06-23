@@ -64,9 +64,8 @@ document.querySelectorAll('.tier-card-images img').forEach(img => {
 
 document.querySelectorAll('.tier-card-images img').forEach(img => {
     img.addEventListener('click', () => {
-        const imag = img.querySelector('img');
-        modalImg.src = imag.src;
+        modalImg.src = img.src; 
         modal.classList.add('active');
-        document.getElementById('top-btn').style.display = 'none';
     });
+    img.style.cursor = 'pointer';
 });
