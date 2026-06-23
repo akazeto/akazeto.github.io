@@ -63,10 +63,10 @@ document.querySelectorAll('.tier-card-images img').forEach(img => {
 });
 
 // 모달 열 때 top-btn 숨기기
-document.querySelectorAll('.tier-card-images img').forEach(artwork => {
-    artwork.addEventListener('click', () => {
-        const img = artwork.querySelector('img');
-        modalImg.src = img.src;
+document.querySelectorAll('.tier-card-images').forEach(images => {
+    images.addEventListener('click', () => {
+        const imag = images.querySelector('img');
+        modalImg.src = imag.src;
         modal.classList.add('active');
         document.getElementById('top-btn').style.display = 'none';
     });
