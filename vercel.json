@@ -4,9 +4,7 @@
     { "source": "/profile", "destination": "/profile.html" },
     { "source": "/others", "destination": "/others.html" },
     { "source": "/commission", "destination": "/commission.html" },
-    { "source": "/commission_index", "destination": "/commission_index.html" },
-    { "source": "/commission_illustration", "destination": "/commission_illustration.html" },
-    { "source": "/commission_rkgk", "destination": "/commission_rkgk.html" },
+    { "source": "/main", "destination": "/main.html" },
     { "source": "/admin", "destination": "/admin.html" }
   ]
 }
