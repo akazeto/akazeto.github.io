@@ -3,11 +3,6 @@ import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/fireb
 import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import { getStatus, incrementViews } from './firebase.js';
 
-window.addEventListener('DOMContentLoaded', async () => {
-    incrementViews(); // 조회수 +1
-    const data = await getStatus();
-});
-
 const firebaseConfig = {
     apiKey: "AIzaSyAezRB7dtq2Ct8K3ac5w2OzWIglbluHVhM",
     authDomain: "haru-scommission.firebaseapp.com",
@@ -54,3 +49,10 @@ async function getViews() {
 }
 
 export { auth, signInWithEmailAndPassword, signOut, onAuthStateChanged, getStatus, setStatus, incrementViews, getViews };
+
+
+window.addEventListener('DOMContentLoaded', async () => {
+    incrementViews(); // 조회수 +1
+    const data = await getStatus();
+});
+

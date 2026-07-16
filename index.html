@@ -10,9 +10,10 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>emailjs.init("UjcMGFM3loGV0QnIq");</script>
     <script type="module">
-        import { getStatus } from './firebase.js';
+        import { getStatus, incrementViews } from './firebase.js';
 
         window.addEventListener('DOMContentLoaded', async () => {
+            incrementViews();
             const data = await getStatus();
             const MAX_SLOTS = 5; // 최대 슬롯 수 (아이콘 총 개수)
 
@@ -537,6 +538,5 @@
     <script src="assets/js/lang_change.js"></script>
     <script src="assets/js/topButton.js"></script>
     <script src="assets/js/modal.js"></script>
-
 </body>
 </html>
