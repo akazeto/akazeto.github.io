@@ -269,6 +269,13 @@
             .save-msg.show {
                 opacity: 1;
             }
+
+        .stat-value {
+            font-size: 36px;
+            font-weight: 600;
+            letter-spacing: -1px;
+            margin-top: 8px;
+        }
     </style>
 </head>
 <body>
@@ -316,6 +323,10 @@
                 <input type="number" class="wait-input" id="waitCount" value="0" min="0">
                 <button id="plusBtn" class="count-btn">+</button>
             </div>
+        </div>
+        <div class="card">
+            <h2>조회수</h2>
+            <div class="stat-value" id="viewCount">-</div>
         </div>
 
         <!-- 저장 -->
@@ -398,6 +409,9 @@
             msg.classList.add('show');
             setTimeout(() => msg.classList.remove('show'), 2500);
         });
+
+        const views = await getViews();
+        document.getElementById('viewCount').textContent = views.toLocaleString() + ' 회';
     </script>
 
 </body>

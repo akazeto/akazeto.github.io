@@ -1,6 +1,12 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { getStatus, incrementViews } from './firebase.js';
+
+window.addEventListener('DOMContentLoaded', async () => {
+    incrementViews(); // 조회수 +1
+    const data = await getStatus();
+});
 
 const firebaseConfig = {
     apiKey: "AIzaSyAezRB7dtq2Ct8K3ac5w2OzWIglbluHVhM",
@@ -31,3 +37,20 @@ async function setStatus(isOpen, waitCount) {
 }
 
 export { auth, signInWithEmailAndPassword, signOut, onAuthStateChanged, getStatus, setStatus };
+
+import { getFirestore, doc, getDoc, setDoc, increment } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+// 조회수 증가
+async function incrementViews() {
+    const ref = doc(db, "commission", "stats");
+    await setDoc(ref, { views: increment(1) }, { merge: true });
+}
+
+// 조회수 읽기
+async function getViews() {
+    const ref = doc(db, "commission", "stats");
+    const snap = await getDoc(ref);
+    return snap.exists() ? snap.data().views || 0 : 0;
+}
+
+export { auth, signInWithEmailAndPassword, signOut, onAuthStateChanged, getStatus, setStatus, incrementViews, getViews };
