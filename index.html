@@ -13,7 +13,10 @@
         import { getStatus, incrementViews } from './firebase.js';
 
         window.addEventListener('DOMContentLoaded', async () => {
-            incrementViews();
+            if (!sessionStorage.getItem('viewed')) {
+                incrementViews();
+                sessionStorage.setItem('viewed', 'true');
+            }
             const data = await getStatus();
             const MAX_SLOTS = 5; // 최대 슬롯 수 (아이콘 총 개수)
 
