@@ -8,7 +8,7 @@ a, img, ul, ol, li, form, label, section, header, footer, nav {
 }
 *, *:before, *:after { box-sizing: border-box; }
 body {
-	background: #f5f7fa;
+	background: rgba(255,255,255,1);
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 300;
 	color: #52575c;
