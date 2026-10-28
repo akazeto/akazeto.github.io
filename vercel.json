@@ -1,10 +1,7 @@
 {
   "rewrites": [
-    { "source": "/artwork", "destination": "/artwork.html" },
-    { "source": "/profile", "destination": "/profile.html" },
-    { "source": "/others", "destination": "/others.html" },
-    { "source": "/commission", "destination": "/commission.html" },
-    { "source": "/main", "destination": "/main.html" },
+    { "source": "/portfolio", "destination": "/portfolio.html" },
+
     { "source": "/admin", "destination": "/admin.html" }
   ]
 }
