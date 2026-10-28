@@ -3639,4 +3639,17 @@ button,
 		font-size: 16px;
 		line-height: 30px;
 	}
+
+	profile{
+
+	}
+
+	.profile a{
+
+	}
+
+	.profile p {
+		text-align:left;
+		font-size: 10px;
+	}
 }
