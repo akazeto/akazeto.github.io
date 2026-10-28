@@ -39,7 +39,7 @@
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
-			padding: 32px 0 32px 0;
+			padding: 28px 0 32px 0;
 			gap: 0;
 			z-index: 100;
 			/* 처음엔 숨김 — JS로 헤더 지나치면 표시 */
@@ -47,6 +47,37 @@
 			pointer-events: none;
 			transition: opacity 0.25s ease;
 		}
+
+        /* ── Side Nav 프로필 이미지 ── */
+        #side-nav .side-profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 0 0 20px 0;
+            margin-bottom: 4px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        #side-nav .side-profile-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-image: url("images/profile.jpg");
+            background-size: cover;
+            background-position: center;
+            background-color: #e8eaed;
+        }
+
+        #side-nav .side-profile-name {
+            margin-top: 10px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: #52575c;
+            text-align: center;
+        }
+
 
 		#side-nav.visible {
 			opacity: 1;
@@ -461,6 +492,10 @@
 
 		<!-- Side Nav (헤더 지나치면 나타남) -->
 		<nav id="side-nav">
+			<div class="side-profile">
+				<div class="side-profile-img"></div>
+				<div class="side-profile-name">hama ハルさま</div>
+			</div>
 			<a href="#section-profile">PROFILE</a>
 			<div class="nav-divider"></div>
 			<a href="#section-artwork">ARTWORK</a>
