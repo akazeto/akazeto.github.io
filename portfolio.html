@@ -325,12 +325,13 @@
 		}
 
 		/* ── Filter buttons ── */
-		.filter-btns {
-			display: flex;
-			gap: 8px;
-			flex-wrap: wrap;
-			margin-top: 8px;
-		}
+        .filter-btns {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+            justify-content: center;
+        }
 
 		.filter-btn {
 			padding: 6px 16px;
@@ -522,7 +523,7 @@
 			<!-- ── PROFILE ── -->
 			<section id="section-profile">
 				<div class="section-header">
-					<h2>PROFILE</h2>
+					<h2 style="text-align:center">PROFILE</h2>
 				</div>
 				<div class="profile-text">
 					<p>
@@ -546,7 +547,7 @@
 			<!-- ── ARTWORK ── -->
 			<section id="section-artwork" class="portfolio-section">
 				<div class="section-header">
-					<h2>ARTWORK</h2>
+					<h2 style="align-content:center">ARTWORK</h2>
 				</div>
 				<div class="filter-btns">
 					<button class="filter-btn active" onclick="filterSection('artwork', 'all')">All</button>
@@ -632,7 +633,7 @@
 			<!-- ── OTHERS ── -->
 			<section id="section-others" class="portfolio-section">
 				<div class="section-header">
-					<h2>OTHERS</h2>
+					<h2 style="text-align:center">OTHERS</h2>
 				</div>
 				<div class="filter-btns">
 					<button class="filter-btn active" onclick="filterSection('others', 'all')">All</button>
