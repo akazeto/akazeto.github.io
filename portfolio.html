@@ -8,7 +8,108 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 	<link rel="icon" href="data:,">
 	<style>
-		/* ── Top Nav ── */
+		/* ── Layout wrapper ── */
+		#page-wrapper {
+			display: flex;
+			flex-direction: column;
+		}
+
+		/* ── Header ── */
+		#header-wrapper {
+			width: 100%;
+		}
+
+		/* ── Body layout after header ── */
+		#body-layout {
+			display: flex;
+			align-items: flex-start;
+			width: 100%;
+		}
+
+		/* ── Side Nav (왼쪽 고정) ── */
+		#side-nav {
+			width: 180px;
+			flex-shrink: 0;
+			position: sticky;
+			top: 0;
+			height: 100vh;
+			background: rgba(255,255,255,0.96);
+			backdrop-filter: blur(8px);
+			border-right: 1px solid rgba(0,0,0,0.08);
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			padding: 32px 0 32px 0;
+			gap: 0;
+			z-index: 100;
+			/* 처음엔 숨김 — JS로 헤더 지나치면 표시 */
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity 0.25s ease;
+		}
+
+		#side-nav.visible {
+			opacity: 1;
+			pointer-events: auto;
+		}
+
+		#side-nav a {
+			display: block;
+			width: 100%;
+			padding: 12px 28px;
+			font-size: 13px;
+			font-weight: 600;
+			letter-spacing: 0.08em;
+			color: #52575c;
+			text-decoration: none;
+			border-bottom: none;
+			transition: color 0.2s, background 0.2s;
+			white-space: nowrap;
+		}
+
+		#side-nav a:hover {
+			color: #f35858;
+			background: rgba(243, 88, 88, 0.06);
+		}
+
+		#side-nav a.commission-link {
+			color: #e040fb;
+		}
+
+		#side-nav a.commission-link:hover {
+			color: #bf00ff;
+			background: rgba(224, 64, 251, 0.06);
+		}
+
+		#side-nav .nav-divider {
+			width: calc(100% - 56px);
+			height: 1px;
+			background: rgba(0,0,0,0.08);
+			margin: 8px 28px;
+		}
+
+		#side-nav .sns-group {
+			display: flex;
+			align-items: center;
+			gap: 2px;
+			padding: 12px 28px;
+			flex-wrap: wrap;
+		}
+
+		#side-nav .sns-group a {
+			width: auto;
+			padding: 4px 6px;
+			font-size: 18px;
+		}
+
+		#side-nav .sns-group a.fanbox-link {
+			font-size: 11px;
+			font-weight: 700;
+			letter-spacing: 0.05em;
+			padding: 4px 6px;
+		}
+
+		/* ── Top Nav (헤더 아래 가로, 헤더 지나치면 숨김) ── */
 		#top-nav {
 			position: sticky;
 			top: 0;
@@ -22,6 +123,13 @@
 			gap: 0;
 			padding: 0 20px;
 			height: 52px;
+			transition: opacity 0.25s ease, transform 0.25s ease;
+		}
+
+		#top-nav.hidden {
+			opacity: 0;
+			pointer-events: none;
+			transform: translateY(-100%);
 		}
 
 		#top-nav a {
@@ -39,17 +147,10 @@
 			white-space: nowrap;
 		}
 
-		#top-nav a:hover {
-			color: #f35858;
-		}
+		#top-nav a:hover { color: #f35858; }
 
-		#top-nav a.commission-link {
-			color: #e040fb;
-		}
-
-		#top-nav a.commission-link:hover {
-			color: #bf00ff;
-		}
+		#top-nav a.commission-link { color: #e040fb; }
+		#top-nav a.commission-link:hover { color: #bf00ff; }
 
 		#top-nav .nav-divider {
 			width: 1px;
@@ -75,6 +176,12 @@
 			font-size: 12px;
 			font-weight: 700;
 			letter-spacing: 0.05em;
+		}
+
+		/* ── Main content ── */
+		#main-content {
+			flex: 1;
+			min-width: 0;
 		}
 
 		/* ── Section titles ── */
@@ -222,9 +329,7 @@
 			justify-content: center;
 		}
 
-		.modal-overlay.active {
-			display: flex;
-		}
+		.modal-overlay.active { display: flex; }
 
 		.modal-overlay img {
 			max-width: 90vw;
@@ -251,8 +356,22 @@
 			z-index: 1;
 		}
 
-		/* ── Mobile ── */
+		/* ── Mobile: 768px 이하는 top-nav만 유지 ── */
 		@media screen and (max-width: 768px) {
+			#side-nav { display: none !important; }
+
+			#top-nav {
+				opacity: 1 !important;
+				pointer-events: auto !important;
+				transform: none !important;
+			}
+
+			#top-nav.hidden {
+				opacity: 1 !important;
+				pointer-events: auto !important;
+				transform: none !important;
+			}
+
 			#top-nav {
 				gap: 0;
 				padding: 0 8px;
@@ -270,45 +389,28 @@
 				font-size: 16px;
 			}
 
-			.portfolio-section {
-				padding: 0 16px 60px;
-			}
-
-			.section-divider {
-				margin: 0 16px;
-			}
-
-			#section-profile {
-				padding: 0 16px 40px;
-			}
+			.portfolio-section { padding: 0 16px 60px; }
+			.section-divider { margin: 0 16px; }
+			#section-profile { padding: 0 16px 40px; }
 
 			#section-artwork .gallery {
 				grid-template-columns: repeat(2, 1fr);
 				gap: 10px;
 			}
 
-			#section-artwork .gallery .artwork img {
-				height: 180px;
-			}
+			#section-artwork .gallery .artwork img { height: 180px; }
 
 			#section-others .gallery {
 				grid-template-columns: repeat(2, 1fr);
 				gap: 10px;
 			}
 
-			#section-others .gallery .artwork img {
-				height: 160px;
-			}
+			#section-others .gallery .artwork img { height: 160px; }
 		}
 
 		@media screen and (max-width: 480px) {
-			#section-artwork .gallery {
-				grid-template-columns: 1fr;
-			}
-
-			#section-others .gallery {
-				grid-template-columns: 1fr;
-			}
+			#section-artwork .gallery { grid-template-columns: 1fr; }
+			#section-others .gallery { grid-template-columns: 1fr; }
 		}
 	</style>
 </head>
@@ -327,7 +429,7 @@
 		</section>
 	</div>
 
-	<!-- Sticky Top Nav -->
+	<!-- Top Nav (헤더 바로 아래, 헤더 지나치면 사라짐) -->
 	<nav id="top-nav">
 		<a href="#section-profile">PROFILE</a>
 		<div class="nav-divider"></div>
@@ -348,162 +450,192 @@
 		</div>
 	</nav>
 
-	<!-- ── PROFILE ── -->
-	<section id="section-profile">
-		<div class="section-header">
-			<h2>PROFILE</h2>
-		</div>
-		<div class="profile-text">
-			<p>
-				可愛いものが大好きで、<br />
-				その魅力をもっと表現できるように頑張っています。<br />
-				少しずつ成長しながら、<br />
-				物語のあるイラストを描いていきたいです。<br />
-				<br />
-				귀여운 것들을 좋아하고<br />
-				그 매력을 더 잘 담아내기 위해 노력하고 있습니다.<br />
-				하루하루 조금씩 성장하며<br />
-				이야기 있는 그림을 그리고 싶습니다.
-			</p>
-		</div>
-		<p class="profile-contact">CONTACT: toehdn6638@gmail.com</p>
-		<p class="profile-langs">日本語 · ENGLISH · 한국어<br>OK</p>
-	</section>
+	<!-- Body layout: side-nav + main content -->
+	<div id="body-layout">
 
-	<hr class="section-divider">
+		<!-- Side Nav (헤더 지나치면 나타남) -->
+		<nav id="side-nav">
+			<a href="#section-profile">PROFILE</a>
+			<div class="nav-divider"></div>
+			<a href="#section-artwork">ARTWORK</a>
+			<div class="nav-divider"></div>
+			<a href="#section-others">OTHERS</a>
+			<div class="nav-divider"></div>
+			<a href="commission_index" class="commission-link">COMMISSION</a>
+			<div class="nav-divider"></div>
+			<div class="sns-group">
+				<a href="https://x.com/harusamadayo1" target="_blank" title="X (Twitter)">
+					<i class="fa-brands fa-x-twitter"></i>
+				</a>
+				<a href="https://pixiv.net/users/22052465" target="_blank" title="pixiv" style="color: rgba(69, 176, 249, 1);">
+					<i class="fa-brands fa-pixiv"></i>
+				</a>
+				<a href="https://harusama.fanbox.cc/" target="_blank" title="FANBOX" class="fanbox-link">FANBOX</a>
+			</div>
+		</nav>
 
-	<!-- ── ARTWORK ── -->
-	<section id="section-artwork" class="portfolio-section">
-		<div class="section-header">
-			<h2>ARTWORK</h2>
-		</div>
-		<div class="filter-btns">
-			<button class="filter-btn active" onclick="filterSection('artwork', 'all')">All</button>
-			<button class="filter-btn" onclick="filterSection('artwork', 'bluearchive')">Blue Archive</button>
-			<button class="filter-btn" onclick="filterSection('artwork', 'stellive')">StelLive</button>
-			<button class="filter-btn" onclick="filterSection('artwork', 'original')">Original</button>
-			<button class="filter-btn" onclick="filterSection('artwork', 'etc')">ETC.</button>
-		</div>
-		<div class="gallery" id="gallery-artwork">
-			<p class="artwork" data-section="artwork" data-category="bluearchive">
-				<img src="assets/artwork_Images/hina_bathroom.jpg" alt="">
-				<span class="img-protect"></span>
-			</p>
-			<p class="artwork" data-section="artwork" data-category="stellive">
-				<img src="assets/artwork_Images/0.jpg" alt="">
-				<span class="img-protect"></span>
-			</p>
-			<p class="artwork" data-section="artwork" data-category="stellive">
-				<img src="assets/artwork_Images/1.jpg" alt="">
-				<span class="img-protect"></span>
-			</p>
-			<p class="artwork" data-section="artwork" data-category="stellive">
-				<img src="assets/artwork_Images/2.jpeg" alt="">
-				<span class="img-protect"></span>
-			</p>
-			<p class="artwork" data-section="artwork" data-category="etc">
-				<img src="assets/artwork_Images/3.jpg" alt="">
-				<span class="img-protect"></span>
-			</p>
-			<p class="artwork" data-section="artwork" data-category="bluearchive">
-				<img src="assets/artwork_Images/4.jpg" alt="">
-				<span class="img-protect"></span>
-			</p>
-			<p class="artwork" data-section="artwork" data-category="bluearchive">
-				<img src="assets/artwork_Images/5.jpeg" alt="">
-				<span class="img-protect"></span>
-			</p>
-			<p class="artwork" data-section="artwork" data-category="bluearchive">
-				<img src="assets/artwork_Images/6.jpeg" alt="">
-				<span class="img-protect"></span>
-			</p>
-			<p class="artwork" data-section="artwork" data-category="bluearchive">
-				<img src="assets/artwork_Images/8.jpeg" alt="">
-				<span class="img-protect"></span>
-			</p>
-			<p class="artwork" data-section="artwork" data-category="bluearchive">
-				<img src="assets/artwork_Images/9.jpg" alt="">
-				<span class="img-protect"></span>
-			</p>
-			<p class="artwork" data-section="artwork" data-category="bluearchive">
-				<img src="assets/artwork_Images/100.jpeg" alt="">
-				<span class="img-protect"></span>
-			</p>
-			<p class="artwork" data-section="artwork" data-category="bluearchive">
-				<img src="assets/artwork_Images/christmas_hina.jfif" alt="">
-				<span class="img-protect"></span>
-			</p>
-			<p class="artwork" data-section="artwork" data-category="bluearchive">
-				<img src="assets/artwork_Images/conceptart_hina.jfif" alt="">
-				<span class="img-protect"></span>
-			</p>
-			<p class="artwork" data-section="artwork" data-category="etc">
-				<img src="assets/artwork_Images/onsen_reze.jpg" alt="">
-				<span class="img-protect"></span>
-			</p>
-			<p class="artwork" data-section="artwork" data-category="bluearchive">
-				<img src="assets/artwork_Images/swimsuit_hubuki.jfif" alt="">
-				<span class="img-protect"></span>
-			</p>
-			<p class="artwork" data-section="artwork" data-category="bluearchive">
-				<img src="assets/artwork_Images/umi_hina.jfif" alt="">
-				<span class="img-protect"></span>
-			</p>
-			<p class="artwork" data-section="artwork" data-category="bluearchive">
-				<img src="assets/artwork_Images/bunnygirl_hina_rkgk.jfif" alt="">
-				<span class="img-protect"></span>
-			</p>
-		</div>
-	</section>
+		<!-- Main Content -->
+		<div id="main-content">
 
-	<hr class="section-divider">
+			<!-- ── PROFILE ── -->
+			<section id="section-profile">
+				<div class="section-header">
+					<h2>PROFILE</h2>
+				</div>
+				<div class="profile-text">
+					<p>
+						可愛いものが大好きで、<br />
+						その魅力をもっと表現できるように頑張っています。<br />
+						少しずつ成長しながら、<br />
+						物語のあるイラストを描いていきたいです。<br />
+						<br />
+						귀여운 것들을 좋아하고<br />
+						그 매력을 더 잘 담아내기 위해 노력하고 있습니다.<br />
+						하루하루 조금씩 성장하며<br />
+						이야기 있는 그림을 그리고 싶습니다.
+					</p>
+				</div>
+				<p class="profile-contact">CONTACT: toehdn6638@gmail.com</p>
+				<p class="profile-langs">日本語 · ENGLISH · 한국어<br>OK</p>
+			</section>
 
-	<!-- ── OTHERS ── -->
-	<section id="section-others" class="portfolio-section">
-		<div class="section-header">
-			<h2>OTHERS</h2>
-		</div>
-		<div class="filter-btns">
-			<button class="filter-btn active" onclick="filterSection('others', 'all')">All</button>
-			<button class="filter-btn" onclick="filterSection('others', 'study')">Study</button>
-			<button class="filter-btn" onclick="filterSection('others', 'rkgk')">RKGK</button>
-		</div>
-		<div class="gallery" id="gallery-others">
-			<p class="artwork" data-section="others" data-category="rkgk">
-				<img src="assets/rkgk/hina_bed.jfif" alt="">
-				<span class="img-protect"></span>
-			</p>
-			<p class="artwork" data-section="others" data-category="rkgk">
-				<img src="assets/rkgk/cafe_hina_rkgk.jfif" alt="">
-				<span class="img-protect"></span>
-			</p>
-			<p class="artwork" data-section="others" data-category="rkgk">
-				<img src="assets/rkgk/sleeping_hina_rkgk.jfif" alt="">
-				<span class="img-protect"></span>
-			</p>
-			<p class="artwork" data-section="others" data-category="rkgk">
-				<img src="assets/rkgk/snow_hina_rkgk.jfif" alt="">
-				<span class="img-protect"></span>
-			</p>
-			<p class="artwork" data-section="others" data-category="rkgk">
-				<img src="assets/rkgk/swimsuit_hina_rkgk.png" alt="">
-				<span class="img-protect"></span>
-			</p>
-			<p class="artwork" data-section="others" data-category="rkgk">
-				<img src="assets/rkgk/rize.jpg" alt="">
-				<span class="img-protect"></span>
-			</p>
-			<p class="artwork" data-section="others" data-category="study">
-				<img src="assets/study/study_00.jpg" alt="">
-				<span class="img-protect"></span>
-			</p>
-		</div>
-	</section>
+			<hr class="section-divider">
 
-	<!-- Footer -->
-	<div id="footer-wrapper">
-		<div id="footer" class="container"></div>
-	</div>
+			<!-- ── ARTWORK ── -->
+			<section id="section-artwork" class="portfolio-section">
+				<div class="section-header">
+					<h2>ARTWORK</h2>
+				</div>
+				<div class="filter-btns">
+					<button class="filter-btn active" onclick="filterSection('artwork', 'all')">All</button>
+					<button class="filter-btn" onclick="filterSection('artwork', 'bluearchive')">Blue Archive</button>
+					<button class="filter-btn" onclick="filterSection('artwork', 'stellive')">StelLive</button>
+					<button class="filter-btn" onclick="filterSection('artwork', 'original')">Original</button>
+					<button class="filter-btn" onclick="filterSection('artwork', 'etc')">ETC.</button>
+				</div>
+				<div class="gallery" id="gallery-artwork">
+					<p class="artwork" data-section="artwork" data-category="bluearchive">
+						<img src="assets/artwork_Images/hina_bathroom.jpg" alt="">
+						<span class="img-protect"></span>
+					</p>
+					<p class="artwork" data-section="artwork" data-category="stellive">
+						<img src="assets/artwork_Images/0.jpg" alt="">
+						<span class="img-protect"></span>
+					</p>
+					<p class="artwork" data-section="artwork" data-category="stellive">
+						<img src="assets/artwork_Images/1.jpg" alt="">
+						<span class="img-protect"></span>
+					</p>
+					<p class="artwork" data-section="artwork" data-category="stellive">
+						<img src="assets/artwork_Images/2.jpeg" alt="">
+						<span class="img-protect"></span>
+					</p>
+					<p class="artwork" data-section="artwork" data-category="etc">
+						<img src="assets/artwork_Images/3.jpg" alt="">
+						<span class="img-protect"></span>
+					</p>
+					<p class="artwork" data-section="artwork" data-category="bluearchive">
+						<img src="assets/artwork_Images/4.jpg" alt="">
+						<span class="img-protect"></span>
+					</p>
+					<p class="artwork" data-section="artwork" data-category="bluearchive">
+						<img src="assets/artwork_Images/5.jpeg" alt="">
+						<span class="img-protect"></span>
+					</p>
+					<p class="artwork" data-section="artwork" data-category="bluearchive">
+						<img src="assets/artwork_Images/6.jpeg" alt="">
+						<span class="img-protect"></span>
+					</p>
+					<p class="artwork" data-section="artwork" data-category="bluearchive">
+						<img src="assets/artwork_Images/8.jpeg" alt="">
+						<span class="img-protect"></span>
+					</p>
+					<p class="artwork" data-section="artwork" data-category="bluearchive">
+						<img src="assets/artwork_Images/9.jpg" alt="">
+						<span class="img-protect"></span>
+					</p>
+					<p class="artwork" data-section="artwork" data-category="bluearchive">
+						<img src="assets/artwork_Images/100.jpeg" alt="">
+						<span class="img-protect"></span>
+					</p>
+					<p class="artwork" data-section="artwork" data-category="bluearchive">
+						<img src="assets/artwork_Images/christmas_hina.jfif" alt="">
+						<span class="img-protect"></span>
+					</p>
+					<p class="artwork" data-section="artwork" data-category="bluearchive">
+						<img src="assets/artwork_Images/conceptart_hina.jfif" alt="">
+						<span class="img-protect"></span>
+					</p>
+					<p class="artwork" data-section="artwork" data-category="etc">
+						<img src="assets/artwork_Images/onsen_reze.jpg" alt="">
+						<span class="img-protect"></span>
+					</p>
+					<p class="artwork" data-section="artwork" data-category="bluearchive">
+						<img src="assets/artwork_Images/swimsuit_hubuki.jfif" alt="">
+						<span class="img-protect"></span>
+					</p>
+					<p class="artwork" data-section="artwork" data-category="bluearchive">
+						<img src="assets/artwork_Images/umi_hina.jfif" alt="">
+						<span class="img-protect"></span>
+					</p>
+					<p class="artwork" data-section="artwork" data-category="bluearchive">
+						<img src="assets/artwork_Images/bunnygirl_hina_rkgk.jfif" alt="">
+						<span class="img-protect"></span>
+					</p>
+				</div>
+			</section>
+
+			<hr class="section-divider">
+
+			<!-- ── OTHERS ── -->
+			<section id="section-others" class="portfolio-section">
+				<div class="section-header">
+					<h2>OTHERS</h2>
+				</div>
+				<div class="filter-btns">
+					<button class="filter-btn active" onclick="filterSection('others', 'all')">All</button>
+					<button class="filter-btn" onclick="filterSection('others', 'study')">Study</button>
+					<button class="filter-btn" onclick="filterSection('others', 'rkgk')">RKGK</button>
+				</div>
+				<div class="gallery" id="gallery-others">
+					<p class="artwork" data-section="others" data-category="rkgk">
+						<img src="assets/rkgk/hina_bed.jfif" alt="">
+						<span class="img-protect"></span>
+					</p>
+					<p class="artwork" data-section="others" data-category="rkgk">
+						<img src="assets/rkgk/cafe_hina_rkgk.jfif" alt="">
+						<span class="img-protect"></span>
+					</p>
+					<p class="artwork" data-section="others" data-category="rkgk">
+						<img src="assets/rkgk/sleeping_hina_rkgk.jfif" alt="">
+						<span class="img-protect"></span>
+					</p>
+					<p class="artwork" data-section="others" data-category="rkgk">
+						<img src="assets/rkgk/snow_hina_rkgk.jfif" alt="">
+						<span class="img-protect"></span>
+					</p>
+					<p class="artwork" data-section="others" data-category="rkgk">
+						<img src="assets/rkgk/swimsuit_hina_rkgk.png" alt="">
+						<span class="img-protect"></span>
+					</p>
+					<p class="artwork" data-section="others" data-category="rkgk">
+						<img src="assets/rkgk/rize.jpg" alt="">
+						<span class="img-protect"></span>
+					</p>
+					<p class="artwork" data-section="others" data-category="study">
+						<img src="assets/study/study_00.jpg" alt="">
+						<span class="img-protect"></span>
+					</p>
+				</div>
+			</section>
+
+			<!-- Footer -->
+			<div id="footer-wrapper">
+				<div id="footer" class="container"></div>
+			</div>
+
+		</div><!-- /main-content -->
+	</div><!-- /body-layout -->
 
 </div><!-- /page-wrapper -->
 
@@ -517,6 +649,26 @@
 <button id="top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="display:none;">↑ Top</button>
 
 <script>
+	// ── Nav 전환: 헤더 지나치면 top-nav 숨기고 side-nav 표시 ──
+	const topNav   = document.getElementById('top-nav');
+	const sideNav  = document.getElementById('side-nav');
+	const headerWrapper = document.getElementById('header-wrapper');
+
+	function updateNav() {
+		// top-nav가 헤더 아래 붙어있으므로, header 하단 + top-nav 높이를 지나치면 전환
+		const threshold = headerWrapper.offsetHeight;
+		if (window.scrollY > threshold) {
+			topNav.classList.add('hidden');
+			sideNav.classList.add('visible');
+		} else {
+			topNav.classList.remove('hidden');
+			sideNav.classList.remove('visible');
+		}
+	}
+
+	window.addEventListener('scroll', updateNav, { passive: true });
+	updateNav(); // 초기 실행
+
 	// ── Filter ──
 	function filterSection(section, category) {
 		const gallery = document.getElementById('gallery-' + section);
@@ -529,17 +681,16 @@
 			}
 		});
 
-		// active button
 		const parentSection = document.getElementById('section-' + section);
 		parentSection.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
 		event.target.classList.add('active');
 	}
 
 	// ── Modal ──
-	const modal = document.getElementById('modal');
-	const modalImg = document.getElementById('modalImg');
+	const modal     = document.getElementById('modal');
+	const modalImg  = document.getElementById('modalImg');
 	const modalClose = document.getElementById('modalClose');
-	const topBtn = document.getElementById('top-btn');
+	const topBtn    = document.getElementById('top-btn');
 
 	function openModal(src) {
 		modalImg.src = src;
@@ -549,7 +700,7 @@
 
 	function closeModal() {
 		modal.classList.remove('active');
-		if (topBtn) topBtn.style.display = 'block';
+		if (topBtn && window.scrollY > 400) topBtn.style.display = 'block';
 	}
 
 	document.querySelectorAll('.gallery .artwork').forEach(artwork => {
@@ -569,17 +720,20 @@
 
 	// ── Top button show/hide ──
 	window.addEventListener('scroll', () => {
-		topBtn.style.display = window.scrollY > 400 ? 'block' : 'none';
+		if (!modal.classList.contains('active')) {
+			topBtn.style.display = window.scrollY > 400 ? 'block' : 'none';
+		}
 	});
 
-	// ── Smooth scroll for nav anchors ──
-	document.querySelectorAll('#top-nav a[href^="#"]').forEach(a => {
+	// ── Smooth scroll (side-nav + top-nav 앵커) ──
+	document.querySelectorAll('#top-nav a[href^="#"], #side-nav a[href^="#"]').forEach(a => {
 		a.addEventListener('click', e => {
 			e.preventDefault();
 			const target = document.querySelector(a.getAttribute('href'));
 			if (target) {
-				const navH = document.getElementById('top-nav').offsetHeight;
-				window.scrollTo({ top: target.offsetTop - navH - 8, behavior: 'smooth' });
+				// side-nav가 보이면 offset 없음, top-nav가 보이면 높이만큼 빼기
+				const offset = sideNav.classList.contains('visible') ? 0 : topNav.offsetHeight;
+				window.scrollTo({ top: target.offsetTop - offset - 8, behavior: 'smooth' });
 			}
 		});
 	});
