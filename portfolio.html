@@ -90,12 +90,12 @@
 
 		/* ── Side Nav (왼쪽 고정) ── */
 		#side-nav {
-			width: 180px;
+			width: 250px;
 			flex-shrink: 0;
 			position: sticky;
 			top: 0;
 			height: 100vh;
-			background: rgba(255,255,255,0.96);
+			background: rgba(240,255,255,0.96);
 			backdrop-filter: blur(8px);
 			border-right: 1px solid rgba(0,0,0,0.08);
 			display: flex;
@@ -118,14 +118,13 @@
 			width: 100%;
 			padding: 0 0 20px 0;
 			margin-bottom: 4px;
-			border-bottom: 1px solid rgba(0,0,0,0.08);
 		}
 
 		#side-nav .side-profile-img {
-			width: 80px;
-			height: 80px;
+			width: 150px;
+			height: 150px;
 			border-radius: 50%;
-			background-image: url("images/profile.jpg");
+			background-image: url("assets/css/images/profile.jpg");
 			background-size: cover;
 			background-position: center;
 			background-color: #e8eaed;
@@ -133,7 +132,7 @@
 
 		#side-nav .side-profile-name {
 			margin-top: 10px;
-			font-size: 11px;
+			font-size: 20px;
 			font-weight: 600;
 			letter-spacing: 0.06em;
 			color: #52575c;
@@ -206,7 +205,7 @@
 			position: sticky;
 			top: 0;
 			z-index: 1000;
-			background: rgba(255,255,255,0.92);
+			background: rgba(240,255,255,0.92);
 			backdrop-filter: blur(8px);
 			border-bottom: 1px solid rgba(0,0,0,0.08);
 			display: flex;
@@ -228,8 +227,8 @@
 			display: inline-flex;
 			align-items: center;
 			padding: 0 18px;
-			height: 52px;
-			font-size: 13px;
+			height: 82px;
+			font-size: 18px;
 			font-weight: 600;
 			letter-spacing: 0.08em;
 			color: #52575c;
@@ -287,17 +286,18 @@
 		}
 
 		/* ── Profile section ── */
-		#section-profile {
-			max-width: 800px;
-			margin: 0 auto;
-			padding: 0 40px 60px;
-		}
+        #section-profile {
+            max-width: 1100px;
+            margin: 0 auto;
+            margin-top: 20px;
+            padding: 0 40px 60px;
+            border-left: 3px solid #d8dce0;
+        }
 
 		#section-profile .profile-text {
 			line-height: 2;
 			font-size: 15px;
 			color: #52575c;
-			border-left: 3px solid #d8dce0;
 			padding-left: 20px;
 			margin-top: 12px;
 		}
@@ -306,7 +306,6 @@
 			margin-top: 20px;
 			font-size: 14px;
 			color: #52575c;
-			border-left: 3px solid #d8dce0;
 			padding-left: 20px;
 		}
 
@@ -315,7 +314,6 @@
 			color: rgba(255, 180, 150, 1);
 			font-weight: bold;
 			font-size: 14px;
-			border-left: 3px solid #d8dce0;
 			padding-left: 20px;
 			padding-bottom: 4px;
 		}
@@ -386,12 +384,13 @@
 		}
 
 		/* ── Filter buttons ── */
-		.filter-btns {
-			display: flex;
-			gap: 8px;
-			flex-wrap: wrap;
-			margin-top: 8px;
-		}
+        .filter-btns {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+            justify-content: center;
+        }
 
 		.filter-btn {
 			padding: 6px 16px;
@@ -414,7 +413,6 @@
 		/* ── Section divider ── */
 		.section-divider {
 			border: none;
-			border-top: 1px solid rgba(0,0,0,0.1);
 			margin: 0 40px;
 		}
 
@@ -549,7 +547,7 @@
 		<div class="nav-divider"></div>
 		<a href="#section-others">OTHERS</a>
 		<div class="nav-divider"></div>
-		<a href="commission_index" class="commission-link">COMMISSION</a>
+		<a href="/" class="commission-link">COMMISSION</a>
 		<div class="nav-divider"></div>
 		<div class="sns-group">
 			<a href="https://x.com/harusamadayo1" target="_blank" title="X (Twitter)">
@@ -577,7 +575,7 @@
 			<div class="nav-divider"></div>
 			<a href="#section-others">OTHERS</a>
 			<div class="nav-divider"></div>
-			<a href="commission_index" class="commission-link">COMMISSION</a>
+			<a href="/" class="commission-link">COMMISSION</a>
 			<div class="nav-divider"></div>
 			<div class="sns-group">
 				<a href="https://x.com/harusamadayo1" target="_blank" title="X (Twitter)">
@@ -596,7 +594,7 @@
 			<!-- ── PROFILE ── -->
 			<section id="section-profile">
 				<div class="section-header">
-					<h2>PROFILE</h2>
+					<h2 style="font-weight:bold">PROFILE</h2>
 				</div>
 				<div class="profile-text">
 					<p>
@@ -612,7 +610,7 @@
 					</p>
 				</div>
 				<p class="profile-contact">CONTACT: toehdn6638@gmail.com</p>
-				<p class="profile-langs">日本語 · ENGLISH · 한국어<br>OK</p>
+				<p class="profile-langs">日本語 · ENGLISH · 한국어</p>
 			</section>
 
 			<hr class="section-divider">
@@ -620,7 +618,7 @@
 			<!-- ── ARTWORK ── -->
 			<section id="section-artwork" class="portfolio-section">
 				<div class="section-header">
-					<h2>ARTWORK</h2>
+					<h2 style="text-align: center; font-weight: bold;">ARTWORK</h2>
 				</div>
 				<div class="filter-btns">
 					<button class="filter-btn active" onclick="filterSection('artwork', 'all')">All</button>
@@ -706,7 +704,7 @@
 			<!-- ── OTHERS ── -->
 			<section id="section-others" class="portfolio-section">
 				<div class="section-header">
-					<h2>OTHERS</h2>
+					<h2 style="text-align: center; font-weight: bold;">OTHERS</h2>
 				</div>
 				<div class="filter-btns">
 					<button class="filter-btn active" onclick="filterSection('others', 'all')">All</button>
