@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getFirestore, doc, getDoc, setDoc, increment } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { getFirestore, doc, getDoc, setDoc, runTransaction } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 const firebaseConfig = {
@@ -29,17 +29,28 @@ async function setStatus(isOpen, waitCount) {
     await setDoc(ref, { isOpen, waitCount });
 }
 
-// 조회수 증가
-async function incrementViews() {
-    const ref = doc(db, "commission", "stats");
-    await setDoc(ref, { views: increment(1) }, { merge: true });
+// 조회수 증가 — page: 'commission' | 'portfolio'
+async function incrementView(page) {
+    const ref = doc(db, 'views', page);
+    const today = new Date().toISOString().slice(0, 10); // "2026-10-29"
+
+    await runTransaction(db, async (tx) => {
+        const snap = await tx.get(ref);
+        const data = snap.exists() ? snap.data() : { total: 0, today: 0, lastDate: '' };
+
+        const todayCount = data.lastDate === today ? data.today + 1 : 1;
+        tx.set(ref, {
+            total: (data.total || 0) + 1,
+            today: todayCount,
+            lastDate: today
+        });
+    });
 }
 
-// 조회수 읽기
-async function getViews() {
-    const ref = doc(db, "commission", "stats");
-    const snap = await getDoc(ref);
-    return snap.exists() ? snap.data().views || 0 : 0;
+// 조회수 읽기 — page: 'commission' | 'portfolio'
+async function getViews(page) {
+    const snap = await getDoc(doc(db, 'views', page));
+    return snap.exists() ? snap.data() : { total: 0, today: 0 };
 }
 
-export { auth, signInWithEmailAndPassword, signOut, onAuthStateChanged, getStatus, setStatus, incrementViews, getViews };
+export { auth, signInWithEmailAndPassword, signOut, onAuthStateChanged, getStatus, setStatus, incrementView, getViews };

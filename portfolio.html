@@ -771,6 +771,14 @@
 <!-- Top Button -->
 <button id="top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="display:none;">↑ Top</button>
 
+<script type="module">
+	import { incrementView } from './firebase.js';
+	if (!sessionStorage.getItem('portfolio_viewed')) {
+		incrementView('portfolio');
+		sessionStorage.setItem('portfolio_viewed', 'true');
+	}
+</script>
+
 <script>
 	// ── Banner Slideshow (가로 슬라이드) ──
 	let currentSlide = 0;

@@ -10,11 +10,11 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>emailjs.init("UjcMGFM3loGV0QnIq");</script>
     <script type="module">
-        import { getStatus, incrementViews } from './firebase.js';
+        import { getStatus, incrementView } from './firebase.js';
 
         window.addEventListener('DOMContentLoaded', async () => {
             if (!sessionStorage.getItem('viewed')) {
-                incrementViews();
+                incrementView('commission');
                 sessionStorage.setItem('viewed', 'true');
             }
             const data = await getStatus();
